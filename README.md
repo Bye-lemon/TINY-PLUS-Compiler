@@ -22,7 +22,7 @@
 | =      | EQ     |
 | <>     | NOTEQ  |
 | <      | LT     |
-| >      | GT     |
+| \>      | GT     |
 | <=     | LTEQ   |
 | \>=    | GTEQ   |
 | (      | LPAREN |

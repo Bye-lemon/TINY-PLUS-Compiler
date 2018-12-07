@@ -91,7 +91,7 @@ Token getToken(void) {
                     SAVE_FLAG = FALSE;
                 else if (ch == '{') {
                     thisState = INCOMMENT;
-                SAVE_FLAG = FALSE;
+                    SAVE_FLAG = FALSE;
                 } else {
                     thisState = DONE;
                     switch (ch) {
@@ -193,7 +193,7 @@ Token getToken(void) {
         }
 
         if ((SAVE_FLAG) && (tokenStringIndex <= MAX_TOKEN_SIZE))
-            tokenString[tokenStringIndex++] = (char)ch;
+            tokenString[tokenStringIndex++] = (char) ch;
         if (thisState == DONE) {
             tokenString[tokenStringIndex] = '\0';
             if (thisToken == ID)
@@ -201,10 +201,10 @@ Token getToken(void) {
         }
     }
     fprintf(oscan, "\t%d: ", thisLine);
-    printToken(thisToken, tokenString);
+    printToken(thisToken, tokenString, oscan);
 
     if (thisToken == ERROR)
-        scanError ++;
+        scanError++;
 
     return thisToken;
 }
