@@ -2,6 +2,8 @@
 // Created by dell on 2018/11/10.
 //
 #include "globals.h"
+#include "stdio.h"
+#include "stdlib.h"
 #include "utils.h"
 
 void printToken(Token token, const char *tokenString, FILE *output) {
@@ -118,7 +120,7 @@ char *copyString(char *s) {
     char *t;
     if (s == NULL) return NULL;
     n = strlen(s) + 1;
-    t = (char *)malloc(n);
+    t = (char *) malloc(n);
     if (t == NULL)
         fprintf(stdout, "Out of memory error at line %d\n", thisLine);
     else strcpy(t, s);
@@ -193,3 +195,81 @@ void printTree(TreeNode *tree) {
     }
     UNINDENT;
 }
+
+int hash(char *key) {
+    int temp = 0;
+    int i = 0;
+    while (key[i] != '\0') {
+        temp = ((temp << SHIFT) + key[i]) % SIZE;
+        ++i;
+    }
+    return temp;
+}
+
+/* Procedure st_insert inserts line numbers and
+ * memory locations into the symbol table
+ * loc = memory location is inserted only the
+ * first time, otherwise ignored
+ */
+void st_insert(char *name, int thisLine, int loc) {
+    int h = hash(name);
+    List l = hashTable[h];
+    while ((l != NULL) && (strcmp(name, l->name) != 0))
+        l = l->next;
+    if (l == NULL) /* variable not yet in table */
+    {
+        l = (List) malloc(sizeof(struct LinkList));
+        l->name = name;
+        l->lines = (Link) malloc(sizeof(struct LinkNode));
+        l->lines->thisLine = thisLine;
+        l->memloc = loc;
+        l->lines->next = NULL;
+        l->next = hashTable[h];
+        hashTable[h] = l;
+    } else /* found in table, so just add line number */
+    {
+        Link t = l->lines;
+        while (t->next != NULL) t = t->next;
+        t->next = (Link) malloc(sizeof(struct LinkNode));
+        t->next->thisLine = thisLine;
+        t->next->next = NULL;
+    }
+} /* st_insert */
+
+/* Function st_lookup returns the memory
+ * location of a variable or -1 if not found
+ */
+int st_lookup(char *name) {
+    int h = hash(name);
+    List l = hashTable[h];
+    while ((l != NULL) && (strcmp(name, l->name) != 0))
+        l = l->next;
+    if (l == NULL) return -1;
+    else return l->memloc;
+}
+
+/* Procedure printSymTab prints a formatted
+ * listing of the symbol table contents
+ * to the listing file
+ */
+void printSymTab(FILE *listing) {
+    int i;
+    fprintf(listing, "Variable Name  Location   Line Numbers\n");
+    fprintf(listing, "-------------  --------   ------------\n");
+    for (i = 0; i < SIZE; ++i) {
+        if (hashTable[i] != NULL) {
+            List l = hashTable[i];
+            while (l != NULL) {
+                Link t = l->lines;
+                fprintf(listing, "%-14s ", l->name);
+                fprintf(listing, "%-8d  ", l->memloc);
+                while (t != NULL) {
+                    fprintf(listing, "%4d ", t->thisLine);
+                    t = t->next;
+                }
+                fprintf(listing, "\n");
+                l = l->next;
+            }
+        }
+    }
+} /* printSymTab */

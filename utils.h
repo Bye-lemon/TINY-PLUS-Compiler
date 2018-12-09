@@ -6,6 +6,7 @@
 #define TPC_UTILS_H
 
 void printToken(Token, const char *, FILE *);
+
 /* Function newStmtNode creates a new statement
  * node for syntax tree construction
  */
@@ -25,5 +26,20 @@ char *copyString(char *);
  * listing file using indentation to indicate subtrees
  */
 void printTree(TreeNode *);
+
+// Symbol Table Definition
+int hash(char *);
+/* Procedure st_insert inserts line numbers and
+ * memory locations into the symbol table
+ * loc = memory location is inserted only the
+ * first time, otherwise ignored
+ */
+void st_insert(char *name, int lineno, int loc);
+
+/* Function st_lookup returns the memory
+ * location of a variable or -1 if not found
+ */
+int st_lookup(char *name);
+void printSymTab(FILE *listing);
 
 #endif //TPC_UTILS_H

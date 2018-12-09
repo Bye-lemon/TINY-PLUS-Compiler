@@ -34,7 +34,8 @@ static TreeNode *factor(void);
 
 static void syntaxError(const char *message) {
     fprintf(stdout, "\n>>> ");
-    fprintf(stdout, "Syntax error at line %d: %s", thisLine, message);
+    fprintf(stdout, "Line %d: ERROR: Syntax Error \'%s\'\n", thisLine, message);
+    scanError ++;
     Error = TRUE;
 }
 
