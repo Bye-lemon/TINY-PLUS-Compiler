@@ -139,8 +139,9 @@ static int indentno = 0;
 /* printSpaces indents by printing spaces */
 static void printSpaces(void) {
     int i;
-    for (i = 0; i < indentno; i++)
+    for (i = 0; i < indentno-2; i++)
         fprintf(oparse, " ");
+    fprintf(oparse, "┖-");
 }
 
 /* procedure printTree prints a syntax tree to the

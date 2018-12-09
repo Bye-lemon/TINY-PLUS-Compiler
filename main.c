@@ -49,6 +49,7 @@ int main(int argc, char *argv[]) {
     }
     // while (getToken() != ENDFILE);
     TreeNode *syntaxTree = parse();
+    fprintf(oparse, "Main Function\n");
     printTree(syntaxTree);
     if (!Error) {
         buildSymtab(syntaxTree);
