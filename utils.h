@@ -29,4 +29,4 @@ int st_lookup(char *name);
 
 void printSymTab(FILE *listing);
 
-#endif //TPC_UTILS_H
+#endif
