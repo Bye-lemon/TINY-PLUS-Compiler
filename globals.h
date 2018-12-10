@@ -1,6 +1,12 @@
-/*
- * Created by dell on 2018/11/10.
- */
+/*****************************************************************************
+*  TINY-PLUS-Compiler Global Header                                          *
+*  Copyright (C) 2018 Yingping Li                                            *
+*                                                                            *
+*  @file     globals.h                                                       *
+*  @brief    TPC编译器的全局参数头文件                                          *
+*  @author   Yingping Li                                                     *
+*                                                                            *
+*****************************************************************************/
 
 #ifndef TPC_GLOBALS_H
 #define TPC_GLOBALS_H
@@ -185,4 +191,4 @@ typedef struct LinkList {
 static List hashTable[SIZE];
 /* End Symbol Table Definition */
 
-#endif //TPC_GLOBALS_H
+#endif

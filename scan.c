@@ -1,14 +1,35 @@
-//
-// Created by dell on 2018/11/10.
-//
+/*****************************************************************************
+*  TINY-PLUS-Compiler Token Scaner                                           *
+*  Copyright (C) 2018 Yingping Li                                            *
+*                                                                            *
+*  @file     scan.c                                                          *
+*  @brief    TPC编译器的词法分析器                                             *
+*  @author   Yingping Li                                                     *
+*                                                                            *
+*****************************************************************************/
+
 #include "globals.h"
 #include "utils.h"
 #include "scan.h"
 
-#define BUFFER 256 // 每行最大字符数
+/**
+* @brief 词法分析器全局变量定义
+* @{
+*/
+#define BUFFER 256
 
+/**
+ * @brief 定义有穷状态自动机的状态
+ */
 typedef enum {
-    START, DONE, INID, INNUM, INLT, INGT, INASSIGN, INCOMMENT
+    START,      /*!< 开始状态 */  /**< 状态机的开始状态 */
+    DONE,       /*!< 结束状态 */  /**< 状态机的结束状态 */
+    INID,       /*!< 标识符状态 */  /**< 检测标识符（字符序列串） */
+    INNUM,      /*!< 数字状态 */  /**< 检测常数（数字序列串） */
+    INLT,       /*!< 小于号状态 */  /**< 判断{<, <=, <>} */
+    INGT,       /*!< 大于号状态 */  /**< 判断{>, >=} */
+    INASSIGN,   /*!< 赋值状态 */  /**< 判断是否为:= */
+    INCOMMENT   /*!< 注释状态 */  /**< 处理源代码中的注释 */
 } State;
 
 char tokenString[MAX_TOKEN_SIZE + 1];
@@ -17,7 +38,12 @@ static char lineBuffer[BUFFER];
 static int thisPosition = 0;
 static int lineLens = 0;
 static int EOF_FLAG = FALSE;
+/** @} */
 
+/**
+ * @brief 获取当前行下一个字符
+ * @return 下一个待检测字符
+ */
 static int getNext(void) {
     if (thisPosition >= lineLens) {
         thisLine++;
@@ -34,12 +60,17 @@ static int getNext(void) {
         return lineBuffer[thisPosition++];
 }
 
+/**
+ * @brief 将当前指针减一，用来返回{<=, >=, <>, :=}的报错信息
+ */
 static void goBack(void) {
     if (!EOF_FLAG)
         thisPosition--;
 }
 
-// 保留字表
+/**
+ * @brief 文法保留字表
+ */
 static struct {
     char *str;
     Token token;
@@ -54,6 +85,11 @@ static struct {
         {"write",  WRITE}
 };
 
+/**
+ * @brief 查找一个串属不属于保留字，属于返回保留字Token，不属于标记为ID（标识符）
+ * @param s -> 待检查字符串
+ * @return Token类型
+ */
 static Token reservedLookup(char *s) {
     int i;
 
@@ -65,6 +101,10 @@ static Token reservedLookup(char *s) {
     return ID;
 }
 
+/**
+ * @brief 词法分析器主函数，每次生成一个Token供语法分析器调用
+ * @return 待处理的Token
+ */
 Token getToken(void) {
     int tokenStringIndex = 0;
     Token thisToken;

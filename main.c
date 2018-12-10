@@ -1,3 +1,13 @@
+/*****************************************************************************
+*  TINY-PLUS-Compiler Main Function                                          *
+*  Copyright (C) 2018 Yingping Li                                            *
+*                                                                            *
+*  @file     main.c                                                          *
+*  @brief    TPC编译器入口程序                                                 *
+*  @author   Yingping Li                                                     *
+*                                                                            *
+*****************************************************************************/
+
 #include "globals.h"
 #include "utils.h"
 #include "scan.h"
@@ -5,20 +15,36 @@
 #include "analyze.h"
 #include "generate.h"
 
-
+/**
+* @brief TPC编译器的全局变量定义
+* @{
+*/
+/** thisLine -> 全局变量，存储当前行号 */
 int thisLine = 0;
+/** scanError -> 全局变量，统计错误数量 */
 int scanError = 0;
-
+/**
+ *  source   -> 源文件流
+ *  oscan    -> 词法分析输出文件流
+ *  oparse   -> 语法分析输出文件流
+ *  oanalyze -> 语义分析输出文件流
+ *  code     -> 中间代码输出文件流
+ */
 FILE *source;
 FILE *oscan;
 FILE *oparse;
 FILE *oanalyze;
 FILE *code;
-
+/** Error -> 标志变量，存储出错信息 */
 int Error = FALSE;
+/** @} */
 
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
-
+/**
+ * @brief TPC编译器入口函数
+ * @param argc -> 期待值为2
+ * @param argv -> 源文件路径
+ * @return
+ */
 int main(int argc, char *argv[]) {
     char srcName[100];
 
@@ -52,13 +78,11 @@ int main(int argc, char *argv[]) {
         printf("Unable to open %s\n", codefile);
         exit(1);
     }
-    // while (getToken() != ENDFILE);
     TreeNode *syntaxTree = parse();
     fprintf(oparse, "Main Function\n");
     printTree(syntaxTree);
     if (!Error) {
-        buildSymtab(syntaxTree);
-        typeCheck(syntaxTree);
+        anaylze(syntaxTree);
     }
     if (!Error) {
         genCode(syntaxTree);
@@ -70,5 +94,6 @@ int main(int argc, char *argv[]) {
     fclose(source);
 
     fprintf(stdout, "Scan Complete. %d Error(s)\n.", scanError);
+
     return 0;
 }

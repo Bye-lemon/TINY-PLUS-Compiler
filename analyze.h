@@ -1,18 +1,16 @@
-//
-// Created by dell on 2018/12/9.
-//
+/*****************************************************************************
+*  TINY-PLUS-Compiler Semantic Analyzer                                      *
+*  Copyright (C) 2018 Yingping Li                                            *
+*                                                                            *
+*  @file     analyze.h                                                       *
+*  @brief    TPC编译器的语义分析器头文件                                        *
+*  @author   Yingping Li                                                     *
+*                                                                            *
+*****************************************************************************/
 
 #ifndef TPC_ANALYZE_H
 #define TPC_ANALYZE_H
 
-/* Function buildSymtab constructs the symbol
- * table by preorder traversal of the syntax tree
- */
-void buildSymtab(TreeNode *);
+void anaylze(TreeNode *);
 
-/* Procedure typeCheck performs type checking
- * by a postorder syntax tree traversal
- */
-void typeCheck(TreeNode *);
-
-#endif //TPC_ANALYZE_H
+#endif
