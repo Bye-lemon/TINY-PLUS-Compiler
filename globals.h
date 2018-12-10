@@ -56,12 +56,14 @@ extern int thisLine;
  *                 oscan    -> Result of scanner
  *                 oparse   -> Result of syntax parser
  *                 oanalyze -> Result of semantics analyzer
+ *                 code     -> Middle Code
  * Used By:        Global
  */
 extern FILE *source;
 extern FILE *oscan;
 extern FILE *oparse;
 extern FILE *oanalyze;
+extern FILE *code;
 
 /*
  * Data Structure; Const Parameter

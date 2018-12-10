@@ -3,6 +3,7 @@
 #include "scan.h"
 #include "parse.h"
 #include "analyze.h"
+#include "generate.h"
 
 
 int thisLine = 0;
@@ -12,6 +13,7 @@ FILE *source;
 FILE *oscan;
 FILE *oparse;
 FILE *oanalyze;
+FILE *code;
 
 int Error = FALSE;
 
@@ -40,10 +42,13 @@ int main(int argc, char *argv[]) {
     codefile = (char *) calloc(fnlen + 4, sizeof(char));
     strncpy(codefile, srcName, fnlen);
     oparse = fopen(strcat(codefile, ".tree"), "w");
-    codefile = (char *) calloc(fnlen + 6, sizeof(char));
+    codefile = (char *) calloc(fnlen + 4, sizeof(char));
     strncpy(codefile, srcName, fnlen);
     oanalyze = fopen(strcat(codefile, ".symbol"), "w");
-    if (oscan == NULL || oparse == NULL || oanalyze == NULL) {
+    codefile = (char *) calloc(fnlen + 4, sizeof(char));
+    strncpy(codefile, srcName, fnlen);
+    code = fopen(strcat(codefile, ".code"), "w");
+    if (oscan == NULL || oparse == NULL || oanalyze == NULL || code == NULL) {
         printf("Unable to open %s\n", codefile);
         exit(1);
     }
@@ -55,9 +60,13 @@ int main(int argc, char *argv[]) {
         buildSymtab(syntaxTree);
         typeCheck(syntaxTree);
     }
+    if (!Error) {
+        genCode(syntaxTree);
+    }
     fclose(oscan);
     fclose(oparse);
     fclose(oanalyze);
+    fclose(code);
     fclose(source);
 
     fprintf(stdout, "Scan Complete. %d Error(s)\n.", scanError);
