@@ -17,4 +17,4 @@ extern char tokenString[MAX_TOKEN_SIZE + 1];
 
 Token getToken(void);
 
-#endif //TPC_SCAN_H
+#endif

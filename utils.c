@@ -1,11 +1,24 @@
-//
-// Created by dell on 2018/11/10.
-//
+/*****************************************************************************
+*  TINY-PLUS-Compiler Utilities                                              *
+*  Copyright (C) 2018 Yingping Li                                            *
+*                                                                            *
+*  @file     utils.c                                                         *
+*  @brief    TPC编译器的辅助函数                                               *
+*  @author   Yingping Li                                                     *
+*                                                                            *
+*****************************************************************************/
+
 #include "globals.h"
 #include "stdio.h"
 #include "stdlib.h"
 #include "utils.h"
 
+/**
+ * @brief 将词法分析器分析结果输出至文件流
+ * @param token -> Token类型
+ * @param tokenString -> Token对应的源码中的串
+ * @param output -> 目标文件流
+ */
 void printToken(Token token, const char *tokenString, FILE *output) {
     switch (token) {
         case IF:
@@ -75,16 +88,19 @@ void printToken(Token token, const char *tokenString, FILE *output) {
     }
 }
 
-/* Function newStmtNode creates a new statement
- * node for syntax tree construction
+/**
+ * @brief 创建一个空的语句节点
+ * @param kind -> 具体的语句类型 {StmtK, ExpK}
+ * @return TreeNode
  */
 TreeNode *newStmtNode(StmtKind kind) {
     TreeNode *t = (TreeNode *) malloc(sizeof(TreeNode));
     int i;
     if (t == NULL)
-        fprintf(stdout, "Out of memory error at line %d\n", thisLine);
+        fprintf(stdout, "Memory Overflow %d\n", thisLine);
     else {
-        for (i = 0; i < MAX_CHILDREN_NUM; i++) t->child[i] = NULL;
+        for (i = 0; i < MAX_CHILDREN_NUM; i++)
+            t->child[i] = NULL;
         t->sibling = NULL;
         t->nodekind = StmtK;
         t->kind.stmt = kind;
@@ -93,16 +109,19 @@ TreeNode *newStmtNode(StmtKind kind) {
     return t;
 }
 
-/* Function newExpNode creates a new expression
- * node for syntax tree construction
+/**
+ * @brief 创建一个空的表达式节点
+ * @param kind -> 具体的表达式语句类型 {OpK, ConstK, IdK}
+ * @return TreeNode
  */
 TreeNode *newExpNode(ExpKind kind) {
     TreeNode *t = (TreeNode *) malloc(sizeof(TreeNode));
     int i;
     if (t == NULL)
-        fprintf(stdout, "Out of memory error at line %d\n", thisLine);
+        fprintf(stdout, "Memory Overflow %d\n", thisLine);
     else {
-        for (i = 0; i < MAX_CHILDREN_NUM; i++) t->child[i] = NULL;
+        for (i = 0; i < MAX_CHILDREN_NUM; i++)
+            t->child[i] = NULL;
         t->sibling = NULL;
         t->nodekind = ExpK;
         t->kind.exp = kind;
@@ -112,8 +131,10 @@ TreeNode *newExpNode(ExpKind kind) {
     return t;
 }
 
-/* Function copyString allocates and makes a new
- * copy of an existing string
+/**
+ * @brief 动态创建一个空间，并复制字符串
+ * @param s -> 源字符串
+ * @return char *
  */
 char *copyString(char *s) {
     int n;
@@ -122,36 +143,33 @@ char *copyString(char *s) {
     n = strlen(s) + 1;
     t = (char *) malloc(n);
     if (t == NULL)
-        fprintf(stdout, "Out of memory error at line %d\n", thisLine);
+        fprintf(stdout, "Memory Overflow %d\n", thisLine);
     else strcpy(t, s);
     return t;
 }
 
-/* Variable indentno is used by printTree to
- * store current number of spaces to indent
+/** indentno -> 缩进大小 */
+static int indent = 0;
+
+/**
+ * @brief 输出缩进内容
  */
-static int indentno = 0;
-
-/* macros to increase/decrease indentation */
-#define INDENT indentno+=2
-#define UNINDENT indentno-=2
-
-/* printSpaces indents by printing spaces */
-static void printSpaces(void) {
+static void printIndent(void) {
     int i;
-    for (i = 0; i < indentno-2; i++)
+    for (i = 0; i < indent-2; i++)
         fprintf(oparse, " ");
     fprintf(oparse, "┖-");
 }
 
-/* procedure printTree prints a syntax tree to the
- * listing file using indentation to indicate subtrees
+/**
+ * @brief 将语法分析结果输出到文件流
+ * @param tree -> 语法树的一个节点（根节点）
  */
 void printTree(TreeNode *tree) {
     int i;
-    INDENT;
+    indent += 2;
     while (tree != NULL) {
-        printSpaces();
+        printIndent();
         if (tree->nodekind == StmtK) {
             switch (tree->kind.stmt) {
                 case IfK:
@@ -194,9 +212,14 @@ void printTree(TreeNode *tree) {
             printTree(tree->child[i]);
         tree = tree->sibling;
     }
-    UNINDENT;
+    indent -= 2;
 }
 
+/**
+ * @brief 哈希函数
+ * @param key -> 待散列字符串
+ * @return int 哈希值
+ */
 int hash(char *key) {
     int temp = 0;
     int i = 0;
@@ -204,21 +227,22 @@ int hash(char *key) {
         temp = ((temp << SHIFT) + key[i]) % SIZE;
         ++i;
     }
+
     return temp;
 }
 
-/* Procedure st_insert inserts line numbers and
- * memory locations into the symbol table
- * loc = memory location is inserted only the
- * first time, otherwise ignored
+/**
+ * @brief 将标识符插入符号表
+ * @param name -> 标识符名称
+ * @param thisLine -> 行标号
+ * @param loc -> 为该标识符分配的内存地址
  */
 void st_insert(char *name, int thisLine, int loc) {
     int h = hash(name);
     List l = hashTable[h];
     while ((l != NULL) && (strcmp(name, l->name) != 0))
         l = l->next;
-    if (l == NULL) /* variable not yet in table */
-    {
+    if (l == NULL) {
         l = (List) malloc(sizeof(struct LinkList));
         l->name = name;
         l->lines = (Link) malloc(sizeof(struct LinkNode));
@@ -227,43 +251,49 @@ void st_insert(char *name, int thisLine, int loc) {
         l->lines->next = NULL;
         l->next = hashTable[h];
         hashTable[h] = l;
-    } else /* found in table, so just add line number */
-    {
+    } else {
         Link t = l->lines;
-        while (t->next != NULL) t = t->next;
+        while (t->next != NULL)
+            t = t->next;
         t->next = (Link) malloc(sizeof(struct LinkNode));
         t->next->thisLine = thisLine;
         t->next->next = NULL;
     }
-} /* st_insert */
+}
 
-/* Function st_lookup returns the memory
- * location of a variable or -1 if not found
+/**
+ * @brief 查找标识符在符号表中是否已存在
+ * @param name -> 标识符名称
+ * @return
+ *     -<em>-1<em> 查找失败
+ *     -<em>int<em> 标识符在符号表中的下标
  */
 int st_lookup(char *name) {
     int h = hash(name);
     List l = hashTable[h];
     while ((l != NULL) && (strcmp(name, l->name) != 0))
         l = l->next;
-    if (l == NULL) return -1;
-    else return l->memloc;
+    if (l == NULL)
+        return -1;
+    else
+        return l->memloc;
 }
 
-/* Procedure printSymTab prints a formatted
- * listing of the symbol table contents
- * to the listing file
+/**
+ * @brief 将符号表格式化输出到文件流
+ * @param listing -> 输出文件流
  */
 void printSymTab(FILE *listing) {
     int i;
-    fprintf(listing, "Variable Name  Location   Line Numbers\n");
-    fprintf(listing, "-------------  --------   ------------\n");
+    fprintf(listing, "Variable Name  Address   Line Numbers\n");
+    fprintf(listing, "-------------  -------   ------------\n");
     for (i = 0; i < SIZE; ++i) {
         if (hashTable[i] != NULL) {
             List l = hashTable[i];
             while (l != NULL) {
                 Link t = l->lines;
                 fprintf(listing, "%-14s ", l->name);
-                fprintf(listing, "%-8d  ", l->memloc);
+                fprintf(listing, "%-7d  ", l->memloc);
                 while (t != NULL) {
                     fprintf(listing, "%4d ", t->thisLine);
                     t = t->next;
@@ -273,7 +303,7 @@ void printSymTab(FILE *listing) {
             }
         }
     }
-} /* printSymTab */
+}
 
 /* TM location number for current instruction emission */
 static int emitLoc = 0;
@@ -283,11 +313,11 @@ static int emitLoc = 0;
    emitBackup, and emitRestore */
 static int highEmitLoc = 0;
 
-/* Procedure emitComment prints a comment line 
+/* Procedure emitComment prints a comment line
  * with comment c in the code file
  */
 void genComment(const char *c) {
-    fprintf(code, "* %s\n", c); 
+    fprintf(code, "* %s\n", c);
 }
 
 /* Procedure emitRO emits a register-only
@@ -331,7 +361,7 @@ int genSkip(int howMany) {
     return i;
 } /* emitSkip */
 
-/* Procedure emitBackup backs up to 
+/* Procedure emitBackup backs up to
  * loc = a previously skipped location
  */
 void genBackup(int loc) {
@@ -339,13 +369,13 @@ void genBackup(int loc) {
     emitLoc = loc;
 } /* emitBackup */
 
-/* Procedure emitRestore restores the current 
+/* Procedure emitRestore restores the current
  * code position to the highest previously
  * unemitted position
  */
 void genRestore(void) { emitLoc = highEmitLoc; }
 
-/* Procedure emitRM_Abs converts an absolute reference 
+/* Procedure emitRM_Abs converts an absolute reference
  * to a pc-relative reference when emitting a
  * register-to-memory TM instruction
  * op = the opcode
