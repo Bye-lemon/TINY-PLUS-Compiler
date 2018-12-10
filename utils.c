@@ -14,6 +14,15 @@
 #include "utils.h"
 
 /**
+ * @brief 用于输出Token
+ */
+char TokenArray[][10] = {
+        "ENDFILE", "ERROR", "ID", "NUM",
+        "IF", "THEN", "ELSE", "END", "REPEAT", "UNTIL", "READ", "WRITE",
+        "+", "-", "*", "/", "=", "<>", "<", "<=", ">", ">=", "(", ")", ";", ":="
+};
+
+/**
  * @brief 将词法分析器分析结果输出至文件流
  * @param token -> Token类型
  * @param tokenString -> Token对应的源码中的串
@@ -194,8 +203,7 @@ void printTree(TreeNode *tree) {
         } else if (tree->nodekind == ExpK) {
             switch (tree->kind.exp) {
                 case OpK:
-                    fprintf(oparse, "Op: ");
-                    printToken(tree->attr.op, "\0", oparse);
+                    fprintf(oparse, "Op: %s", TokenArray[tree->attr.op]);
                     break;
                 case ConstK:
                     fprintf(oparse, "Const: %d\n", tree->attr.val);

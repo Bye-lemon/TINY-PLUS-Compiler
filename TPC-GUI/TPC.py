@@ -17,10 +17,15 @@ class Ui_MainWindow(object):
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.output = QtWidgets.QTextBrowser(self.centralwidget)
-        self.output.setGeometry(QtCore.QRect(0, 411, 801, 141))
+        self.output.setGeometry(QtCore.QRect(0, 271, 801, 281))
         self.output.setObjectName("output")
+        font_io = QtGui.QFont()
+        font_io.setFamily("Console")
+        font_io.setPointSize(14)
+        font_io.setWeight(75)
+        self.output.setFont(font_io)
         self.console = QtWidgets.QLabel(self.centralwidget)
-        self.console.setGeometry(QtCore.QRect(10, 390, 54, 12))
+        self.console.setGeometry(QtCore.QRect(10, 250, 54, 12))
         font = QtGui.QFont()
         font.setFamily("Microsoft YaHei UI")
         font.setBold(True)
@@ -28,7 +33,7 @@ class Ui_MainWindow(object):
         self.console.setFont(font)
         self.console.setObjectName("console")
         self.input = QtWidgets.QTextEdit(self.centralwidget)
-        self.input.setGeometry(QtCore.QRect(0, 0, 801, 381))
+        self.input.setGeometry(QtCore.QRect(0, 0, 801, 241))
         self.input.setObjectName("input")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
@@ -56,9 +61,9 @@ class Ui_MainWindow(object):
         self.compile_2 = QtWidgets.QAction(MainWindow)
         self.compile_2.setShortcutVisibleInContextMenu(True)
         self.compile_2.setObjectName("compile_2")
-        self.execute = QtWidgets.QAction(MainWindow)
-        self.execute.setShortcutVisibleInContextMenu(True)
-        self.execute.setObjectName("execute")
+        self.semantics = QtWidgets.QAction(MainWindow)
+        self.semantics.setShortcutVisibleInContextMenu(True)
+        self.semantics.setObjectName("execute")
         self.scan = QtWidgets.QAction(MainWindow)
         self.scan.setShortcutVisibleInContextMenu(True)
         self.scan.setObjectName("scan")
@@ -83,10 +88,10 @@ class Ui_MainWindow(object):
         self.start.addSeparator()
         self.start.addAction(self.quit)
         self.compile.addAction(self.compile_2)
-        self.compile.addAction(self.execute)
         self.compile.addSeparator()
         self.compile.addAction(self.scan)
         self.compile.addAction(self.parse)
+        self.compile.addAction(self.semantics)
         self.compile.addAction(self.middle)
         self.menu_3.addAction(self.description)
         self.menu_3.addSeparator()
@@ -115,12 +120,12 @@ class Ui_MainWindow(object):
         self.quit.setShortcut(_translate("MainWindow", "Ctrl+Q"))
         self.compile_2.setText(_translate("MainWindow", "编译"))
         self.compile_2.setShortcut(_translate("MainWindow", "F5"))
-        self.execute.setText(_translate("MainWindow", "运行"))
-        self.execute.setShortcut(_translate("MainWindow", "F6"))
+        self.semantics.setText(_translate("MainWindow", "语义分析结果"))
+        self.semantics.setShortcut(_translate("MainWindow", "F8"))
         self.scan.setText(_translate("MainWindow", "词法分析结果"))
-        self.scan.setShortcut(_translate("MainWindow", "F7"))
+        self.scan.setShortcut(_translate("MainWindow", "F6"))
         self.parse.setText(_translate("MainWindow", "语法分析结果"))
-        self.parse.setShortcut(_translate("MainWindow", "F8"))
+        self.parse.setShortcut(_translate("MainWindow", "F7"))
         self.middle.setText(_translate("MainWindow", "查看中间代码"))
         self.middle.setShortcut(_translate("MainWindow", "F9"))
         self.description.setText(_translate("MainWindow", "TINY+ 语言描述"))
@@ -136,11 +141,15 @@ class TPC(QtWidgets.QMainWindow, Ui_MainWindow):
         super(TPC, self).__init__()
         self.setupUi(self)
         self.filename = ""
+        self.filename_pre = ""
         self.openfile.triggered.connect(self.fileopen)
         self.savefile.triggered.connect(self.filesave)
         self.newfile.triggered.connect(self.filenew)
         self.compile_2.triggered.connect(self.filecompile)
         self.scan.triggered.connect(self.showscan)
+        self.parse.triggered.connect(self.showparse)
+        self.semantics.triggered.connect(self.showanaylze)
+        self.middle.triggered.connect(self.showcode)
         self.filenew()
         self.input.setFont(QtGui.QFont("Ubuntu Mono", 12))
 
@@ -154,6 +163,7 @@ class TPC(QtWidgets.QMainWindow, Ui_MainWindow):
                 istream = QtCore.QTextStream(file)
                 self.input.setPlainText(istream.readAll())
                 self.filename = filename
+                self.filename_pre = self.filename.replace(".TNY", '')
             except EnvironmentError as e:
                 QtWidgets.QMessageBox.warning(self, "脚本 {0} 加载失败".format(filename))
             finally:
@@ -176,14 +186,30 @@ class TPC(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def filecompile(self):
         self.filesave()
-        script = "TPC " + self.filename
+        script = '"' + os.path.join(os.path.abspath('.'), 'TPC.exe') + '" "' + self.filename + '"'
         result = os.popen(script)
         self.output.setText(result.read())
 
     def showscan(self):
-        filename = self.filename.replace('.TNY', '.scan')
+        filename = self.filename_pre + '.scan'
         oscan = open(filename, "r")
         self.output.setPlainText(oscan.read())
         oscan.close()
 
+    def showparse(self):
+        filename = self.filename_pre + '.tree'
+        oparse = open(filename, "r")
+        self.output.setPlainText(oparse.read())
+        oparse.close()
 
+    def showanaylze(self):
+        filename = self.filename_pre + '.symbol'
+        oanalyze = open(filename, "r")
+        self.output.setPlainText(oanalyze.read())
+        oanalyze.close()
+
+    def showcode(self):
+        filename = self.filename_pre + '.code'
+        ocode = open(filename, "r")
+        self.output.setPlainText(ocode.read())
+        ocode.close()

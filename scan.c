@@ -240,7 +240,10 @@ Token getToken(void) {
         }
     }
     fprintf(oscan, "%-4d\t", thisLine);
-    printToken(thisToken, tokenString, oscan);
+    if (thisToken == ERROR)
+        fprintf(oscan, "%-10s\tERROR\n", tokenString);
+    else
+        printToken(thisToken, tokenString, oscan);
 
     if (thisToken == ERROR)
         scanError++;
