@@ -158,7 +158,7 @@ static void printIndent(void) {
     int i;
     for (i = 0; i < indent-2; i++)
         fprintf(oparse, " ");
-    fprintf(oparse, "┖-");
+    fprintf(oparse, "|-");
 }
 
 /**
