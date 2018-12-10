@@ -29,58 +29,58 @@ void printToken(Token token, const char *tokenString, FILE *output) {
         case UNTIL:
         case READ:
         case WRITE:
-            fprintf(output, "reserved word: %s\n", tokenString);
+            fprintf(output, "%-10s\tReserved Word\n", tokenString);
             break;
         case ASSIGN:
-            fprintf(output, ":=\n");
+            fprintf(output, ":=        \tAssign\n");
             break;
         case LT:
-            fprintf(output, "<\n");
+            fprintf(output, "<         \tOperator\n");
             break;
         case LTEQ:
-            fprintf(output, "<=\n");
+            fprintf(output, "<=        \tOperator\n");
             break;
         case EQ:
-            fprintf(output, "=\n");
+            fprintf(output, "=         \tOperator\n");
             break;
         case GT:
-            fprintf(output, ">\n");
+            fprintf(output, ">         \tOperator\n");
             break;
         case GTEQ:
-            fprintf(output, ">=\n");
+            fprintf(output, ">=        \tOperator\n");
             break;
         case NOTEQ:
-            fprintf(output, "<>\n");
+            fprintf(output, "<>        \tOperator\n");
             break;
         case LPAREN:
-            fprintf(output, "(\n");
+            fprintf(output, "(         \tLeft Parentheses\n");
             break;
         case RPAREN:
-            fprintf(output, ")\n");
+            fprintf(output, ")         \tRight Parentheses\n");
             break;
         case SEMI:
-            fprintf(output, ";\n");
+            fprintf(output, ";         \tSemicolon\n");
             break;
         case PLUS:
-            fprintf(output, "+\n");
+            fprintf(output, "+         \tOperator\n");
             break;
         case MINUS:
-            fprintf(output, "-\n");
+            fprintf(output, "-         \tOperator\n");
             break;
         case TIMES:
-            fprintf(output, "*\n");
+            fprintf(output, "*         \tOperator\n");
             break;
         case OVER:
-            fprintf(output, "/\n");
+            fprintf(output, "/         \tOperator\n");
             break;
         case ENDFILE:
-            fprintf(output, "EOF\n");
+            fprintf(output, "          \tEOF\n");
             break;
         case NUM:
-            fprintf(output, "NUM, value= %s\n", tokenString);
+            fprintf(output, "%-10s\tConst Number\n", tokenString);
             break;
         case ID:
-            fprintf(output, "ID, name= %s\n", tokenString);
+            fprintf(output, "%-10s\tIdentification\n", tokenString);
             break;
         case ERROR:
             fprintf(stdout, "Line %d: ERROR: Invaild Symbol \'%s\'\n", thisLine, tokenString);

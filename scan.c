@@ -48,7 +48,6 @@ static int getNext(void) {
     if (thisPosition >= lineLens) {
         thisLine++;
         if (fgets(lineBuffer, BUFFER - 1, source)) {
-            fprintf(oscan, "%4d: %s", thisLine, lineBuffer);
             lineLens = strlen(lineBuffer);
             thisPosition = 0;
             return lineBuffer[thisPosition++];
@@ -240,7 +239,7 @@ Token getToken(void) {
                 thisToken = reservedLookup(tokenString);
         }
     }
-    fprintf(oscan, "\t%d: ", thisLine);
+    fprintf(oscan, "%-4d\t", thisLine);
     printToken(thisToken, tokenString, oscan);
 
     if (thisToken == ERROR)

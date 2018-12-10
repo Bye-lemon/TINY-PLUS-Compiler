@@ -78,6 +78,8 @@ int main(int argc, char *argv[]) {
         printf("Unable to open %s\n", codefile);
         exit(1);
     }
+    fprintf(oscan, "Line\tContent   \tToken\n");
+    fprintf(oscan, "----\t----------\t-----\n\n");
     TreeNode *syntaxTree = parse();
     fprintf(oparse, "Main Function\n");
     printTree(syntaxTree);
