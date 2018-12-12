@@ -12,6 +12,6 @@ install:
   - cd build
   - /usr/bin/cmake ..
   - make
-  - ./TPC ../SAMPLE.TNY
+script: ./TPC ../SAMPLE.TNY
 compiler:
   - gcc
