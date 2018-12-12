@@ -1,0 +1,36 @@
+Line	Content   	Token
+----	----------	-----
+
+1   	read      	Reserved Word
+1   	x         	Identification
+1   	;         	Semicolon
+2   	if        	Reserved Word
+2   	x         	Identification
+2   	>         	Operator
+2   	0         	Const Number
+2   	then      	Reserved Word
+3   	fact      	Identification
+3   	:=        	Assign
+3   	1         	Const Number
+3   	;         	Semicolon
+4   	repeat    	Reserved Word
+5   	fact      	Identification
+5   	:=        	Assign
+5   	fact      	Identification
+5   	*         	Operator
+5   	x         	Identification
+5   	;         	Semicolon
+6   	x         	Identification
+6   	:=        	Assign
+6   	x         	Identification
+6   	-         	Operator
+6   	1         	Const Number
+7   	until     	Reserved Word
+7   	x         	Identification
+7   	+         	Operator
+7   	0         	Const Number
+7   	;         	Semicolon
+8   	write     	Reserved Word
+8   	fact      	Identification
+9   	end       	Reserved Word
+10  	          	EOF

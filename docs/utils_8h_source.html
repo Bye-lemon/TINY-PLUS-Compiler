@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TINY-PLUS-Compiler: C:/Users/Li Yingping/Documents/GitHub/TINY-PLUS-Complier/utils.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">TINY-PLUS-Compiler
+   &#160;<span id="projectnumber">v1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_f396504afdc959660871b003fa10164d.html">Documents</a></li><li class="navelem"><a class="el" href="dir_7e17ac9cf8fba2cb04bc248c85b0ceb7.html">GitHub</a></li><li class="navelem"><a class="el" href="dir_45c9c218a9acb27c16e45b2472f93a52.html">TINY-PLUS-Complier</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">utils.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="utils_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*****************************************************************************</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">*  TINY-PLUS-Compiler Utilities                                              *</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">*  Copyright (C) 2018 Yingping Li                                            *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">*                                                                            *</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">*  @file     utils.h                                                         *</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*  @brief    TPC编译器的辅助函数头文件                                          *</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">*  @author   Yingping Li                                                     *</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">*                                                                            *</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">*****************************************************************************/</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#ifndef TPC_UTILS_H</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define TPC_UTILS_H</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keywordtype">void</span> <a class="code" href="utils_8h.html#ae4819c308b42244b955aff46e3638b14">printToken</a>(<a class="code" href="globals_8h.html#a6a9e93b081bad7fc74c17306fb168c1f">Token</a>, <span class="keyword">const</span> <span class="keywordtype">char</span> *, FILE *);</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<a class="code" href="structtree_node.html">TreeNode</a> *<a class="code" href="utils_8h.html#a404bce7819cbe6ad50a544e8826d14ba">newStmtNode</a>(<a class="code" href="globals_8h.html#a1b09b1c2cca879d79a9b57ae03eb9ffe">StmtKind</a>);</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<a class="code" href="structtree_node.html">TreeNode</a> *<a class="code" href="utils_8h.html#abb7f45c296bb7e85d64211c6cead8be0">newExpNode</a>(<a class="code" href="globals_8h.html#af8c932c87ae3eb6e7ee7bb64db191253">ExpKind</a>);</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keywordtype">char</span> *<a class="code" href="utils_8h.html#ae8f0bacd507d9507e2e2fb4435da52e4">copyString</a>(<span class="keywordtype">char</span> *);</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keywordtype">void</span> <a class="code" href="utils_8h.html#ae46b48f156cfd67ebbd585f339ef0552">printTree</a>(<a class="code" href="structtree_node.html">TreeNode</a> *);</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordtype">int</span> <a class="code" href="utils_8h.html#a2ae6dd7f250ebf02a45ef8cbffae652f">hash</a>(<span class="keywordtype">char</span> *);</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordtype">void</span> <a class="code" href="utils_8h.html#a01dd6047a736ec63798471e0d9fa87d3">st_insert</a>(<span class="keywordtype">char</span> *name, <span class="keywordtype">int</span> lineno, <span class="keywordtype">int</span> loc);</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">int</span> <a class="code" href="utils_8h.html#abfb67d8b62e7fb31d50470d480108b5e">st_lookup</a>(<span class="keywordtype">char</span> *name);</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordtype">void</span> <a class="code" href="utils_8h.html#a37d18f26177c64c4f08c5ad2055a5c68">printSymTab</a>(FILE *listing);</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="utils_8h_html_a01dd6047a736ec63798471e0d9fa87d3"><div class="ttname"><a href="utils_8h.html#a01dd6047a736ec63798471e0d9fa87d3">st_insert</a></div><div class="ttdeci">void st_insert(char *name, int lineno, int loc)</div><div class="ttdoc">将标识符插入符号表 </div><div class="ttdef"><b>Definition:</b> utils.c:248</div></div>
+<div class="ttc" id="utils_8h_html_a37d18f26177c64c4f08c5ad2055a5c68"><div class="ttname"><a href="utils_8h.html#a37d18f26177c64c4f08c5ad2055a5c68">printSymTab</a></div><div class="ttdeci">void printSymTab(FILE *listing)</div><div class="ttdoc">将符号表格式化输出到文件流 </div><div class="ttdef"><b>Definition:</b> utils.c:294</div></div>
+<div class="ttc" id="utils_8h_html_abb7f45c296bb7e85d64211c6cead8be0"><div class="ttname"><a href="utils_8h.html#abb7f45c296bb7e85d64211c6cead8be0">newExpNode</a></div><div class="ttdeci">TreeNode * newExpNode(ExpKind)</div><div class="ttdoc">创建一个空的表达式节点 </div><div class="ttdef"><b>Definition:</b> utils.c:126</div></div>
+<div class="ttc" id="utils_8h_html_abfb67d8b62e7fb31d50470d480108b5e"><div class="ttname"><a href="utils_8h.html#abfb67d8b62e7fb31d50470d480108b5e">st_lookup</a></div><div class="ttdeci">int st_lookup(char *name)</div><div class="ttdoc">查找标识符在符号表中是否已存在 </div><div class="ttdef"><b>Definition:</b> utils.c:279</div></div>
+<div class="ttc" id="structtree_node_html"><div class="ttname"><a href="structtree_node.html">treeNode</a></div><div class="ttdoc">语法树定义 </div><div class="ttdef"><b>Definition:</b> globals.h:77</div></div>
+<div class="ttc" id="globals_8h_html_a1b09b1c2cca879d79a9b57ae03eb9ffe"><div class="ttname"><a href="globals_8h.html#a1b09b1c2cca879d79a9b57ae03eb9ffe">StmtKind</a></div><div class="ttdeci">StmtKind</div><div class="ttdef"><b>Definition:</b> globals.h:58</div></div>
+<div class="ttc" id="utils_8h_html_a404bce7819cbe6ad50a544e8826d14ba"><div class="ttname"><a href="utils_8h.html#a404bce7819cbe6ad50a544e8826d14ba">newStmtNode</a></div><div class="ttdeci">TreeNode * newStmtNode(StmtKind)</div><div class="ttdoc">创建一个空的语句节点 </div><div class="ttdef"><b>Definition:</b> utils.c:105</div></div>
+<div class="ttc" id="utils_8h_html_a2ae6dd7f250ebf02a45ef8cbffae652f"><div class="ttname"><a href="utils_8h.html#a2ae6dd7f250ebf02a45ef8cbffae652f">hash</a></div><div class="ttdeci">int hash(char *)</div><div class="ttdoc">哈希函数 </div><div class="ttdef"><b>Definition:</b> utils.c:231</div></div>
+<div class="ttc" id="globals_8h_html_af8c932c87ae3eb6e7ee7bb64db191253"><div class="ttname"><a href="globals_8h.html#af8c932c87ae3eb6e7ee7bb64db191253">ExpKind</a></div><div class="ttdeci">ExpKind</div><div class="ttdef"><b>Definition:</b> globals.h:61</div></div>
+<div class="ttc" id="utils_8h_html_ae4819c308b42244b955aff46e3638b14"><div class="ttname"><a href="utils_8h.html#ae4819c308b42244b955aff46e3638b14">printToken</a></div><div class="ttdeci">void printToken(Token, const char *, FILE *)</div><div class="ttdoc">将词法分析器分析结果输出至文件流 </div><div class="ttdef"><b>Definition:</b> utils.c:31</div></div>
+<div class="ttc" id="utils_8h_html_ae8f0bacd507d9507e2e2fb4435da52e4"><div class="ttname"><a href="utils_8h.html#ae8f0bacd507d9507e2e2fb4435da52e4">copyString</a></div><div class="ttdeci">char * copyString(char *)</div><div class="ttdoc">动态创建一个空间，并复制字符串 </div><div class="ttdef"><b>Definition:</b> utils.c:148</div></div>
+<div class="ttc" id="globals_8h_html_a6a9e93b081bad7fc74c17306fb168c1f"><div class="ttname"><a href="globals_8h.html#a6a9e93b081bad7fc74c17306fb168c1f">Token</a></div><div class="ttdeci">Token</div><div class="ttdoc">Token列表 </div><div class="ttdef"><b>Definition:</b> globals.h:25</div></div>
+<div class="ttc" id="utils_8h_html_ae46b48f156cfd67ebbd585f339ef0552"><div class="ttname"><a href="utils_8h.html#ae46b48f156cfd67ebbd585f339ef0552">printTree</a></div><div class="ttdeci">void printTree(TreeNode *)</div><div class="ttdoc">将语法分析结果输出到文件流 </div><div class="ttdef"><b>Definition:</b> utils.c:177</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>
