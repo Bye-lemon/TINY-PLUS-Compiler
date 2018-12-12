@@ -12,10 +12,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38c29830-08b9-4a89-8689-da02d2c22fe9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TPC-GUI/dist/SAMPLE.code" beforeDir="false" afterPath="$PROJECT_DIR$/TPC-GUI/dist/SAMPLE.code" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TPC-GUI/dist/SAMPLE.symbol" beforeDir="false" afterPath="$PROJECT_DIR$/TPC-GUI/dist/SAMPLE.symbol" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TPC-GUI/dist/SAMPLE.tree" beforeDir="false" afterPath="$PROJECT_DIR$/TPC-GUI/dist/SAMPLE.tree" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,7 +30,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/main.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="360">
+                <state relative-caret-position="1386">
                   <caret line="77" column="27" selection-start-line="77" selection-start-column="27" selection-end-line="77" selection-end-column="27" />
                   <folding>
                     <element signature="e#707#727#0" expanded="true" />
@@ -52,7 +51,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/generate.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="936">
+                <state relative-caret-position="1296">
                   <caret line="72" column="38" selection-start-line="72" selection-start-column="38" selection-end-line="72" selection-end-column="38" />
                   <folding>
                     <element signature="e#705#725#0" expanded="true" />
@@ -64,7 +63,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/parse.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-4716">
+                <state relative-caret-position="270">
                   <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
                 </state>
               </provider>
@@ -73,7 +72,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/utils.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="612">
+                <state relative-caret-position="5526">
                   <caret line="307" column="42" selection-start-line="307" selection-start-column="42" selection-end-line="307" selection-end-column="42" />
                   <folding>
                     <element signature="e#706#726#0" expanded="true" />
@@ -82,11 +81,20 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/.gitignore">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="370">
-                  <caret line="175" lean-forward="true" selection-start-line="175" selection-end-line="175" />
+                <state relative-caret-position="3114">
+                  <caret line="173" column="19" selection-start-line="173" selection-start-column="19" selection-end-line="173" selection-end-column="19" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/README.md">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="108">
+                  <caret line="6" selection-start-line="6" selection-end-line="6" />
                 </state>
               </provider>
             </entry>
@@ -95,11 +103,20 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/scan.c">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="432">
                   <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/.travis.yml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="126">
+                  <caret line="7" column="9" lean-forward="true" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
                 </state>
               </provider>
             </entry>
@@ -143,7 +160,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$USER_HOME$/Downloads/download/编译原理课程设计/scan.c" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/parse.h" />
         <option value="$PROJECT_DIR$/analyze.h" />
         <option value="$PROJECT_DIR$/scan.h" />
@@ -157,6 +173,8 @@
         <option value="$PROJECT_DIR$/generate.c" />
         <option value="$PROJECT_DIR$/utils.c" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/.travis.yml" />
       </list>
     </option>
   </component>
@@ -178,11 +196,6 @@
               <item name="TPC" type="b2602c69:ProjectViewProjectNode" />
               <item name="TINY-PLUS-Complier" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="TPC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TINY-PLUS-Complier" type="462c0819:PsiDirectoryNode" />
-              <item name="TPC-GUI" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -192,7 +205,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/awesomeCC" />
-    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -278,7 +291,8 @@
       <workItem from="1544479712648" duration="295000" />
       <workItem from="1544483598417" duration="2523000" />
       <workItem from="1544489596532" duration="2390000" />
-      <workItem from="1544639420574" duration="6646000" />
+      <workItem from="1544639420574" duration="7559000" />
+      <workItem from="1544652515120" duration="258000" />
     </task>
     <task id="LOCAL-00001" summary="Parser Finished">
       <created>1544153510694</created>
@@ -378,11 +392,25 @@
       <option name="project" value="LOCAL" />
       <updated>1544651443948</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Update .gitignore">
+      <created>1544651590138</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1544651590138</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Remove build files">
+      <created>1544651755835</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1544651755835</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58171000" />
+    <option name="totallyTimeSpent" value="59342000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -397,7 +425,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49945828" visible="true" weight="0.21108742" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49945828" visible="true" weight="0.21321961" />
       <window_info id="Structure" order="1" sideWeight="0.5005417" side_tool="true" weight="0.17857143" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -459,7 +487,9 @@
     <MESSAGE value="Finish UI" />
     <MESSAGE value="Rewrite Commits" />
     <MESSAGE value="Redefine output format" />
-    <option name="LAST_COMMIT_MESSAGE" value="Redefine output format" />
+    <MESSAGE value="Update .gitignore" />
+    <MESSAGE value="Remove build files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove build files" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/Downloads/download/编译原理课程设计/util.h" />
@@ -469,9 +499,6 @@
     <entry file="file://$USER_HOME$/Downloads/download/编译原理课程设计/globals.h" />
     <entry file="file://$USER_HOME$/Downloads/download/编译原理课程设计/main.c" />
     <entry file="file://$USER_HOME$/Downloads/download/编译原理课程设计/scan.c" />
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../../../Public/SAMPLE.tree" />
     <entry file="file://$USER_HOME$/Desktop/TINY_Source/UTIL.H">
       <provider selected="true" editor-type-id="text-editor" />
@@ -542,13 +569,6 @@
     <entry file="file://$USER_HOME$/Desktop/Tiny+语法语义分析及代码生成/Tiny+语法语义分析及代码生成/Tiny/CGEN.H" />
     <entry file="file://$USER_HOME$/Desktop/Tiny+语法语义分析及代码生成/Tiny+语法语义分析及代码生成/Tiny/MAIN.C" />
     <entry file="file://$USER_HOME$/Desktop/Tiny+语法语义分析及代码生成/Tiny+语法语义分析及代码生成/Tiny/CGEN.C" />
-    <entry file="file://$PROJECT_DIR$/scan.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scan.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -584,16 +604,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/generate.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
+        <state relative-caret-position="1386">
           <caret line="77" column="27" selection-start-line="77" selection-start-column="27" selection-end-line="77" selection-end-column="27" />
           <folding>
             <element signature="e#707#727#0" expanded="true" />
@@ -601,16 +614,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/parse.c">
+    <entry file="file://$PROJECT_DIR$/generate.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4716">
-          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+        <state relative-caret-position="90">
+          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/generate.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="936">
+        <state relative-caret-position="1296">
           <caret line="72" column="38" selection-start-line="72" selection-start-column="38" selection-end-line="72" selection-end-column="38" />
           <folding>
             <element signature="e#705#725#0" expanded="true" />
@@ -618,9 +631,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/parse.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/utils.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
+        <state relative-caret-position="5526">
           <caret line="307" column="42" selection-start-line="307" selection-start-column="42" selection-end-line="307" selection-end-column="42" />
           <folding>
             <element signature="e#706#726#0" expanded="true" />
@@ -630,8 +650,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="175" lean-forward="true" selection-start-line="175" selection-end-line="175" />
+        <state relative-caret-position="3114">
+          <caret line="173" column="19" selection-start-line="173" selection-start-column="19" selection-end-line="173" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scan.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="9" lean-forward="true" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
         </state>
       </provider>
     </entry>
