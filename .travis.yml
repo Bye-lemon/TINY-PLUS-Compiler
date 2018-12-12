@@ -1,8 +1,11 @@
 os: linux
 language: c
+addons:
+  apt:
+    packages:
+      - cmake
 install:
-  - cmake-3.12 .
+  - cmake .
   - make
 compiler:
   - gcc
-  - clang
