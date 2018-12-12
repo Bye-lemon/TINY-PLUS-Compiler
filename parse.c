@@ -13,11 +13,7 @@
 #include "scan.h"
 #include "parse.h"
 
-/**
-* @brief 语法分析器的函数声明和全局变量定义
-* @{
-*/
-/** token -> 全局变量，当前处理的token */
+/** 待处理的Token */
 static Token token;
 
 static TreeNode *stmt_sequence(void);
@@ -31,11 +27,10 @@ static TreeNode *complex_exp(void);
 static TreeNode *simple_exp(void);
 static TreeNode *addend(void);
 static TreeNode *factor(void);
-/** @} */
 
 /**
  * @brief 将错误信息输出到stdout
- * @param message -> 错误消息
+ * @param message 错误消息
  */
 static void syntaxError(const char *message) {
     fprintf(stdout, "\n>>> ");
@@ -46,7 +41,7 @@ static void syntaxError(const char *message) {
 
 /**
  * @brief 获取下一个token，匹配成功返回token，失败抛出错误。
- * @param expected -> 期待获得的Token值
+ * @param expected 期待获得的Token值
  */
 static void match(Token expected) {
     if (token == expected)
@@ -293,6 +288,7 @@ TreeNode *factor(void) {
 /**
  * @brief 语法分析器主函数 程序 -> 语句序列
  * @return 语法树的根节点（程序节点）
+ * @see scan.h
  */
 TreeNode *parse(void) {
     TreeNode *t;

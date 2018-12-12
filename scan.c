@@ -12,10 +12,7 @@
 #include "utils.h"
 #include "scan.h"
 
-/**
-* @brief 词法分析器全局变量定义
-* @{
-*/
+/** 文件最大行数的定义 */
 #define BUFFER 256
 
 /**
@@ -32,13 +29,16 @@ typedef enum {
     INCOMMENT   /*!< 注释状态 */  /**< 处理源代码中的注释 */
 } State;
 
+/** 用于保存Token */
 char tokenString[MAX_TOKEN_SIZE + 1];
-
+/** 文件缓冲区 */
 static char lineBuffer[BUFFER];
+/** 文件行数标号 */
 static int thisPosition = 0;
+/** 当前行字符长度 */
 static int lineLens = 0;
+/** 标记变量，文件结束标识符 */
 static int EOF_FLAG = FALSE;
-/** @} */
 
 /**
  * @brief 获取当前行下一个字符
@@ -86,7 +86,7 @@ static struct {
 
 /**
  * @brief 查找一个串属不属于保留字，属于返回保留字Token，不属于标记为ID（标识符）
- * @param s -> 待检查字符串
+ * @param s 待检查字符串
  * @return Token类型
  */
 static Token reservedLookup(char *s) {

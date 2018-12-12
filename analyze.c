@@ -12,25 +12,14 @@
 #include "utils.h"
 #include "analyze.h"
 
-/**
-* @brief 语义分析器的全局变量定义
-* @{
-*/
-/** location -> 记录符号表已分配的地址 */
+/** 记录符号表已分配的地址 */
 static int location = 0;
-/** @} */
-
-/* Procedure traverse is a generic recursive
- * syntax tree traversal routine:
- * it applies preProc in preorder and postProc
- * in postorder to tree pointed to by t
- */
 
 /**
  * @brief 遍历语法树的通用模板函数
- * @param t -> 语法树的一个节点
- * @param preProc -> 第一个函数
- * @param postProc -> 第二个函数
+ * @param t 语法树的一个节点
+ * @param preProc 第一个过程函数
+ * @param postProc 第二个过程函数
  */
 static void traverse(TreeNode *t, void (*preProc)(TreeNode *), void (*postProc)(TreeNode *)) {
     if (t != NULL) {
@@ -45,7 +34,7 @@ static void traverse(TreeNode *t, void (*preProc)(TreeNode *), void (*postProc)(
 
 /**
  * @brief 占位符，空过程
- * @param t -> 语法树的一个节点
+ * @param t 语法树的一个节点
  */
 static void nullProc(TreeNode *t) {
 
@@ -54,7 +43,7 @@ static void nullProc(TreeNode *t) {
 
 /**
  * @brief 过程函数，用来将节点信息插入符号表
- * @param t -> 节点树的一个节点
+ * @param t 节点树的一个节点
  */
 static void insertNode(TreeNode *t) {
     switch (t->nodekind) {
@@ -97,7 +86,7 @@ static void insertNode(TreeNode *t) {
 
 /**
  * @brief 先序遍历语法树，创建符号表并打印到输出文件中
- * @param syntaxTree -> 语法树的一个节点（根节点）
+ * @param syntaxTree 语法树的一个节点（根节点）
  */
 void buildSymtab(TreeNode *syntaxTree) {
     traverse(syntaxTree, insertNode, nullProc);
@@ -106,8 +95,8 @@ void buildSymtab(TreeNode *syntaxTree) {
 
 /**
  * @brief 将语义分析错误信息输出到stdout
- * @param t -> 语法树的一个节点
- * @param message -> 错误信息
+ * @param t 语法树的一个节点
+ * @param message 错误信息
  */
 static void typeError(TreeNode *t, char *message) {
     fprintf(stdout, "Line %d: ERROR: Type Error \'%s\'\n", t->thisLine, message);
@@ -117,7 +106,7 @@ static void typeError(TreeNode *t, char *message) {
 
 /**
  * @brief 对语法树的一个节点进行静态类型检查
- * @param t -> 语法树的一个节点
+ * @param t 语法树的一个节点
  */
 static void checkNode(TreeNode *t) {
     switch (t->nodekind) {
@@ -170,7 +159,7 @@ static void checkNode(TreeNode *t) {
 
 /**
  * @brief 后序遍历语法树，进行静态类型检查
- * @param syntaxTree -> 语法树的一个节点（根节点）
+ * @param syntaxTree 语法树的一个节点（根节点）
  */
 void typeCheck(TreeNode *syntaxTree) {
     traverse(syntaxTree, nullProc, checkNode);
@@ -178,7 +167,7 @@ void typeCheck(TreeNode *syntaxTree) {
 
 /**
  * @brief 语义分析器主函数
- * @param syntaxTree -> 语法树的一个节点（根节点）
+ * @param syntaxTree 语法树的一个节点（根节点）
  */
 void anaylze(TreeNode *syntaxTree) {
     buildSymtab(syntaxTree);

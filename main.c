@@ -15,35 +15,29 @@
 #include "analyze.h"
 #include "generate.h"
 
-/**
-* @brief TPC编译器的全局变量定义
-* @{
-*/
-/** thisLine -> 全局变量，存储当前行号 */
+/** 全局变量，存储当前行号 */
 int thisLine = 0;
-/** scanError -> 全局变量，统计错误数量 */
+/** 全局变量，统计错误数量 */
 int scanError = 0;
-/**
- *  source   -> 源文件流
- *  oscan    -> 词法分析输出文件流
- *  oparse   -> 语法分析输出文件流
- *  oanalyze -> 语义分析输出文件流
- *  code     -> 中间代码输出文件流
- */
+/** 源文件流 */
 FILE *source;
+/** 词法分析结果输出文件流 */
 FILE *oscan;
+/** 语法分析结果输出文件流 */
 FILE *oparse;
+/** 语义分析结果输出文件流 */
 FILE *oanalyze;
+/** 中间代码输出文件流 */
 FILE *code;
-/** Error -> 标志变量，存储出错信息 */
+/** 标志变量，存储出错信息 */
 int Error = FALSE;
-/** @} */
 
 /**
  * @brief TPC编译器入口函数
- * @param argc -> 期待值为2
- * @param argv -> 源文件路径
+ * @param argc 期待值为2
+ * @param argv 源文件路径
  * @return
+ *     @retval 0 程序顺利结束
  */
 int main(int argc, char *argv[]) {
     char srcName[100];

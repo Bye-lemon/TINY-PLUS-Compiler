@@ -24,9 +24,9 @@ char TokenArray[][10] = {
 
 /**
  * @brief 将词法分析器分析结果输出至文件流
- * @param token -> Token类型
- * @param tokenString -> Token对应的源码中的串
- * @param output -> 目标文件流
+ * @param token Token类型
+ * @param tokenString Token对应的源码中的串
+ * @param output 目标文件流
  */
 void printToken(Token token, const char *tokenString, FILE *output) {
     switch (token) {
@@ -99,7 +99,7 @@ void printToken(Token token, const char *tokenString, FILE *output) {
 
 /**
  * @brief 创建一个空的语句节点
- * @param kind -> 具体的语句类型 {StmtK, ExpK}
+ * @param kind 具体的语句类型 {StmtK, ExpK}
  * @return TreeNode
  */
 TreeNode *newStmtNode(StmtKind kind) {
@@ -120,7 +120,7 @@ TreeNode *newStmtNode(StmtKind kind) {
 
 /**
  * @brief 创建一个空的表达式节点
- * @param kind -> 具体的表达式语句类型 {OpK, ConstK, IdK}
+ * @param kind 具体的表达式语句类型 {OpK, ConstK, IdK}
  * @return TreeNode
  */
 TreeNode *newExpNode(ExpKind kind) {
@@ -142,7 +142,7 @@ TreeNode *newExpNode(ExpKind kind) {
 
 /**
  * @brief 动态创建一个空间，并复制字符串
- * @param s -> 源字符串
+ * @param s 源字符串
  * @return char *
  */
 char *copyString(char *s) {
@@ -157,7 +157,7 @@ char *copyString(char *s) {
     return t;
 }
 
-/** indentno -> 缩进大小 */
+/** 缩进大小 */
 static int indent = 0;
 
 /**
@@ -172,7 +172,7 @@ static void printIndent(void) {
 
 /**
  * @brief 将语法分析结果输出到文件流
- * @param tree -> 语法树的一个节点（根节点）
+ * @param tree 语法树的一个节点（根节点）
  */
 void printTree(TreeNode *tree) {
     int i;
@@ -225,8 +225,8 @@ void printTree(TreeNode *tree) {
 
 /**
  * @brief 哈希函数
- * @param key -> 待散列字符串
- * @return int 哈希值
+ * @param key 待散列字符串
+ * @return 哈希值
  */
 int hash(char *key) {
     int temp = 0;
@@ -241,9 +241,9 @@ int hash(char *key) {
 
 /**
  * @brief 将标识符插入符号表
- * @param name -> 标识符名称
- * @param thisLine -> 行标号
- * @param loc -> 为该标识符分配的内存地址
+ * @param name 标识符名称
+ * @param thisLine 行标号
+ * @param loc 为该标识符分配的内存地址
  */
 void st_insert(char *name, int thisLine, int loc) {
     int h = hash(name);
@@ -271,7 +271,7 @@ void st_insert(char *name, int thisLine, int loc) {
 
 /**
  * @brief 查找标识符在符号表中是否已存在
- * @param name -> 标识符名称
+ * @param name 标识符名称
  * @return
  *     -<em>-1<em> 查找失败
  *     -<em>int<em> 标识符在符号表中的下标
@@ -289,7 +289,7 @@ int st_lookup(char *name) {
 
 /**
  * @brief 将符号表格式化输出到文件流
- * @param listing -> 输出文件流
+ * @param listing 输出文件流
  */
 void printSymTab(FILE *listing) {
     int i;

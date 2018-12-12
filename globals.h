@@ -16,20 +16,11 @@
 #include "string.h"
 #include "ctype.h"
 
-/*
- * Data Structure; Const Parameter
- * Usage:          Boolean value definition
- * Used By:        Global
- */
 #define TRUE 1
 #define FALSE 0
 
-/* Scanner Definition */
-/*
- * Data Structure; Enum Array
- * Usage:          Define token type
- * Variable:       Token -> List of all tokens
- * Used By:        Scanner
+/**
+ * @brief Token列表
  */
 typedef enum {
     ENDFILE, ERROR, ID, NUM,
@@ -37,61 +28,30 @@ typedef enum {
     PLUS, MINUS, TIMES, OVER, EQ, NOTEQ, LT, LTEQ, GT, GTEQ, LPAREN, RPAREN, SEMI, ASSIGN
 } Token;
 
-/*
- * Data Structure; Const Parameter
- * Usage:          Number of reserved word
- * Addition:       IF, THEN, ELSE, END, REPEAT, UNTIL, READ, WRITE
- * Used By:        Scanner
+/**
+ * @brief 定义的保留字的个数
+ * @details IF, THEN, ELSE, END, REPEAT, UNTIL, READ, WRITE
  */
 #define RESERVED_WORD_NUM 8
-/* End Scanner Definition */
 
-/* Main Function Definition */
-/*
- * Data Structure; Const Parameter
- * Usage:          Global line number
- * Variable:       thisLine -> Global line number
- * Used By:        Global
- */
+/** 当前被处理的行号 */
 extern int thisLine;
 
-/*
- * Data Structure; File
- * Usage:          File I/O
- * Variable:       source   -> TINY-PLUS language source file
- *                 oscan    -> Result of scanner
- *                 oparse   -> Result of syntax parser
- *                 oanalyze -> Result of semantics analyzer
- *                 code     -> Middle Code
- * Used By:        Global
- */
+/** 源文件流 */
 extern FILE *source;
+/** 词法分析结果输出文件流 */
 extern FILE *oscan;
+/** 语法分析结果输出文件流 */
 extern FILE *oparse;
+/** 语义分析结果输出文件流 */
 extern FILE *oanalyze;
+/** 中间代码输出文件流 */
 extern FILE *code;
-
-/*
- * Data Structure; Const Parameter
- * Usage:          Record compile errors
- * Variable:       Error     -> Flag variable
- *                 scanError -> Count number of Errors
- * Used By:        Global
- */
+/** 标志变量，是否有扫描错误 */
 extern int Error;
+/** 编译错误数量 */
 extern int scanError;
-/* End Main Function Definition */
 
-/* Parser Definition */
-/*
- * Data Structure; Enum Array
- * Usage:          Define kind of statement
- * Variable:       NodeKind -> Divided statement to logic control statement and experiment
- *                 StmtKind -> Define logic control statement, including IfK RepeatK AssignK ReadK WriteK
- *                 ExpKind  -> Define experiment, including OpK ConstK IdK
- *                 ExpType  -> Define kind of an experiment's  result
- * Used By:        Global Definition
- */
 typedef enum {
     StmtK, ExpK
 } NodeKind;
@@ -105,90 +65,74 @@ typedef enum {
     Void, Integer, Boolean
 } ExpType;
 
-/*
- * Data Structure; Const Parameter
- * Usage:          Define child node max number
- * Addition:       All operators have at most 2 numbers to operate, so a node at most has 3 child, 1 opK and 2 ConstK or IdK
- * Used By:        Global Definition
+/**
+ * @brief 定义语法树最大子树个数
+ * @details 一个节点最多拥有3个子节点，IF语句有一个表达式，一个真出口，一个假出口。
  */
 #define MAX_CHILDREN_NUM 3
 
-/*
- * Data Structure; Tree
- * Usage:          Record result of syntax analyze
- * Variable:       child    -> Link to child node
- *                 sibling  -> Link to sibling node (Statement after ';')
- *                 thisLine -> Record line number now
- *                 nodeKind -> Record which kind of statement this node belongs to
- *                 kind     -> Record node kind detail
- *                 attr     -> Record values, including label of operator, value of integer and name of identification
- *                 type     -> Marked node type to check semantics simply
- * Used By:        Syntax Parser & Semantics Analyzer
+/**
+ * @brief 语法树定义
  */
 typedef struct treeNode {
+    /** 子节点 */
     struct treeNode *child[MAX_CHILDREN_NUM];
+    /** 兄弟节点 */
     struct treeNode *sibling;
+    /** 当前行号 */
     int thisLine;
+    /** 当前节点类型 @enum NodeKind */
     NodeKind nodekind;
+
+    /**
+     * @brief 节点具体类型
+     */
     union {
+        /** 语句类型 @enum StmtKind */
         StmtKind stmt;
+        /** 表达式类型 @enum ExpKind */
         ExpKind exp;
     } kind;
+
+    /**
+     * @brief 节点属性信息
+     */
     union {
+        /** ExpK 类型中的具体表达式信息 */
         Token op;
+        /** ConstK 类型中的具体数值信息 */
         int val;
+        /** IdK 类型中具体的名称信息 */
         char *name;
     } attr;
+    /** 节点静态类型 */
     ExpType type;
 } TreeNode;
-/* End Parser Definition */
 
-/* Symbol Table Definition */
-/*
- * Data Structure: Const Parameter
- * Usage:          Parameter of Hash Function, Also Used to Define A Hash Table
- * Variable:       SIZE  -> Length of Hash Table
- *                 SHIFT -> Shift Length
- * Used By:        Symbol Table (utils.c)
- */
-#define SIZE 211
+/** 哈希表长度 */
+#define SIZE 512
+/** 哈希函数偏移值 */
 #define SHIFT 4
 
-/*
- * Data Structure: LinkList
- * Usage:          Record variable usage in which line of the source file
- * Variable:       thisLine -> Line number
- *                 next     -> Link to next record
- * Used By:        Symbol Table
+/**
+ * @brief 符号表中变量被使用的行号表
  */
 typedef struct LinkNode {
-    int thisLine;
+    int thisLine;  /**< 一条行号记录 */
     struct LinkNode *next;
 } *Link;
 
-/*
- * Data Structure; LinkList
- * Usage:          Record all information of a variable
- * Variable:       name   -> Variable name
- *                 lines  -> Record lines where this variable occur
- *                 memloc -> Stack Address Locations
- *                 next   -> Link to next Variable
- * Used By:        Symbol Table
+/**
+ * @brief 哈希表中元素的结构定义
  */
 typedef struct LinkList {
-    char *name;
-    Link lines;
-    int memloc; /* memory location for variable */
+    char *name;  /**< 变量名 */
+    Link lines;  /**< 存储行号信息的链表 @struct LinkNode*/
+    int memloc;  /**< 为变量分配的位置 */
     struct LinkList *next;
 } *List;
 
-/*
- * Data Structure; Array (Hash Table)
- * Usage:          Symbol Table
- * Variable:       hashTable -> Store symbols
- * Used By:        Symbol Table & Semantics Analyzer
- */
+/** 符号哈希表 */
 static List hashTable[SIZE];
-/* End Symbol Table Definition */
 
 #endif
