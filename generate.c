@@ -70,7 +70,7 @@ static void cGenStmt(TreeNode *tree, CodeStruct *S) {
                 E.isStmt = 1;
                 cGenExp(p1, &E);
                 if (p2 != NULL)
-                    fprintf(code, "(%d)Label L%d\n", thisOutLine++, E.trueLabel);
+                    fprintf(code, "(%-2d)(label, -, -, l%d)\n", thisOutLine++, E.trueLabel);
                 cGenThreeAddr(p2, &E1);
             } else {
                 E.falseLabel = newLabel();
@@ -79,11 +79,11 @@ static void cGenStmt(TreeNode *tree, CodeStruct *S) {
                 E2.nextLabel = S->nextLabel;
                 cGenExp(p1, &E);
                 if (p1 != NULL)
-                    fprintf(code, "(%d)Label L%d\n", thisOutLine++, E.trueLabel);
+                    fprintf(code, "(%-2d)(label, -, -, l%d)\n", thisOutLine++, E.trueLabel);
                 cGenThreeAddr(p2, &E1);
-                fprintf(code, "(%d)goto L%d\n", thisOutLine++, S->nextLabel);
+                fprintf(code, "(%-2d)(goto , -, -, l%d)\n", thisOutLine++, S->nextLabel);
                 if (p2 != NULL)
-                    fprintf(code, "(%d)Label L%d\n", thisOutLine++, E.falseLabel);
+                    fprintf(code, "(%-2d)(goto , -, -, l%d)\n", thisOutLine++, E.falseLabel);
                 cGenThreeAddr(p3, &E2);
             }
             break;
@@ -96,22 +96,22 @@ static void cGenStmt(TreeNode *tree, CodeStruct *S) {
             E.falseLabel = S->beginLabel;
             E.isStmt = 1;
             if (p1 != NULL)
-                fprintf(code, "(%d)Label L%d\n", thisOutLine++, S->beginLabel);
+                fprintf(code, "(%-2d)(label, -, -, l%d)\n", thisOutLine++, S->beginLabel);
             cGenThreeAddr(p1, &E1);
-            fprintf(code, "(%d)Label L%d\n", thisOutLine++, E1.nextLabel);
+            fprintf(code, "(%-2d)(label, -, -, l%d)\n", thisOutLine++, E1.nextLabel);
             cGenExp(p2, &E);
             break;
         case AssignK:
             str1 = cGenThreeAddr(tree->child[0], S);
-            fprintf(code, "(%d)%s:=%s\n", thisOutLine++, tree->attr.name, str1);
+            fprintf(code, "(%-2d)(:=   , %s, -, %s)\n", thisOutLine++, str1, tree->attr.name);
             free(str1);
             break;
         case ReadK:
-            fprintf(code, "(%d)read %s\n", thisOutLine++, tree->attr.name);
+            fprintf(code, "(%-2d)(read , -, -, %s)\n", thisOutLine++, tree->attr.name);
             break;
         case WriteK:
             str1 = cGenThreeAddr(tree->child[0], S);
-            fprintf(code, "(%d)write %s\n", thisOutLine++, str1);
+            fprintf(code, "(%-2d)(write, -, -, %s)\n", thisOutLine++, str1);
             free(str1);
             break;
     }
@@ -143,76 +143,80 @@ static char *cGenExp(TreeNode *tree, CodeStruct *S) {
                     str1 = cGenExp(p1, &E1);
                     str2 = cGenExp(p2, &E2);
                     if (S->isStmt == 1) {
-                        fprintf(code, "(%d)if %s > %s goto L%d\n", thisOutLine++, str1, str2, S->trueLabel);
-                        fprintf(code, "(%d)goto L%d\n", thisOutLine++, S->falseLabel);
+                        fprintf(code, "(%-2d)(j>   , %s, %s, l%d)\n", thisOutLine++, str1, str2, S->trueLabel);
+                        fprintf(code, "(%-2d)(goto , -, -, l%d)\n", thisOutLine++, S->falseLabel);
                     } else
-                        fprintf(code, "(%d)t%d := %s > %s\n", thisOutLine++, varNum++, str1, str2);
+                        fprintf(code, "(%-2d)(:=   , %s, %s, t%d)\n", thisOutLine++, str1, str2, varNum ++);
                     break;
                 case LT:
                     str1 = cGenExp(p1, &E1);
                     str2 = cGenExp(p2, &E2);
                     if (S->isStmt == 1) {
-                        fprintf(code, "(%d)if %s < %s goto L%d\n", thisOutLine++, str1, str2, S->trueLabel);
-                        fprintf(code, "(%d)goto L%d\n", thisOutLine++, S->falseLabel);
+                        fprintf(code, "(%-2d)(j<   , %s, %s, l%d)\n", thisOutLine++, str1, str2, S->trueLabel);
+                        fprintf(code, "(%-2d)(goto , -, -, l%d)\n", thisOutLine++, S->falseLabel);
                     } else {
-                        fprintf(code, "(%d)t%d := %s < %s\n", thisOutLine++, varNum++, str1, str2);
+                        fprintf(code, "(%-2d)(:=   , %s, %s, t%d)\n", thisOutLine++, str1, str2, varNum ++);
                     }
                     break;
                 case EQ:
                     str1 = cGenExp(p1, &E1);
                     str2 = cGenExp(p2, &E2);
                     if (S->isStmt == 1) {
-                        fprintf(code, "(%d)if %s := %s goto L%d\n", thisOutLine++, str1, str2, S->trueLabel);
-                        fprintf(code, "(%d)goto L%d\n", thisOutLine++, S->falseLabel);
-                    } else
-                        fprintf(code, "(%d)t%d := %s =  %s\n", thisOutLine++, varNum++, str1, str2);
+                        fprintf(code, "(%-2d)(j=   , %s, %s, l%d)\n", thisOutLine++, str1, str2, S->trueLabel);
+                        fprintf(code, "(%-2d)(goto , -, -, l%d)\n", thisOutLine++, S->falseLabel);
+                    } else {
+                        fprintf(code, "(%-2d)(:=   , %s, %s, t%d)\n", thisOutLine++, str1, str2, varNum ++);
+                    }
                     break;
                 case GTEQ:
                     str1 = cGenExp(p1, &E1);
                     str2 = cGenExp(p2, &E2);
                     if (S->isStmt == 1) {
-                        fprintf(code, "(%d)if %s >= %s goto L%d\n", thisOutLine++, str1, str2, S->trueLabel);
-                        fprintf(code, "(%d)goto L%d\n", thisOutLine++, S->falseLabel);
-                    } else
-                        fprintf(code, "(%d)t%d := %s >= %s\n", thisOutLine++, varNum++, str1, str2);
+                        fprintf(code, "(%-2d)(j>=   , %s, %s, l%d)\n", thisOutLine++, str1, str2, S->trueLabel);
+                        fprintf(code, "(%-2d)(goto , -, -, l%d)\n", thisOutLine++, S->falseLabel);
+                    } else {
+                        fprintf(code, "(%-2d)(:=   , %s, %s, t%d)\n", thisOutLine++, str1, str2, varNum ++);
+                    }
                     break;
                 case LTEQ:
                     str1 = cGenExp(p1, &E1);
                     str2 = cGenExp(p2, &E2);
                     if (S->isStmt == 1) {
-                        fprintf(code, "(%d)if %s <= %s goto L%d\n", thisOutLine++, str1, str2, S->trueLabel);
-                        fprintf(code, "(%d)goto L%d\n", thisOutLine++, S->falseLabel);
-                    } else
-                        fprintf(code, "(%d)t%d :=%s <= %s\n", thisOutLine++, varNum++, str1, str2);
+                        fprintf(code, "(%-2d)(j<=   , %s, %s, l%d)\n", thisOutLine++, str1, str2, S->trueLabel);
+                        fprintf(code, "(%-2d)(goto , -, -, l%d)\n", thisOutLine++, S->falseLabel);
+                    } else {
+                        fprintf(code, "(%-2d)(:=   , %s, %s, t%d)\n", thisOutLine++, str1, str2, varNum ++);
+                    }
                     break;
                 case NOTEQ:
                     str1 = cGenExp(p1, &E1);
                     str2 = cGenExp(p2, &E2);
                     if (S->isStmt == 1) {
-                        fprintf(code, "(%d)if %s != %s goto L%d\n", thisOutLine++, str1, str2, S->trueLabel);
-                        fprintf(code, "(%d)goto L%d\n", thisOutLine++, S->falseLabel);
-                    } else
-                        fprintf(code, "(%d)t%d :=%s <= %s\n", thisOutLine++, varNum++, str1, str2);
+                        fprintf(code, "(%-2d)(j<>   , %s, %s, l%d)\n", thisOutLine++, str1, str2, S->trueLabel);
+                        fprintf(code, "(%-2d)(goto , -, -, l%d)\n", thisOutLine++, S->falseLabel);
+                    } else {
+                        fprintf(code, "(%-2d)(:=   , %s, %s, t%d)\n", thisOutLine++, str1, str2, varNum ++);
+                    }
                     break;
                 case PLUS:
                     str1 = cGenExp(p1, &E1);
                     str2 = cGenExp(p2, &E2);
-                    fprintf(code, "(%d)t%d = %s + %s\n", thisOutLine++, varNum++, str1, str2);
+                    fprintf(code, "(%-2d)(+    , %s, %s, t%d)\n", thisOutLine++, str1, str2, varNum ++);
                     break;
                 case MINUS:
                     str1 = cGenExp(p1, &E1);
                     str2 = cGenExp(p2, &E2);
-                    fprintf(code, "(%d)t%d = %s - %s\n", thisOutLine++, varNum++, str1, str2);
+                    fprintf(code, "(%-2d)(-    , %s, %s, t%d)\n", thisOutLine++, str1, str2, varNum ++);
                     break;
                 case TIMES:
                     str1 = cGenExp(p1, &E1);
                     str2 = cGenExp(p2, &E2);
-                    fprintf(code, "(%d)t%d = %s * %s\n", thisOutLine++, varNum++, str1, str2);
+                    fprintf(code, "(%-2d)(*    , %s, %s, t%d)\n", thisOutLine++, str1, str2, varNum ++);
                     break;
                 case OVER:
                     str1 = cGenExp(p1, &E1);
                     str2 = cGenExp(p2, &E2);
-                    fprintf(code, "(%d)t%d = %s / %s\n", thisOutLine++, varNum++, str1, str2);
+                    fprintf(code, "(%-2d)(/    , %s, %s, t%d)\n", thisOutLine++, str1, str2, varNum ++);
                     break;
             }
             free(str1);
@@ -245,7 +249,7 @@ char *cGenThreeAddr(TreeNode *tree, CodeStruct *codes) {
                         E.nextLabel = newLabel();
                         E1.nextLabel = codes->nextLabel;
                         cGenStmt(tree, &E);
-                        fprintf(code, "(%d)Label L%d\n", thisOutLine++, E.nextLabel);
+                        fprintf(code, "(%-2d)(label, -, -, l%d)\n", thisOutLine++, E.nextLabel);
                         break;
                 }
                 break;

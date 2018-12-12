@@ -203,7 +203,7 @@ void printTree(TreeNode *tree) {
         } else if (tree->nodekind == ExpK) {
             switch (tree->kind.exp) {
                 case OpK:
-                    fprintf(oparse, "Op: %s", TokenArray[tree->attr.op]);
+                    fprintf(oparse, "Op: %s\n", TokenArray[tree->attr.op]);
                     break;
                 case ConstK:
                     fprintf(oparse, "Const: %d\n", tree->attr.val);
@@ -300,10 +300,12 @@ void printSymTab(FILE *listing) {
             List l = hashTable[i];
             while (l != NULL) {
                 Link t = l->lines;
-                fprintf(listing, "%-14s ", l->name);
-                fprintf(listing, "%-7d  ", l->memloc);
+                fprintf(listing, "%-14s  ", l->name);
+                fprintf(listing, "%-7d   ", l->memloc);
+                fprintf(listing, "%-4d\n", t->thisLine);
+                t = t->next;
                 while (t != NULL) {
-                    fprintf(listing, "%4d ", t->thisLine);
+                    fprintf(listing, "                          %-4d\n", t->thisLine);
                     t = t->next;
                 }
                 fprintf(listing, "\n");

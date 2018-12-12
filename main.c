@@ -75,7 +75,7 @@ int main(int argc, char *argv[]) {
     fprintf(oscan, "Line\tContent   \tToken\n");
     fprintf(oscan, "----\t----------\t-----\n\n");
     TreeNode *syntaxTree = parse();
-    fprintf(oparse, "Main Function\n");
+    fprintf(oparse, "Program\n");
     printTree(syntaxTree);
     if (!Error) {
         anaylze(syntaxTree);
