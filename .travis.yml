@@ -3,7 +3,6 @@ os: linux
 sudo: required
 language: c
 before_install:
-  - sudo apt-get autoremove cmake3
   - wget https://cmake.org/files/v3.12/cmake-3.12.2-Linux-x86_64.tar.gz
   - tar zxvf cmake-3.12.2-Linux-x86_64.tar.gz
   - mv cmake-3.12.2-Linux-x86_64 /opt/cmake-3.12.2
@@ -11,7 +10,7 @@ before_install:
 install:
   - mkdir build
   - cd build
-  - cmake ..
+  - /usr/bin/cmake ..
   - make
   - ./TPC ../SAMPLE.TNY
 compiler:
