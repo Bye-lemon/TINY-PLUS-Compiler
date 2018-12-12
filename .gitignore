@@ -174,4 +174,9 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+### PyInstaller ###
+build/
+dist/
+*.spec
+
 # End of https://www.gitignore.io/api/c,cmake,windows,clion+all
