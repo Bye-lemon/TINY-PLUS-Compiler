@@ -1,5 +1,6 @@
 # TINY-PLUS Compiler(TPC)
 ---
+[![Build Status](https://travis-ci.org/Bye-lemon/TINY-PLUS-Complier.svg?branch=master)](https://travis-ci.org/Bye-lemon/TINY-PLUS-Complier)
 
 ## 使用方法
 
