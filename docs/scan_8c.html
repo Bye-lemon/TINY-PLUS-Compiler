@@ -1,0 +1,558 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TINY-PLUS-Compiler: C:/Users/Li Yingping/Documents/GitHub/TINY-PLUS-Complier/scan.c 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">TINY-PLUS-Compiler
+   &#160;<span id="projectnumber">v1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_f396504afdc959660871b003fa10164d.html">Documents</a></li><li class="navelem"><a class="el" href="dir_7e17ac9cf8fba2cb04bc248c85b0ceb7.html">GitHub</a></li><li class="navelem"><a class="el" href="dir_45c9c218a9acb27c16e45b2472f93a52.html">TINY-PLUS-Complier</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#enum-members">枚举</a> &#124;
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle">
+<div class="title">scan.c 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="globals_8h_source.html">globals.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="utils_8h_source.html">utils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="scan_8h_source.html">scan.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+scan.c 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="scan_8c__incl.png" border="0" usemap="#_c_1_2_users_2_li_01_yingping_2_documents_2_git_hub_2_t_i_n_y-_p_l_u_s-_complier_2scan_8c" alt=""/></div>
+<map name="_c_1_2_users_2_li_01_yingping_2_documents_2_git_hub_2_t_i_n_y-_p_l_u_s-_complier_2scan_8c" id="_c_1_2_users_2_li_01_yingping_2_documents_2_git_hub_2_t_i_n_y-_p_l_u_s-_complier_2scan_8c">
+<area shape="rect" id="node2" href="globals_8h.html" title="globals.h" alt="" coords="129,109,204,136"/>
+<area shape="rect" id="node7" href="utils_8h.html" title="utils.h" alt="" coords="229,109,286,136"/>
+<area shape="rect" id="node8" href="scan_8h.html" title="scan.h" alt="" coords="311,109,372,136"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a05ec23ea9e68706e210bd8f965beee10"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scan_8c.html#a05ec23ea9e68706e210bd8f965beee10">BUFFER</a>&#160;&#160;&#160;256</td></tr>
+<tr class="separator:a05ec23ea9e68706e210bd8f965beee10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+枚举</h2></td></tr>
+<tr class="memitem:a5d74787dedbc4e11c1ab15bf487e61f8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scan_8c.html#a5d74787dedbc4e11c1ab15bf487e61f8">State</a> { <br />
+&#160;&#160;<a class="el" href="scan_8c.html#a5d74787dedbc4e11c1ab15bf487e61f8a13d000b4d7dc70d90239b7430d1eb6b2">START</a>, 
+<a class="el" href="scan_8c.html#a5d74787dedbc4e11c1ab15bf487e61f8a9c954bcf443428c80b0f107b3bc48749">DONE</a>, 
+<a class="el" href="scan_8c.html#a5d74787dedbc4e11c1ab15bf487e61f8a058b4da72c8ae13a2089a061349b202b">INID</a>, 
+<a class="el" href="scan_8c.html#a5d74787dedbc4e11c1ab15bf487e61f8a0801df1e8de543a43e129e85f1787d39">INNUM</a>, 
+<br />
+&#160;&#160;<a class="el" href="scan_8c.html#a5d74787dedbc4e11c1ab15bf487e61f8a28cbd0a89bdf28210701b95bbde817ae">INLT</a>, 
+<a class="el" href="scan_8c.html#a5d74787dedbc4e11c1ab15bf487e61f8ab9026568ac0cd74322efff5df319d46a">INGT</a>, 
+<a class="el" href="scan_8c.html#a5d74787dedbc4e11c1ab15bf487e61f8a93c3f188530fd736e7070a9ab500b2ff">INASSIGN</a>, 
+<a class="el" href="scan_8c.html#a5d74787dedbc4e11c1ab15bf487e61f8acf94a3a86a9ebec978c36fe000c6156b">INCOMMENT</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:a5d74787dedbc4e11c1ab15bf487e61f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">定义有穷状态自动机的状态  <a href="scan_8c.html#a5d74787dedbc4e11c1ab15bf487e61f8">更多...</a><br /></td></tr>
+<tr class="separator:a5d74787dedbc4e11c1ab15bf487e61f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a7bcf99de554c1ec21c5fbbba3accb238"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scan_8c.html#a7bcf99de554c1ec21c5fbbba3accb238">getNext</a> (void)</td></tr>
+<tr class="memdesc:a7bcf99de554c1ec21c5fbbba3accb238"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前行下一个字符  <a href="#a7bcf99de554c1ec21c5fbbba3accb238">更多...</a><br /></td></tr>
+<tr class="separator:a7bcf99de554c1ec21c5fbbba3accb238"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92bc16c7e91cc956c67770f1f9c927c1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scan_8c.html#a92bc16c7e91cc956c67770f1f9c927c1">goBack</a> (void)</td></tr>
+<tr class="memdesc:a92bc16c7e91cc956c67770f1f9c927c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">将当前指针减一，用来返回{&lt;=, &gt;=, &lt;&gt;, :=}的报错信息  <a href="#a92bc16c7e91cc956c67770f1f9c927c1">更多...</a><br /></td></tr>
+<tr class="separator:a92bc16c7e91cc956c67770f1f9c927c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebce0206bc04c28bd27bf0cacafb0811"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="globals_8h.html#a6a9e93b081bad7fc74c17306fb168c1f">Token</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scan_8c.html#aebce0206bc04c28bd27bf0cacafb0811">reservedLookup</a> (char *s)</td></tr>
+<tr class="memdesc:aebce0206bc04c28bd27bf0cacafb0811"><td class="mdescLeft">&#160;</td><td class="mdescRight">查找一个串属不属于保留字，属于返回保留字Token，不属于标记为ID（标识符）  <a href="#aebce0206bc04c28bd27bf0cacafb0811">更多...</a><br /></td></tr>
+<tr class="separator:aebce0206bc04c28bd27bf0cacafb0811"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a87381a6bbaf512557fc21c8ae28a35"><td class="memItemLeft" align="right" valign="top"><a class="el" href="globals_8h.html#a6a9e93b081bad7fc74c17306fb168c1f">Token</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scan_8c.html#a9a87381a6bbaf512557fc21c8ae28a35">getToken</a> (void)</td></tr>
+<tr class="memdesc:a9a87381a6bbaf512557fc21c8ae28a35"><td class="mdescLeft">&#160;</td><td class="mdescRight">词法分析器主函数，每次生成一个Token供语法分析器调用  <a href="#a9a87381a6bbaf512557fc21c8ae28a35">更多...</a><br /></td></tr>
+<tr class="separator:a9a87381a6bbaf512557fc21c8ae28a35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:a362d9c1465449e70a2dca24d22496fc5"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scan_8c.html#a362d9c1465449e70a2dca24d22496fc5">tokenString</a> [<a class="el" href="scan_8h.html#a060a34fe8229a960f4250e93b346144d">MAX_TOKEN_SIZE</a>+1]</td></tr>
+<tr class="separator:a362d9c1465449e70a2dca24d22496fc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66dffef9cdbe612eae2fc317fce0aa41"><td class="memItemLeft" align="right" valign="top">static char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scan_8c.html#a66dffef9cdbe612eae2fc317fce0aa41">lineBuffer</a> [<a class="el" href="scan_8c.html#a05ec23ea9e68706e210bd8f965beee10">BUFFER</a>]</td></tr>
+<tr class="separator:a66dffef9cdbe612eae2fc317fce0aa41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2f3df3060fedc41e7db77c890eb046e"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scan_8c.html#ac2f3df3060fedc41e7db77c890eb046e">thisPosition</a> = 0</td></tr>
+<tr class="separator:ac2f3df3060fedc41e7db77c890eb046e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5574b43d4b07339cee8a6e08f928028d"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scan_8c.html#a5574b43d4b07339cee8a6e08f928028d">lineLens</a> = 0</td></tr>
+<tr class="separator:a5574b43d4b07339cee8a6e08f928028d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae216ba067a591583e3a3ec7807518744"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scan_8c.html#ae216ba067a591583e3a3ec7807518744">EOF_FLAG</a> = <a class="el" href="globals_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></td></tr>
+<tr class="separator:ae216ba067a591583e3a3ec7807518744"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab338b374b5db0cf8d9b2ffe2a9ecd38d"><td class="memItemLeft" >struct {</td></tr>
+<tr class="memitem:acb34a6bdeb0e7aea41f4a77ce2c0a917"><td class="memItemLeft" >&#160;&#160;&#160;char *&#160;&#160;&#160;<a class="el" href="scan_8c.html#ab50d783982593ef993ea0b68f7ad8b80">str</a></td></tr>
+<tr class="separator:acb34a6bdeb0e7aea41f4a77ce2c0a917"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fadb5b8f08d6f3f5dc310f1c1417196"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="globals_8h.html#a6a9e93b081bad7fc74c17306fb168c1f">Token</a>&#160;&#160;&#160;<a class="el" href="scan_8c.html#ab88f7a2c255ddf124db18f5bf961c10c">token</a></td></tr>
+<tr class="separator:a4fadb5b8f08d6f3f5dc310f1c1417196"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab338b374b5db0cf8d9b2ffe2a9ecd38d"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scan_8c.html#ab338b374b5db0cf8d9b2ffe2a9ecd38d">reservedWordList</a> [<a class="el" href="globals_8h.html#affc3cfe42d24a44e03e715571129c55b">RESERVED_WORD_NUM</a>]</td></tr>
+<tr class="memdesc:ab338b374b5db0cf8d9b2ffe2a9ecd38d"><td class="mdescLeft">&#160;</td><td class="mdescRight">文法保留字表  <a href="#ab338b374b5db0cf8d9b2ffe2a9ecd38d">更多...</a><br /></td></tr>
+<tr class="separator:ab338b374b5db0cf8d9b2ffe2a9ecd38d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="a05ec23ea9e68706e210bd8f965beee10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05ec23ea9e68706e210bd8f965beee10">&#9670;&nbsp;</a></span>BUFFER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUFFER&#160;&#160;&#160;256</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>文件最大行数的定义 </p>
+
+</div>
+</div>
+<h2 class="groupheader">枚举类型说明</h2>
+<a id="a5d74787dedbc4e11c1ab15bf487e61f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d74787dedbc4e11c1ab15bf487e61f8">&#9670;&nbsp;</a></span>State</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="scan_8c.html#a5d74787dedbc4e11c1ab15bf487e61f8">State</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>定义有穷状态自动机的状态 </p>
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a5d74787dedbc4e11c1ab15bf487e61f8a13d000b4d7dc70d90239b7430d1eb6b2"></a>START&#160;</td><td class="fielddoc"><p>开始状态 状态机的开始状态 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a5d74787dedbc4e11c1ab15bf487e61f8a9c954bcf443428c80b0f107b3bc48749"></a>DONE&#160;</td><td class="fielddoc"><p>结束状态 状态机的结束状态 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a5d74787dedbc4e11c1ab15bf487e61f8a058b4da72c8ae13a2089a061349b202b"></a>INID&#160;</td><td class="fielddoc"><p>标识符状态 检测标识符（字符序列串） </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a5d74787dedbc4e11c1ab15bf487e61f8a0801df1e8de543a43e129e85f1787d39"></a>INNUM&#160;</td><td class="fielddoc"><p>数字状态 检测常数（数字序列串） </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a5d74787dedbc4e11c1ab15bf487e61f8a28cbd0a89bdf28210701b95bbde817ae"></a>INLT&#160;</td><td class="fielddoc"><p>小于号状态 判断{&lt;, &lt;=, &lt;&gt;} </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a5d74787dedbc4e11c1ab15bf487e61f8ab9026568ac0cd74322efff5df319d46a"></a>INGT&#160;</td><td class="fielddoc"><p>大于号状态 判断{&gt;, &gt;=} </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a5d74787dedbc4e11c1ab15bf487e61f8a93c3f188530fd736e7070a9ab500b2ff"></a>INASSIGN&#160;</td><td class="fielddoc"><p>赋值状态 判断是否为:= </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a5d74787dedbc4e11c1ab15bf487e61f8acf94a3a86a9ebec978c36fe000c6156b"></a>INCOMMENT&#160;</td><td class="fielddoc"><p>注释状态 处理源代码中的注释 </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="a7bcf99de554c1ec21c5fbbba3accb238"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bcf99de554c1ec21c5fbbba3accb238">&#9670;&nbsp;</a></span>getNext()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int getNext </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取当前行下一个字符 </p>
+<dl class="section return"><dt>返回</dt><dd>下一个待检测字符 </dd></dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="scan_8c_a7bcf99de554c1ec21c5fbbba3accb238_icgraph.png" border="0" usemap="#scan_8c_a7bcf99de554c1ec21c5fbbba3accb238_icgraph" alt=""/></div>
+<map name="scan_8c_a7bcf99de554c1ec21c5fbbba3accb238_icgraph" id="scan_8c_a7bcf99de554c1ec21c5fbbba3accb238_icgraph">
+<area shape="rect" id="node2" href="scan_8h.html#a9a87381a6bbaf512557fc21c8ae28a35" title="词法分析器主函数，每次生成一个Token供语法分析器调用 " alt="" coords="120,220,195,247"/>
+<area shape="rect" id="node3" href="parse_8c.html#a5ee7da9e5bb43f2b9f797c2ceb045820" title="获取下一个token，匹配成功返回token，失败抛出错误。 " alt="" coords="243,322,301,348"/>
+<area shape="rect" id="node6" href="parse_8c.html#a70095d31ccd507def5c76f3290b47202" title="语句 &#45;&gt; if 语句 | repeat 语句 | assign 语句 | read 语句 | write 语句 " alt="" coords="649,271,729,298"/>
+<area shape="rect" id="node8" href="parse_8h.html#a3978e850bcd90e50ac083de049831eb5" title="语法分析器主函数 程序 &#45;&gt; 语句序列 " alt="" coords="527,68,582,95"/>
+<area shape="rect" id="node14" href="parse_8c.html#a926714887855939b510801f4509d70cb" title="因数 &#45;&gt; ( 表达式 ) | 数字 | 标识符 " alt="" coords="527,524,582,551"/>
+<area shape="rect" id="node4" href="parse_8c.html#af9d481a7d7e2b85b4cf329e89472b505" title="语句序列 &#45;&gt; 语句 ; 语句 " alt="" coords="349,170,460,196"/>
+<area shape="rect" id="node5" href="parse_8c.html#a51b5bd1d6581e6ddebb093ea476577be" title="if 语句 &#45;&gt; if 表达式 then 语句序列 end | if 表达式 then 语句序列 else 语句序列 end ..." alt="" coords="524,220,585,247"/>
+<area shape="rect" id="node7" href="parse_8c.html#aa01e603dbb1132a662bae5fec534b1f3" title="repeat 语句 &#45;&gt; repeat 语句序列 until 表达式 " alt="" coords="509,271,600,298"/>
+<area shape="rect" id="node10" href="parse_8c.html#a47791facfbbe8a7918aaec25902ef0e7" title="assign 语句 &#45;&gt; 标识符 := 表达式 " alt="" coords="508,322,601,348"/>
+<area shape="rect" id="node11" href="parse_8c.html#acbf6a9e0d3d9bc4b84ae1cc3dfa87a18" title="read 语句 &#45;&gt; read 标识符 " alt="" coords="365,474,445,500"/>
+<area shape="rect" id="node12" href="parse_8c.html#a05035e26d9ea848a887b442225fe0a3c" title="write 语句 &#45;&gt; write 表达式 " alt="" coords="513,423,596,450"/>
+<area shape="rect" id="node13" href="parse_8c.html#a748ea477d7e9cba15a1d23ccec2148b7" title="表达式 &#45;&gt; 简单表达式 | 简单表达式 {&lt;, &gt;, =, &lt;=, &gt;=, &lt;&gt;} 简单表达式 " alt="" coords="355,372,454,399"/>
+<area shape="rect" id="node15" href="parse_8c.html#a5743a7c7a28f2b26524f037cfee051d7" title="加数 &#45;&gt; 因数 | 因数 {*, /} 因数 " alt="" coords="657,524,721,551"/>
+<area shape="rect" id="node16" href="parse_8c.html#a68833992f58c454cc4b399e6495d3457" title="简单表达式 &#45;&gt; 加数 | 加数 {+, &#45;} 加数 " alt="" coords="777,372,865,399"/>
+<area shape="rect" id="node9" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="TPC��������ں��� " alt="" coords="664,68,715,95"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9a87381a6bbaf512557fc21c8ae28a35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a87381a6bbaf512557fc21c8ae28a35">&#9670;&nbsp;</a></span>getToken()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="globals_8h.html#a6a9e93b081bad7fc74c17306fb168c1f">Token</a> getToken </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>词法分析器主函数，每次生成一个Token供语法分析器调用 </p>
+<dl class="section return"><dt>返回</dt><dd>待处理的Token </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="scan_8c_a9a87381a6bbaf512557fc21c8ae28a35_cgraph.png" border="0" usemap="#scan_8c_a9a87381a6bbaf512557fc21c8ae28a35_cgraph" alt=""/></div>
+<map name="scan_8c_a9a87381a6bbaf512557fc21c8ae28a35_cgraph" id="scan_8c_a9a87381a6bbaf512557fc21c8ae28a35_cgraph">
+<area shape="rect" id="node2" href="scan_8c.html#a7bcf99de554c1ec21c5fbbba3accb238" title="获取当前行下一个字符 " alt="" coords="151,5,217,32"/>
+<area shape="rect" id="node3" href="scan_8c.html#a92bc16c7e91cc956c67770f1f9c927c1" title="将当前指针减一，用来返回{&lt;=, &gt;=, &lt;&gt;, :=}的报错信息 " alt="" coords="151,56,217,83"/>
+<area shape="rect" id="node4" href="scan_8c.html#aebce0206bc04c28bd27bf0cacafb0811" title="查找一个串属不属于保留字，属于返回保留字Token，不属于标记为ID（标识符） " alt="" coords="128,107,240,133"/>
+<area shape="rect" id="node5" href="utils_8c.html#af19bf3dc8caf4e45bdc9b053febbedee" title="将词法分析器分析结果输出至文件流 " alt="" coords="143,157,225,184"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="scan_8c_a9a87381a6bbaf512557fc21c8ae28a35_icgraph.png" border="0" usemap="#scan_8c_a9a87381a6bbaf512557fc21c8ae28a35_icgraph" alt=""/></div>
+<map name="scan_8c_a9a87381a6bbaf512557fc21c8ae28a35_icgraph" id="scan_8c_a9a87381a6bbaf512557fc21c8ae28a35_icgraph">
+<area shape="rect" id="node2" href="parse_8c.html#a5ee7da9e5bb43f2b9f797c2ceb045820" title="获取下一个token，匹配成功返回token，失败抛出错误。 " alt="" coords="128,322,187,348"/>
+<area shape="rect" id="node5" href="parse_8c.html#a70095d31ccd507def5c76f3290b47202" title="语句 &#45;&gt; if 语句 | repeat 语句 | assign 语句 | read 语句 | write 语句 " alt="" coords="535,271,615,298"/>
+<area shape="rect" id="node7" href="parse_8h.html#a3978e850bcd90e50ac083de049831eb5" title="语法分析器主函数 程序 &#45;&gt; 语句序列 " alt="" coords="413,68,467,95"/>
+<area shape="rect" id="node13" href="parse_8c.html#a926714887855939b510801f4509d70cb" title="因数 &#45;&gt; ( 表达式 ) | 数字 | 标识符 " alt="" coords="413,524,467,551"/>
+<area shape="rect" id="node3" href="parse_8c.html#af9d481a7d7e2b85b4cf329e89472b505" title="语句序列 &#45;&gt; 语句 ; 语句 " alt="" coords="235,170,345,196"/>
+<area shape="rect" id="node4" href="parse_8c.html#a51b5bd1d6581e6ddebb093ea476577be" title="if 语句 &#45;&gt; if 表达式 then 语句序列 end | if 表达式 then 语句序列 else 语句序列 end ..." alt="" coords="409,220,471,247"/>
+<area shape="rect" id="node6" href="parse_8c.html#aa01e603dbb1132a662bae5fec534b1f3" title="repeat 语句 &#45;&gt; repeat 语句序列 until 表达式 " alt="" coords="395,271,485,298"/>
+<area shape="rect" id="node9" href="parse_8c.html#a47791facfbbe8a7918aaec25902ef0e7" title="assign 语句 &#45;&gt; 标识符 := 表达式 " alt="" coords="393,322,487,348"/>
+<area shape="rect" id="node10" href="parse_8c.html#acbf6a9e0d3d9bc4b84ae1cc3dfa87a18" title="read 语句 &#45;&gt; read 标识符 " alt="" coords="250,474,330,500"/>
+<area shape="rect" id="node11" href="parse_8c.html#a05035e26d9ea848a887b442225fe0a3c" title="write 语句 &#45;&gt; write 表达式 " alt="" coords="399,423,481,450"/>
+<area shape="rect" id="node12" href="parse_8c.html#a748ea477d7e9cba15a1d23ccec2148b7" title="表达式 &#45;&gt; 简单表达式 | 简单表达式 {&lt;, &gt;, =, &lt;=, &gt;=, &lt;&gt;} 简单表达式 " alt="" coords="241,372,339,399"/>
+<area shape="rect" id="node14" href="parse_8c.html#a5743a7c7a28f2b26524f037cfee051d7" title="加数 &#45;&gt; 因数 | 因数 {*, /} 因数 " alt="" coords="543,524,607,551"/>
+<area shape="rect" id="node15" href="parse_8c.html#a68833992f58c454cc4b399e6495d3457" title="简单表达式 &#45;&gt; 加数 | 加数 {+, &#45;} 加数 " alt="" coords="663,372,751,399"/>
+<area shape="rect" id="node8" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="TPC��������ں��� " alt="" coords="549,68,600,95"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a92bc16c7e91cc956c67770f1f9c927c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92bc16c7e91cc956c67770f1f9c927c1">&#9670;&nbsp;</a></span>goBack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void goBack </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>将当前指针减一，用来返回{&lt;=, &gt;=, &lt;&gt;, :=}的报错信息 </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="scan_8c_a92bc16c7e91cc956c67770f1f9c927c1_icgraph.png" border="0" usemap="#scan_8c_a92bc16c7e91cc956c67770f1f9c927c1_icgraph" alt=""/></div>
+<map name="scan_8c_a92bc16c7e91cc956c67770f1f9c927c1_icgraph" id="scan_8c_a92bc16c7e91cc956c67770f1f9c927c1_icgraph">
+<area shape="rect" id="node2" href="scan_8h.html#a9a87381a6bbaf512557fc21c8ae28a35" title="词法分析器主函数，每次生成一个Token供语法分析器调用 " alt="" coords="120,220,195,247"/>
+<area shape="rect" id="node3" href="parse_8c.html#a5ee7da9e5bb43f2b9f797c2ceb045820" title="获取下一个token，匹配成功返回token，失败抛出错误。 " alt="" coords="243,322,301,348"/>
+<area shape="rect" id="node6" href="parse_8c.html#a70095d31ccd507def5c76f3290b47202" title="语句 &#45;&gt; if 语句 | repeat 语句 | assign 语句 | read 语句 | write 语句 " alt="" coords="649,271,729,298"/>
+<area shape="rect" id="node8" href="parse_8h.html#a3978e850bcd90e50ac083de049831eb5" title="语法分析器主函数 程序 &#45;&gt; 语句序列 " alt="" coords="527,68,582,95"/>
+<area shape="rect" id="node14" href="parse_8c.html#a926714887855939b510801f4509d70cb" title="因数 &#45;&gt; ( 表达式 ) | 数字 | 标识符 " alt="" coords="527,524,582,551"/>
+<area shape="rect" id="node4" href="parse_8c.html#af9d481a7d7e2b85b4cf329e89472b505" title="语句序列 &#45;&gt; 语句 ; 语句 " alt="" coords="349,170,460,196"/>
+<area shape="rect" id="node5" href="parse_8c.html#a51b5bd1d6581e6ddebb093ea476577be" title="if 语句 &#45;&gt; if 表达式 then 语句序列 end | if 表达式 then 语句序列 else 语句序列 end ..." alt="" coords="524,220,585,247"/>
+<area shape="rect" id="node7" href="parse_8c.html#aa01e603dbb1132a662bae5fec534b1f3" title="repeat 语句 &#45;&gt; repeat 语句序列 until 表达式 " alt="" coords="509,271,600,298"/>
+<area shape="rect" id="node10" href="parse_8c.html#a47791facfbbe8a7918aaec25902ef0e7" title="assign 语句 &#45;&gt; 标识符 := 表达式 " alt="" coords="508,322,601,348"/>
+<area shape="rect" id="node11" href="parse_8c.html#acbf6a9e0d3d9bc4b84ae1cc3dfa87a18" title="read 语句 &#45;&gt; read 标识符 " alt="" coords="365,474,445,500"/>
+<area shape="rect" id="node12" href="parse_8c.html#a05035e26d9ea848a887b442225fe0a3c" title="write 语句 &#45;&gt; write 表达式 " alt="" coords="513,423,596,450"/>
+<area shape="rect" id="node13" href="parse_8c.html#a748ea477d7e9cba15a1d23ccec2148b7" title="表达式 &#45;&gt; 简单表达式 | 简单表达式 {&lt;, &gt;, =, &lt;=, &gt;=, &lt;&gt;} 简单表达式 " alt="" coords="355,372,454,399"/>
+<area shape="rect" id="node15" href="parse_8c.html#a5743a7c7a28f2b26524f037cfee051d7" title="加数 &#45;&gt; 因数 | 因数 {*, /} 因数 " alt="" coords="657,524,721,551"/>
+<area shape="rect" id="node16" href="parse_8c.html#a68833992f58c454cc4b399e6495d3457" title="简单表达式 &#45;&gt; 加数 | 加数 {+, &#45;} 加数 " alt="" coords="777,372,865,399"/>
+<area shape="rect" id="node9" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="TPC��������ں��� " alt="" coords="664,68,715,95"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aebce0206bc04c28bd27bf0cacafb0811"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebce0206bc04c28bd27bf0cacafb0811">&#9670;&nbsp;</a></span>reservedLookup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="globals_8h.html#a6a9e93b081bad7fc74c17306fb168c1f">Token</a> reservedLookup </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>查找一个串属不属于保留字，属于返回保留字Token，不属于标记为ID（标识符） </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>待检查字符串 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>Token类型 </dd></dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="scan_8c_aebce0206bc04c28bd27bf0cacafb0811_icgraph.png" border="0" usemap="#scan_8c_aebce0206bc04c28bd27bf0cacafb0811_icgraph" alt=""/></div>
+<map name="scan_8c_aebce0206bc04c28bd27bf0cacafb0811_icgraph" id="scan_8c_aebce0206bc04c28bd27bf0cacafb0811_icgraph">
+<area shape="rect" id="node2" href="scan_8h.html#a9a87381a6bbaf512557fc21c8ae28a35" title="词法分析器主函数，每次生成一个Token供语法分析器调用 " alt="" coords="165,220,240,247"/>
+<area shape="rect" id="node3" href="parse_8c.html#a5ee7da9e5bb43f2b9f797c2ceb045820" title="获取下一个token，匹配成功返回token，失败抛出错误。 " alt="" coords="288,322,347,348"/>
+<area shape="rect" id="node6" href="parse_8c.html#a70095d31ccd507def5c76f3290b47202" title="语句 &#45;&gt; if 语句 | repeat 语句 | assign 语句 | read 语句 | write 语句 " alt="" coords="695,271,775,298"/>
+<area shape="rect" id="node8" href="parse_8h.html#a3978e850bcd90e50ac083de049831eb5" title="语法分析器主函数 程序 &#45;&gt; 语句序列 " alt="" coords="573,68,627,95"/>
+<area shape="rect" id="node14" href="parse_8c.html#a926714887855939b510801f4509d70cb" title="因数 &#45;&gt; ( 表达式 ) | 数字 | 标识符 " alt="" coords="573,524,627,551"/>
+<area shape="rect" id="node4" href="parse_8c.html#af9d481a7d7e2b85b4cf329e89472b505" title="语句序列 &#45;&gt; 语句 ; 语句 " alt="" coords="395,170,505,196"/>
+<area shape="rect" id="node5" href="parse_8c.html#a51b5bd1d6581e6ddebb093ea476577be" title="if 语句 &#45;&gt; if 表达式 then 语句序列 end | if 表达式 then 语句序列 else 语句序列 end ..." alt="" coords="569,220,631,247"/>
+<area shape="rect" id="node7" href="parse_8c.html#aa01e603dbb1132a662bae5fec534b1f3" title="repeat 语句 &#45;&gt; repeat 语句序列 until 表达式 " alt="" coords="555,271,645,298"/>
+<area shape="rect" id="node10" href="parse_8c.html#a47791facfbbe8a7918aaec25902ef0e7" title="assign 语句 &#45;&gt; 标识符 := 表达式 " alt="" coords="553,322,647,348"/>
+<area shape="rect" id="node11" href="parse_8c.html#acbf6a9e0d3d9bc4b84ae1cc3dfa87a18" title="read 语句 &#45;&gt; read 标识符 " alt="" coords="410,474,490,500"/>
+<area shape="rect" id="node12" href="parse_8c.html#a05035e26d9ea848a887b442225fe0a3c" title="write 语句 &#45;&gt; write 表达式 " alt="" coords="559,423,641,450"/>
+<area shape="rect" id="node13" href="parse_8c.html#a748ea477d7e9cba15a1d23ccec2148b7" title="表达式 &#45;&gt; 简单表达式 | 简单表达式 {&lt;, &gt;, =, &lt;=, &gt;=, &lt;&gt;} 简单表达式 " alt="" coords="401,372,499,399"/>
+<area shape="rect" id="node15" href="parse_8c.html#a5743a7c7a28f2b26524f037cfee051d7" title="加数 &#45;&gt; 因数 | 因数 {*, /} 因数 " alt="" coords="703,524,767,551"/>
+<area shape="rect" id="node16" href="parse_8c.html#a68833992f58c454cc4b399e6495d3457" title="简单表达式 &#45;&gt; 加数 | 加数 {+, &#45;} 加数 " alt="" coords="823,372,911,399"/>
+<area shape="rect" id="node9" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="TPC��������ں��� " alt="" coords="709,68,760,95"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a id="ae216ba067a591583e3a3ec7807518744"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae216ba067a591583e3a3ec7807518744">&#9670;&nbsp;</a></span>EOF_FLAG</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int EOF_FLAG = <a class="el" href="globals_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>标记变量，文件结束标识符 </p>
+
+</div>
+</div>
+<a id="a66dffef9cdbe612eae2fc317fce0aa41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66dffef9cdbe612eae2fc317fce0aa41">&#9670;&nbsp;</a></span>lineBuffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char lineBuffer[<a class="el" href="scan_8c.html#a05ec23ea9e68706e210bd8f965beee10">BUFFER</a>]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>文件缓冲区 </p>
+
+</div>
+</div>
+<a id="a5574b43d4b07339cee8a6e08f928028d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5574b43d4b07339cee8a6e08f928028d">&#9670;&nbsp;</a></span>lineLens</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int lineLens = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>当前行字符长度 </p>
+
+</div>
+</div>
+<a id="ab338b374b5db0cf8d9b2ffe2a9ecd38d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab338b374b5db0cf8d9b2ffe2a9ecd38d">&#9670;&nbsp;</a></span>reservedWordList</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct { ... }   reservedWordList[<a class="el" href="globals_8h.html#affc3cfe42d24a44e03e715571129c55b">RESERVED_WORD_NUM</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>初始值:</b><div class="fragment"><div class="line">= {</div><div class="line">        {<span class="stringliteral">&quot;if&quot;</span>,     <a class="code" href="globals_8h.html#a6a9e93b081bad7fc74c17306fb168c1fa252802eda493fb6b4a279c4452acb547">IF</a>},</div><div class="line">        {<span class="stringliteral">&quot;then&quot;</span>,   <a class="code" href="globals_8h.html#a6a9e93b081bad7fc74c17306fb168c1fabb40477a291c07277e13d096645f4305">THEN</a>},</div><div class="line">        {<span class="stringliteral">&quot;else&quot;</span>,   <a class="code" href="globals_8h.html#a6a9e93b081bad7fc74c17306fb168c1fa90d649d830ea440c8b8a56c7ef23c426">ELSE</a>},</div><div class="line">        {<span class="stringliteral">&quot;end&quot;</span>,    <a class="code" href="globals_8h.html#a6a9e93b081bad7fc74c17306fb168c1fadc6f24fd6915a3f2786a1b7045406924">END</a>},</div><div class="line">        {<span class="stringliteral">&quot;repeat&quot;</span>, <a class="code" href="globals_8h.html#a6a9e93b081bad7fc74c17306fb168c1fa972f3df9d279a3d3acc88bcbe4452d51">REPEAT</a>},</div><div class="line">        {<span class="stringliteral">&quot;until&quot;</span>,  <a class="code" href="globals_8h.html#a6a9e93b081bad7fc74c17306fb168c1faa4f38f5001aff1b45ecf511715d587d4">UNTIL</a>},</div><div class="line">        {<span class="stringliteral">&quot;read&quot;</span>,   <a class="code" href="globals_8h.html#a6a9e93b081bad7fc74c17306fb168c1facb9be765f361bb7efb9073730aac92c6">READ</a>},</div><div class="line">        {<span class="stringliteral">&quot;write&quot;</span>,  <a class="code" href="globals_8h.html#a6a9e93b081bad7fc74c17306fb168c1fa61aa7ff70b76bff0fda378cf61d6afbc">WRITE</a>}</div><div class="line">}</div><div class="ttc" id="globals_8h_html_a6a9e93b081bad7fc74c17306fb168c1fa972f3df9d279a3d3acc88bcbe4452d51"><div class="ttname"><a href="globals_8h.html#a6a9e93b081bad7fc74c17306fb168c1fa972f3df9d279a3d3acc88bcbe4452d51">REPEAT</a></div><div class="ttdef"><b>Definition:</b> globals.h:27</div></div>
+<div class="ttc" id="globals_8h_html_a6a9e93b081bad7fc74c17306fb168c1fa90d649d830ea440c8b8a56c7ef23c426"><div class="ttname"><a href="globals_8h.html#a6a9e93b081bad7fc74c17306fb168c1fa90d649d830ea440c8b8a56c7ef23c426">ELSE</a></div><div class="ttdef"><b>Definition:</b> globals.h:27</div></div>
+<div class="ttc" id="globals_8h_html_a6a9e93b081bad7fc74c17306fb168c1fa61aa7ff70b76bff0fda378cf61d6afbc"><div class="ttname"><a href="globals_8h.html#a6a9e93b081bad7fc74c17306fb168c1fa61aa7ff70b76bff0fda378cf61d6afbc">WRITE</a></div><div class="ttdef"><b>Definition:</b> globals.h:27</div></div>
+<div class="ttc" id="globals_8h_html_a6a9e93b081bad7fc74c17306fb168c1facb9be765f361bb7efb9073730aac92c6"><div class="ttname"><a href="globals_8h.html#a6a9e93b081bad7fc74c17306fb168c1facb9be765f361bb7efb9073730aac92c6">READ</a></div><div class="ttdef"><b>Definition:</b> globals.h:27</div></div>
+<div class="ttc" id="globals_8h_html_a6a9e93b081bad7fc74c17306fb168c1fa252802eda493fb6b4a279c4452acb547"><div class="ttname"><a href="globals_8h.html#a6a9e93b081bad7fc74c17306fb168c1fa252802eda493fb6b4a279c4452acb547">IF</a></div><div class="ttdef"><b>Definition:</b> globals.h:27</div></div>
+<div class="ttc" id="globals_8h_html_a6a9e93b081bad7fc74c17306fb168c1faa4f38f5001aff1b45ecf511715d587d4"><div class="ttname"><a href="globals_8h.html#a6a9e93b081bad7fc74c17306fb168c1faa4f38f5001aff1b45ecf511715d587d4">UNTIL</a></div><div class="ttdef"><b>Definition:</b> globals.h:27</div></div>
+<div class="ttc" id="globals_8h_html_a6a9e93b081bad7fc74c17306fb168c1fadc6f24fd6915a3f2786a1b7045406924"><div class="ttname"><a href="globals_8h.html#a6a9e93b081bad7fc74c17306fb168c1fadc6f24fd6915a3f2786a1b7045406924">END</a></div><div class="ttdef"><b>Definition:</b> globals.h:27</div></div>
+<div class="ttc" id="globals_8h_html_a6a9e93b081bad7fc74c17306fb168c1fabb40477a291c07277e13d096645f4305"><div class="ttname"><a href="globals_8h.html#a6a9e93b081bad7fc74c17306fb168c1fabb40477a291c07277e13d096645f4305">THEN</a></div><div class="ttdef"><b>Definition:</b> globals.h:27</div></div>
+</div><!-- fragment -->
+<p>文法保留字表 </p>
+
+</div>
+</div>
+<a id="ab50d783982593ef993ea0b68f7ad8b80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab50d783982593ef993ea0b68f7ad8b80">&#9670;&nbsp;</a></span>str</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* str</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac2f3df3060fedc41e7db77c890eb046e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2f3df3060fedc41e7db77c890eb046e">&#9670;&nbsp;</a></span>thisPosition</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int thisPosition = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>文件行数标号 </p>
+
+</div>
+</div>
+<a id="ab88f7a2c255ddf124db18f5bf961c10c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab88f7a2c255ddf124db18f5bf961c10c">&#9670;&nbsp;</a></span>token</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="globals_8h.html#a6a9e93b081bad7fc74c17306fb168c1f">Token</a> token</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a362d9c1465449e70a2dca24d22496fc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a362d9c1465449e70a2dca24d22496fc5">&#9670;&nbsp;</a></span>tokenString</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char tokenString[<a class="el" href="scan_8h.html#a060a34fe8229a960f4250e93b346144d">MAX_TOKEN_SIZE</a>+1]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>用于保存Token </p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

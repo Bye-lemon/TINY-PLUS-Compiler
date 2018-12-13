@@ -1,0 +1,553 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TINY-PLUS-Compiler: C:/Users/Li Yingping/Documents/GitHub/TINY-PLUS-Complier/analyze.c 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">TINY-PLUS-Compiler
+   &#160;<span id="projectnumber">v1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_f396504afdc959660871b003fa10164d.html">Documents</a></li><li class="navelem"><a class="el" href="dir_7e17ac9cf8fba2cb04bc248c85b0ceb7.html">GitHub</a></li><li class="navelem"><a class="el" href="dir_45c9c218a9acb27c16e45b2472f93a52.html">TINY-PLUS-Complier</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle">
+<div class="title">analyze.c 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="globals_8h_source.html">globals.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="utils_8h_source.html">utils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="analyze_8h_source.html">analyze.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+analyze.c 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="analyze_8c__incl.png" border="0" usemap="#_c_1_2_users_2_li_01_yingping_2_documents_2_git_hub_2_t_i_n_y-_p_l_u_s-_complier_2analyze_8c" alt=""/></div>
+<map name="_c_1_2_users_2_li_01_yingping_2_documents_2_git_hub_2_t_i_n_y-_p_l_u_s-_complier_2analyze_8c" id="_c_1_2_users_2_li_01_yingping_2_documents_2_git_hub_2_t_i_n_y-_p_l_u_s-_complier_2analyze_8c">
+<area shape="rect" id="node2" href="globals_8h.html" title="globals.h" alt="" coords="129,109,204,136"/>
+<area shape="rect" id="node7" href="utils_8h.html" title="utils.h" alt="" coords="229,109,286,136"/>
+<area shape="rect" id="node8" href="analyze_8h.html" title="analyze.h" alt="" coords="310,109,389,136"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:aa5f516332cd747076ed883899e87dded"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analyze_8c.html#aa5f516332cd747076ed883899e87dded">traverse</a> (<a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a> *t, void(*preProc)(<a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a> *), void(*postProc)(<a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a> *))</td></tr>
+<tr class="memdesc:aa5f516332cd747076ed883899e87dded"><td class="mdescLeft">&#160;</td><td class="mdescRight">遍历语法树的通用模板函数  <a href="#aa5f516332cd747076ed883899e87dded">更多...</a><br /></td></tr>
+<tr class="separator:aa5f516332cd747076ed883899e87dded"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a700c643a998c4de2a8281823e663d8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analyze_8c.html#a4a700c643a998c4de2a8281823e663d8">nullProc</a> (<a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a> *t)</td></tr>
+<tr class="memdesc:a4a700c643a998c4de2a8281823e663d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">占位符，空过程  <a href="#a4a700c643a998c4de2a8281823e663d8">更多...</a><br /></td></tr>
+<tr class="separator:a4a700c643a998c4de2a8281823e663d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a73b0d6b3948bbcbb42630cd8536871"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analyze_8c.html#a4a73b0d6b3948bbcbb42630cd8536871">insertNode</a> (<a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a> *t)</td></tr>
+<tr class="memdesc:a4a73b0d6b3948bbcbb42630cd8536871"><td class="mdescLeft">&#160;</td><td class="mdescRight">过程函数，用来将节点信息插入符号表  <a href="#a4a73b0d6b3948bbcbb42630cd8536871">更多...</a><br /></td></tr>
+<tr class="separator:a4a73b0d6b3948bbcbb42630cd8536871"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e2c69c0ee19fc702f28565ef79835e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analyze_8c.html#a5e2c69c0ee19fc702f28565ef79835e1">buildSymtab</a> (<a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a> *syntaxTree)</td></tr>
+<tr class="memdesc:a5e2c69c0ee19fc702f28565ef79835e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">先序遍历语法树，创建符号表并打印到输出文件中  <a href="#a5e2c69c0ee19fc702f28565ef79835e1">更多...</a><br /></td></tr>
+<tr class="separator:a5e2c69c0ee19fc702f28565ef79835e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe5d1c18aacbfbf88cf0153ae84a866d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analyze_8c.html#abe5d1c18aacbfbf88cf0153ae84a866d">typeError</a> (<a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a> *t, char *message)</td></tr>
+<tr class="memdesc:abe5d1c18aacbfbf88cf0153ae84a866d"><td class="mdescLeft">&#160;</td><td class="mdescRight">将语义分析错误信息输出到stdout  <a href="#abe5d1c18aacbfbf88cf0153ae84a866d">更多...</a><br /></td></tr>
+<tr class="separator:abe5d1c18aacbfbf88cf0153ae84a866d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a900b311daff41d2020edfb0884e6035c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analyze_8c.html#a900b311daff41d2020edfb0884e6035c">checkNode</a> (<a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a> *t)</td></tr>
+<tr class="memdesc:a900b311daff41d2020edfb0884e6035c"><td class="mdescLeft">&#160;</td><td class="mdescRight">对语法树的一个节点进行静态类型检查  <a href="#a900b311daff41d2020edfb0884e6035c">更多...</a><br /></td></tr>
+<tr class="separator:a900b311daff41d2020edfb0884e6035c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a245013b624c1981629a714f89c46ba03"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analyze_8c.html#a245013b624c1981629a714f89c46ba03">typeCheck</a> (<a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a> *syntaxTree)</td></tr>
+<tr class="memdesc:a245013b624c1981629a714f89c46ba03"><td class="mdescLeft">&#160;</td><td class="mdescRight">后序遍历语法树，进行静态类型检查  <a href="#a245013b624c1981629a714f89c46ba03">更多...</a><br /></td></tr>
+<tr class="separator:a245013b624c1981629a714f89c46ba03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4b4599976983b441026aed013fcc230"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analyze_8c.html#ab4b4599976983b441026aed013fcc230">anaylze</a> (<a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a> *syntaxTree)</td></tr>
+<tr class="memdesc:ab4b4599976983b441026aed013fcc230"><td class="mdescLeft">&#160;</td><td class="mdescRight">语义分析器主函数  <a href="#ab4b4599976983b441026aed013fcc230">更多...</a><br /></td></tr>
+<tr class="separator:ab4b4599976983b441026aed013fcc230"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:a7bbce2c7450610bda61793f7dd12ceed"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analyze_8c.html#a7bbce2c7450610bda61793f7dd12ceed">location</a> = 0</td></tr>
+<tr class="separator:a7bbce2c7450610bda61793f7dd12ceed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">函数说明</h2>
+<a id="ab4b4599976983b441026aed013fcc230"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4b4599976983b441026aed013fcc230">&#9670;&nbsp;</a></span>anaylze()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void anaylze </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a> *&#160;</td>
+          <td class="paramname"><em>syntaxTree</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>语义分析器主函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">syntaxTree</td><td>语法树的一个节点（根节点） </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="analyze_8c_ab4b4599976983b441026aed013fcc230_cgraph.png" border="0" usemap="#analyze_8c_ab4b4599976983b441026aed013fcc230_cgraph" alt=""/></div>
+<map name="analyze_8c_ab4b4599976983b441026aed013fcc230_cgraph" id="analyze_8c_ab4b4599976983b441026aed013fcc230_cgraph">
+<area shape="rect" id="node2" href="analyze_8c.html#a5e2c69c0ee19fc702f28565ef79835e1" title="先序遍历语法树，创建符号表并打印到输出文件中 " alt="" coords="120,107,215,133"/>
+<area shape="rect" id="node10" href="analyze_8c.html#a245013b624c1981629a714f89c46ba03" title="后序遍历语法树，进行静态类型检查 " alt="" coords="125,56,209,83"/>
+<area shape="rect" id="node3" href="analyze_8c.html#aa5f516332cd747076ed883899e87dded" title="遍历语法树的通用模板函数 " alt="" coords="277,107,343,133"/>
+<area shape="rect" id="node4" href="analyze_8c.html#a4a73b0d6b3948bbcbb42630cd8536871" title="过程函数，用来将节点信息插入符号表 " alt="" coords="268,208,352,235"/>
+<area shape="rect" id="node8" href="analyze_8c.html#a4a700c643a998c4de2a8281823e663d8" title="占位符，空过程 " alt="" coords="275,56,345,83"/>
+<area shape="rect" id="node9" href="utils_8c.html#a37d18f26177c64c4f08c5ad2055a5c68" title="将符号表格式化输出到文件流 " alt="" coords="263,157,357,184"/>
+<area shape="rect" id="node5" href="utils_8c.html#abfb67d8b62e7fb31d50470d480108b5e" title="查找标识符在符号表中是否已存在 " alt="" coords="405,183,484,209"/>
+<area shape="rect" id="node7" href="utils_8c.html#a156326d7bb1212304fd144b0075310a0" title="将标识符插入符号表 " alt="" coords="409,233,481,260"/>
+<area shape="rect" id="node6" href="utils_8c.html#a1d95dd3ffd39252eccb4b968ea061ec3" title="哈希函数 " alt="" coords="532,208,583,235"/>
+<area shape="rect" id="node11" href="analyze_8c.html#a900b311daff41d2020edfb0884e6035c" title="对语法树的一个节点进行静态类型检查 " alt="" coords="267,5,353,32"/>
+<area shape="rect" id="node12" href="analyze_8c.html#abe5d1c18aacbfbf88cf0153ae84a866d" title="将语义分析错误信息输出到stdout " alt="" coords="407,5,482,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="analyze_8c_ab4b4599976983b441026aed013fcc230_icgraph.png" border="0" usemap="#analyze_8c_ab4b4599976983b441026aed013fcc230_icgraph" alt=""/></div>
+<map name="analyze_8c_ab4b4599976983b441026aed013fcc230_icgraph" id="analyze_8c_ab4b4599976983b441026aed013fcc230_icgraph">
+<area shape="rect" id="node2" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="TPC��������ں��� " alt="" coords="120,5,171,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5e2c69c0ee19fc702f28565ef79835e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e2c69c0ee19fc702f28565ef79835e1">&#9670;&nbsp;</a></span>buildSymtab()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void buildSymtab </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a> *&#160;</td>
+          <td class="paramname"><em>syntaxTree</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>先序遍历语法树，创建符号表并打印到输出文件中 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">syntaxTree</td><td>语法树的一个节点（根节点） </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="analyze_8c_a5e2c69c0ee19fc702f28565ef79835e1_cgraph.png" border="0" usemap="#analyze_8c_a5e2c69c0ee19fc702f28565ef79835e1_cgraph" alt=""/></div>
+<map name="analyze_8c_a5e2c69c0ee19fc702f28565ef79835e1_cgraph" id="analyze_8c_a5e2c69c0ee19fc702f28565ef79835e1_cgraph">
+<area shape="rect" id="node2" href="analyze_8c.html#aa5f516332cd747076ed883899e87dded" title="遍历语法树的通用模板函数 " alt="" coords="162,5,229,32"/>
+<area shape="rect" id="node3" href="analyze_8c.html#a4a73b0d6b3948bbcbb42630cd8536871" title="过程函数，用来将节点信息插入符号表 " alt="" coords="153,56,237,83"/>
+<area shape="rect" id="node7" href="analyze_8c.html#a4a700c643a998c4de2a8281823e663d8" title="占位符，空过程 " alt="" coords="161,107,230,133"/>
+<area shape="rect" id="node8" href="utils_8c.html#a37d18f26177c64c4f08c5ad2055a5c68" title="将符号表格式化输出到文件流 " alt="" coords="148,157,243,184"/>
+<area shape="rect" id="node4" href="utils_8c.html#abfb67d8b62e7fb31d50470d480108b5e" title="查找标识符在符号表中是否已存在 " alt="" coords="291,31,369,57"/>
+<area shape="rect" id="node6" href="utils_8c.html#a156326d7bb1212304fd144b0075310a0" title="将标识符插入符号表 " alt="" coords="294,81,366,108"/>
+<area shape="rect" id="node5" href="utils_8c.html#a1d95dd3ffd39252eccb4b968ea061ec3" title="哈希函数 " alt="" coords="417,56,468,83"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="analyze_8c_a5e2c69c0ee19fc702f28565ef79835e1_icgraph.png" border="0" usemap="#analyze_8c_a5e2c69c0ee19fc702f28565ef79835e1_icgraph" alt=""/></div>
+<map name="analyze_8c_a5e2c69c0ee19fc702f28565ef79835e1_icgraph" id="analyze_8c_a5e2c69c0ee19fc702f28565ef79835e1_icgraph">
+<area shape="rect" id="node2" href="analyze_8h.html#abe285ca9008bdcfcf19b1cc49950c1f7" title="语义分析器主函数 " alt="" coords="148,5,215,32"/>
+<area shape="rect" id="node3" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="TPC��������ں��� " alt="" coords="263,5,313,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a900b311daff41d2020edfb0884e6035c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a900b311daff41d2020edfb0884e6035c">&#9670;&nbsp;</a></span>checkNode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void checkNode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a> *&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>对语法树的一个节点进行静态类型检查 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>语法树的一个节点 </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>比较表达式节点为布尔型 <br />
+ 算术表达式节点为整型 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="analyze_8c_a900b311daff41d2020edfb0884e6035c_cgraph.png" border="0" usemap="#analyze_8c_a900b311daff41d2020edfb0884e6035c_cgraph" alt=""/></div>
+<map name="analyze_8c_a900b311daff41d2020edfb0884e6035c_cgraph" id="analyze_8c_a900b311daff41d2020edfb0884e6035c_cgraph">
+<area shape="rect" id="node2" href="analyze_8c.html#abe5d1c18aacbfbf88cf0153ae84a866d" title="将语义分析错误信息输出到stdout " alt="" coords="140,5,215,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="analyze_8c_a900b311daff41d2020edfb0884e6035c_icgraph.png" border="0" usemap="#analyze_8c_a900b311daff41d2020edfb0884e6035c_icgraph" alt=""/></div>
+<map name="analyze_8c_a900b311daff41d2020edfb0884e6035c_icgraph" id="analyze_8c_a900b311daff41d2020edfb0884e6035c_icgraph">
+<area shape="rect" id="node2" href="analyze_8c.html#a245013b624c1981629a714f89c46ba03" title="后序遍历语法树，进行静态类型检查 " alt="" coords="140,5,224,32"/>
+<area shape="rect" id="node3" href="analyze_8h.html#abe285ca9008bdcfcf19b1cc49950c1f7" title="语义分析器主函数 " alt="" coords="272,5,339,32"/>
+<area shape="rect" id="node4" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="TPC��������ں��� " alt="" coords="387,5,437,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4a73b0d6b3948bbcbb42630cd8536871"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a73b0d6b3948bbcbb42630cd8536871">&#9670;&nbsp;</a></span>insertNode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void insertNode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a> *&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>过程函数，用来将节点信息插入符号表 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>节点树的一个节点 </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>语句类if write repeat 不产生新变量， 所以只考虑assign和read 语句类节点需要保存的是变量的标识符</p>
+<p>表达式类op const 不是变量，只有id需要计入符号表</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="analyze_8c_a4a73b0d6b3948bbcbb42630cd8536871_cgraph.png" border="0" usemap="#analyze_8c_a4a73b0d6b3948bbcbb42630cd8536871_cgraph" alt=""/></div>
+<map name="analyze_8c_a4a73b0d6b3948bbcbb42630cd8536871_cgraph" id="analyze_8c_a4a73b0d6b3948bbcbb42630cd8536871_cgraph">
+<area shape="rect" id="node2" href="utils_8c.html#abfb67d8b62e7fb31d50470d480108b5e" title="查找标识符在符号表中是否已存在 " alt="" coords="137,5,216,32"/>
+<area shape="rect" id="node4" href="utils_8c.html#a156326d7bb1212304fd144b0075310a0" title="将标识符插入符号表 " alt="" coords="141,56,213,83"/>
+<area shape="rect" id="node3" href="utils_8c.html#a1d95dd3ffd39252eccb4b968ea061ec3" title="哈希函数 " alt="" coords="264,31,315,57"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="analyze_8c_a4a73b0d6b3948bbcbb42630cd8536871_icgraph.png" border="0" usemap="#analyze_8c_a4a73b0d6b3948bbcbb42630cd8536871_icgraph" alt=""/></div>
+<map name="analyze_8c_a4a73b0d6b3948bbcbb42630cd8536871_icgraph" id="analyze_8c_a4a73b0d6b3948bbcbb42630cd8536871_icgraph">
+<area shape="rect" id="node2" href="analyze_8c.html#a5e2c69c0ee19fc702f28565ef79835e1" title="先序遍历语法树，创建符号表并打印到输出文件中 " alt="" coords="137,5,232,32"/>
+<area shape="rect" id="node3" href="analyze_8h.html#abe285ca9008bdcfcf19b1cc49950c1f7" title="语义分析器主函数 " alt="" coords="280,5,347,32"/>
+<area shape="rect" id="node4" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="TPC��������ں��� " alt="" coords="395,5,445,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4a700c643a998c4de2a8281823e663d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a700c643a998c4de2a8281823e663d8">&#9670;&nbsp;</a></span>nullProc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void nullProc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a> *&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>占位符，空过程 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>语法树的一个节点 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="analyze_8c_a4a700c643a998c4de2a8281823e663d8_icgraph.png" border="0" usemap="#analyze_8c_a4a700c643a998c4de2a8281823e663d8_icgraph" alt=""/></div>
+<map name="analyze_8c_a4a700c643a998c4de2a8281823e663d8_icgraph" id="analyze_8c_a4a700c643a998c4de2a8281823e663d8_icgraph">
+<area shape="rect" id="node2" href="analyze_8c.html#a5e2c69c0ee19fc702f28565ef79835e1" title="先序遍历语法树，创建符号表并打印到输出文件中 " alt="" coords="123,5,217,32"/>
+<area shape="rect" id="node5" href="analyze_8c.html#a245013b624c1981629a714f89c46ba03" title="后序遍历语法树，进行静态类型检查 " alt="" coords="128,56,212,83"/>
+<area shape="rect" id="node3" href="analyze_8h.html#abe285ca9008bdcfcf19b1cc49950c1f7" title="语义分析器主函数 " alt="" coords="265,31,332,57"/>
+<area shape="rect" id="node4" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="TPC��������ں��� " alt="" coords="380,31,431,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa5f516332cd747076ed883899e87dded"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5f516332cd747076ed883899e87dded">&#9670;&nbsp;</a></span>traverse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void traverse </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a> *&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void(*)(<a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a> *)&#160;</td>
+          <td class="paramname"><em>preProc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void(*)(<a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a> *)&#160;</td>
+          <td class="paramname"><em>postProc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>遍历语法树的通用模板函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>语法树的一个节点 </td></tr>
+    <tr><td class="paramname">preProc</td><td>第一个过程函数 </td></tr>
+    <tr><td class="paramname">postProc</td><td>第二个过程函数 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="analyze_8c_aa5f516332cd747076ed883899e87dded_icgraph.png" border="0" usemap="#analyze_8c_aa5f516332cd747076ed883899e87dded_icgraph" alt=""/></div>
+<map name="analyze_8c_aa5f516332cd747076ed883899e87dded_icgraph" id="analyze_8c_aa5f516332cd747076ed883899e87dded_icgraph">
+<area shape="rect" id="node2" href="analyze_8c.html#a5e2c69c0ee19fc702f28565ef79835e1" title="先序遍历语法树，创建符号表并打印到输出文件中 " alt="" coords="120,5,215,32"/>
+<area shape="rect" id="node5" href="analyze_8c.html#a245013b624c1981629a714f89c46ba03" title="后序遍历语法树，进行静态类型检查 " alt="" coords="125,56,209,83"/>
+<area shape="rect" id="node3" href="analyze_8h.html#abe285ca9008bdcfcf19b1cc49950c1f7" title="语义分析器主函数 " alt="" coords="263,31,329,57"/>
+<area shape="rect" id="node4" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="TPC��������ں��� " alt="" coords="377,31,428,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a245013b624c1981629a714f89c46ba03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a245013b624c1981629a714f89c46ba03">&#9670;&nbsp;</a></span>typeCheck()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void typeCheck </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a> *&#160;</td>
+          <td class="paramname"><em>syntaxTree</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>后序遍历语法树，进行静态类型检查 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">syntaxTree</td><td>语法树的一个节点（根节点） </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="analyze_8c_a245013b624c1981629a714f89c46ba03_cgraph.png" border="0" usemap="#analyze_8c_a245013b624c1981629a714f89c46ba03_cgraph" alt=""/></div>
+<map name="analyze_8c_a245013b624c1981629a714f89c46ba03_cgraph" id="analyze_8c_a245013b624c1981629a714f89c46ba03_cgraph">
+<area shape="rect" id="node2" href="analyze_8c.html#aa5f516332cd747076ed883899e87dded" title="遍历语法树的通用模板函数 " alt="" coords="147,5,214,32"/>
+<area shape="rect" id="node3" href="analyze_8c.html#a4a700c643a998c4de2a8281823e663d8" title="占位符，空过程 " alt="" coords="146,56,215,83"/>
+<area shape="rect" id="node4" href="analyze_8c.html#a900b311daff41d2020edfb0884e6035c" title="对语法树的一个节点进行静态类型检查 " alt="" coords="137,107,224,133"/>
+<area shape="rect" id="node5" href="analyze_8c.html#abe5d1c18aacbfbf88cf0153ae84a866d" title="将语义分析错误信息输出到stdout " alt="" coords="272,107,347,133"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="analyze_8c_a245013b624c1981629a714f89c46ba03_icgraph.png" border="0" usemap="#analyze_8c_a245013b624c1981629a714f89c46ba03_icgraph" alt=""/></div>
+<map name="analyze_8c_a245013b624c1981629a714f89c46ba03_icgraph" id="analyze_8c_a245013b624c1981629a714f89c46ba03_icgraph">
+<area shape="rect" id="node2" href="analyze_8h.html#abe285ca9008bdcfcf19b1cc49950c1f7" title="语义分析器主函数 " alt="" coords="137,5,204,32"/>
+<area shape="rect" id="node3" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="TPC��������ں��� " alt="" coords="252,5,303,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abe5d1c18aacbfbf88cf0153ae84a866d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe5d1c18aacbfbf88cf0153ae84a866d">&#9670;&nbsp;</a></span>typeError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void typeError </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a> *&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>message</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>将语义分析错误信息输出到stdout </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>语法树的一个节点 </td></tr>
+    <tr><td class="paramname">message</td><td>错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="analyze_8c_abe5d1c18aacbfbf88cf0153ae84a866d_icgraph.png" border="0" usemap="#analyze_8c_abe5d1c18aacbfbf88cf0153ae84a866d_icgraph" alt=""/></div>
+<map name="analyze_8c_abe5d1c18aacbfbf88cf0153ae84a866d_icgraph" id="analyze_8c_abe5d1c18aacbfbf88cf0153ae84a866d_icgraph">
+<area shape="rect" id="node2" href="analyze_8c.html#a900b311daff41d2020edfb0884e6035c" title="对语法树的一个节点进行静态类型检查 " alt="" coords="128,5,215,32"/>
+<area shape="rect" id="node3" href="analyze_8c.html#a245013b624c1981629a714f89c46ba03" title="后序遍历语法树，进行静态类型检查 " alt="" coords="263,5,347,32"/>
+<area shape="rect" id="node4" href="analyze_8h.html#abe285ca9008bdcfcf19b1cc49950c1f7" title="语义分析器主函数 " alt="" coords="395,5,461,32"/>
+<area shape="rect" id="node5" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="TPC��������ں��� " alt="" coords="509,5,560,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a id="a7bbce2c7450610bda61793f7dd12ceed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bbce2c7450610bda61793f7dd12ceed">&#9670;&nbsp;</a></span>location</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int location = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>记录符号表已分配的地址 </p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

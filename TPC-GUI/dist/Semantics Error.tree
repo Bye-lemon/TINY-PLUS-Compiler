@@ -1,0 +1,18 @@
+Main Function
+|-Read: x
+|-If
+  |-Op: >    |-Id: x
+    |-Const: 0
+  |-Assign to: fact
+    |-Const: 1
+  |-Repeat
+    |-Assign to: fact
+      |-Op: *        |-Id: fact
+        |-Id: x
+    |-Assign to: x
+      |-Op: -        |-Id: x
+        |-Const: 1
+    |-Op: +      |-Id: x
+      |-Const: 0
+  |-Write
+    |-Id: fact

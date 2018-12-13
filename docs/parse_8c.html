@@ -1,0 +1,1053 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TINY-PLUS-Compiler: C:/Users/Li Yingping/Documents/GitHub/TINY-PLUS-Complier/parse.c 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">TINY-PLUS-Compiler
+   &#160;<span id="projectnumber">v1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_f396504afdc959660871b003fa10164d.html">Documents</a></li><li class="navelem"><a class="el" href="dir_7e17ac9cf8fba2cb04bc248c85b0ceb7.html">GitHub</a></li><li class="navelem"><a class="el" href="dir_45c9c218a9acb27c16e45b2472f93a52.html">TINY-PLUS-Complier</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle">
+<div class="title">parse.c 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="globals_8h_source.html">globals.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="utils_8h_source.html">utils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="scan_8h_source.html">scan.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="parse_8h_source.html">parse.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+parse.c 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="parse_8c__incl.png" border="0" usemap="#_c_1_2_users_2_li_01_yingping_2_documents_2_git_hub_2_t_i_n_y-_p_l_u_s-_complier_2parse_8c" alt=""/></div>
+<map name="_c_1_2_users_2_li_01_yingping_2_documents_2_git_hub_2_t_i_n_y-_p_l_u_s-_complier_2parse_8c" id="_c_1_2_users_2_li_01_yingping_2_documents_2_git_hub_2_t_i_n_y-_p_l_u_s-_complier_2parse_8c">
+<area shape="rect" id="node2" href="globals_8h.html" title="globals.h" alt="" coords="129,109,204,136"/>
+<area shape="rect" id="node7" href="utils_8h.html" title="utils.h" alt="" coords="229,109,286,136"/>
+<area shape="rect" id="node8" href="scan_8h.html" title="scan.h" alt="" coords="311,109,372,136"/>
+<area shape="rect" id="node9" href="parse_8h.html" title="parse.h" alt="" coords="397,109,462,136"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:af9d481a7d7e2b85b4cf329e89472b505"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parse_8c.html#af9d481a7d7e2b85b4cf329e89472b505">stmt_sequence</a> (void)</td></tr>
+<tr class="memdesc:af9d481a7d7e2b85b4cf329e89472b505"><td class="mdescLeft">&#160;</td><td class="mdescRight">语句序列 -&gt; 语句 ; 语句  <a href="#af9d481a7d7e2b85b4cf329e89472b505">更多...</a><br /></td></tr>
+<tr class="separator:af9d481a7d7e2b85b4cf329e89472b505"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70095d31ccd507def5c76f3290b47202"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parse_8c.html#a70095d31ccd507def5c76f3290b47202">statement</a> (void)</td></tr>
+<tr class="memdesc:a70095d31ccd507def5c76f3290b47202"><td class="mdescLeft">&#160;</td><td class="mdescRight">语句 -&gt; if 语句 | repeat 语句 | assign 语句 | read 语句 | write 语句  <a href="#a70095d31ccd507def5c76f3290b47202">更多...</a><br /></td></tr>
+<tr class="separator:a70095d31ccd507def5c76f3290b47202"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51b5bd1d6581e6ddebb093ea476577be"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parse_8c.html#a51b5bd1d6581e6ddebb093ea476577be">if_stmt</a> (void)</td></tr>
+<tr class="memdesc:a51b5bd1d6581e6ddebb093ea476577be"><td class="mdescLeft">&#160;</td><td class="mdescRight">if 语句 -&gt; if 表达式 then 语句序列 end | if 表达式 then 语句序列 else 语句序列 end  <a href="#a51b5bd1d6581e6ddebb093ea476577be">更多...</a><br /></td></tr>
+<tr class="separator:a51b5bd1d6581e6ddebb093ea476577be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa01e603dbb1132a662bae5fec534b1f3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parse_8c.html#aa01e603dbb1132a662bae5fec534b1f3">repeat_stmt</a> (void)</td></tr>
+<tr class="memdesc:aa01e603dbb1132a662bae5fec534b1f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">repeat 语句 -&gt; repeat 语句序列 until 表达式  <a href="#aa01e603dbb1132a662bae5fec534b1f3">更多...</a><br /></td></tr>
+<tr class="separator:aa01e603dbb1132a662bae5fec534b1f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47791facfbbe8a7918aaec25902ef0e7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parse_8c.html#a47791facfbbe8a7918aaec25902ef0e7">assign_stmt</a> (void)</td></tr>
+<tr class="memdesc:a47791facfbbe8a7918aaec25902ef0e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">assign 语句 -&gt; 标识符 := 表达式  <a href="#a47791facfbbe8a7918aaec25902ef0e7">更多...</a><br /></td></tr>
+<tr class="separator:a47791facfbbe8a7918aaec25902ef0e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbf6a9e0d3d9bc4b84ae1cc3dfa87a18"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parse_8c.html#acbf6a9e0d3d9bc4b84ae1cc3dfa87a18">read_stmt</a> (void)</td></tr>
+<tr class="memdesc:acbf6a9e0d3d9bc4b84ae1cc3dfa87a18"><td class="mdescLeft">&#160;</td><td class="mdescRight">read 语句 -&gt; read 标识符  <a href="#acbf6a9e0d3d9bc4b84ae1cc3dfa87a18">更多...</a><br /></td></tr>
+<tr class="separator:acbf6a9e0d3d9bc4b84ae1cc3dfa87a18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05035e26d9ea848a887b442225fe0a3c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parse_8c.html#a05035e26d9ea848a887b442225fe0a3c">write_stmt</a> (void)</td></tr>
+<tr class="memdesc:a05035e26d9ea848a887b442225fe0a3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">write 语句 -&gt; write 表达式  <a href="#a05035e26d9ea848a887b442225fe0a3c">更多...</a><br /></td></tr>
+<tr class="separator:a05035e26d9ea848a887b442225fe0a3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a748ea477d7e9cba15a1d23ccec2148b7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parse_8c.html#a748ea477d7e9cba15a1d23ccec2148b7">complex_exp</a> (void)</td></tr>
+<tr class="memdesc:a748ea477d7e9cba15a1d23ccec2148b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">表达式 -&gt; 简单表达式 | 简单表达式 {&lt;, &gt;, =, &lt;=, &gt;=, &lt;&gt;} 简单表达式  <a href="#a748ea477d7e9cba15a1d23ccec2148b7">更多...</a><br /></td></tr>
+<tr class="separator:a748ea477d7e9cba15a1d23ccec2148b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68833992f58c454cc4b399e6495d3457"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parse_8c.html#a68833992f58c454cc4b399e6495d3457">simple_exp</a> (void)</td></tr>
+<tr class="memdesc:a68833992f58c454cc4b399e6495d3457"><td class="mdescLeft">&#160;</td><td class="mdescRight">简单表达式 -&gt; 加数 | 加数 {+, -} 加数  <a href="#a68833992f58c454cc4b399e6495d3457">更多...</a><br /></td></tr>
+<tr class="separator:a68833992f58c454cc4b399e6495d3457"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5743a7c7a28f2b26524f037cfee051d7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parse_8c.html#a5743a7c7a28f2b26524f037cfee051d7">addend</a> (void)</td></tr>
+<tr class="memdesc:a5743a7c7a28f2b26524f037cfee051d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">加数 -&gt; 因数 | 因数 {*, /} 因数  <a href="#a5743a7c7a28f2b26524f037cfee051d7">更多...</a><br /></td></tr>
+<tr class="separator:a5743a7c7a28f2b26524f037cfee051d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a926714887855939b510801f4509d70cb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parse_8c.html#a926714887855939b510801f4509d70cb">factor</a> (void)</td></tr>
+<tr class="memdesc:a926714887855939b510801f4509d70cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">因数 -&gt; ( 表达式 ) | 数字 | 标识符  <a href="#a926714887855939b510801f4509d70cb">更多...</a><br /></td></tr>
+<tr class="separator:a926714887855939b510801f4509d70cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a256d11bf07725a265da8a68dbebd2be1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parse_8c.html#a256d11bf07725a265da8a68dbebd2be1">syntaxError</a> (const char *message)</td></tr>
+<tr class="memdesc:a256d11bf07725a265da8a68dbebd2be1"><td class="mdescLeft">&#160;</td><td class="mdescRight">将错误信息输出到stdout  <a href="#a256d11bf07725a265da8a68dbebd2be1">更多...</a><br /></td></tr>
+<tr class="separator:a256d11bf07725a265da8a68dbebd2be1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ee7da9e5bb43f2b9f797c2ceb045820"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parse_8c.html#a5ee7da9e5bb43f2b9f797c2ceb045820">match</a> (<a class="el" href="globals_8h.html#a6a9e93b081bad7fc74c17306fb168c1f">Token</a> expected)</td></tr>
+<tr class="memdesc:a5ee7da9e5bb43f2b9f797c2ceb045820"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取下一个token，匹配成功返回token，失败抛出错误。  <a href="#a5ee7da9e5bb43f2b9f797c2ceb045820">更多...</a><br /></td></tr>
+<tr class="separator:a5ee7da9e5bb43f2b9f797c2ceb045820"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3978e850bcd90e50ac083de049831eb5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parse_8c.html#a3978e850bcd90e50ac083de049831eb5">parse</a> (void)</td></tr>
+<tr class="memdesc:a3978e850bcd90e50ac083de049831eb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">语法分析器主函数 程序 -&gt; 语句序列  <a href="#a3978e850bcd90e50ac083de049831eb5">更多...</a><br /></td></tr>
+<tr class="separator:a3978e850bcd90e50ac083de049831eb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:ab88f7a2c255ddf124db18f5bf961c10c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="globals_8h.html#a6a9e93b081bad7fc74c17306fb168c1f">Token</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parse_8c.html#ab88f7a2c255ddf124db18f5bf961c10c">token</a></td></tr>
+<tr class="separator:ab88f7a2c255ddf124db18f5bf961c10c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">函数说明</h2>
+<a id="a5743a7c7a28f2b26524f037cfee051d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5743a7c7a28f2b26524f037cfee051d7">&#9670;&nbsp;</a></span>addend()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a> * addend </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>加数 -&gt; 因数 | 因数 {*, /} 因数 </p>
+<dl class="section return"><dt>返回</dt><dd>语法树的一个加数节点 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="parse_8c_a5743a7c7a28f2b26524f037cfee051d7_cgraph.png" border="0" usemap="#parse_8c_a5743a7c7a28f2b26524f037cfee051d7_cgraph" alt=""/></div>
+<map name="parse_8c_a5743a7c7a28f2b26524f037cfee051d7_cgraph" id="parse_8c_a5743a7c7a28f2b26524f037cfee051d7_cgraph">
+<area shape="rect" id="node2" href="parse_8c.html#a926714887855939b510801f4509d70cb" title="因数 &#45;&gt; ( 表达式 ) | 数字 | 标识符 " alt="" coords="117,178,172,205"/>
+<area shape="rect" id="node3" href="utils_8c.html#a692239b050374630d532008b58ee1d16" title="创建一个空的表达式节点 " alt="" coords="503,280,601,306"/>
+<area shape="rect" id="node4" href="parse_8c.html#a5ee7da9e5bb43f2b9f797c2ceb045820" title="获取下一个token，匹配成功返回token，失败抛出错误。 " alt="" coords="523,102,581,129"/>
+<area shape="rect" id="node5" href="scan_8c.html#a9a87381a6bbaf512557fc21c8ae28a35" title="词法分析器主函数，每次生成一个Token供语法分析器调用 " alt="" coords="657,178,731,205"/>
+<area shape="rect" id="node9" href="utils_8c.html#af19bf3dc8caf4e45bdc9b053febbedee" title="将词法分析器分析结果输出至文件流 " alt="" coords="801,89,884,116"/>
+<area shape="rect" id="node10" href="parse_8c.html#a256d11bf07725a265da8a68dbebd2be1" title="将错误信息输出到stdout " alt="" coords="649,52,739,78"/>
+<area shape="rect" id="node11" href="utils_8c.html#afa7de10760996fc5201ebd6e7143fcf5" title="动态创建一个空间，并复制字符串 " alt="" coords="227,102,311,129"/>
+<area shape="rect" id="node12" href="parse_8c.html#a748ea477d7e9cba15a1d23ccec2148b7" title="表达式 &#45;&gt; 简单表达式 | 简单表达式 {&lt;, &gt;, =, &lt;=, &gt;=, &lt;&gt;} 简单表达式 " alt="" coords="220,204,319,230"/>
+<area shape="rect" id="node6" href="scan_8c.html#a7bcf99de554c1ec21c5fbbba3accb238" title="获取当前行下一个字符 " alt="" coords="809,140,876,166"/>
+<area shape="rect" id="node7" href="scan_8c.html#a92bc16c7e91cc956c67770f1f9c927c1" title="将当前指针减一，用来返回{&lt;=, &gt;=, &lt;&gt;, :=}的报错信息 " alt="" coords="809,190,876,217"/>
+<area shape="rect" id="node8" href="scan_8c.html#aebce0206bc04c28bd27bf0cacafb0811" title="查找一个串属不属于保留字，属于返回保留字Token，不属于标记为ID（标识符） " alt="" coords="787,241,899,268"/>
+<area shape="rect" id="node13" href="parse_8c.html#a68833992f58c454cc4b399e6495d3457" title="简单表达式 &#45;&gt; 加数 | 加数 {+, &#45;} 加数 " alt="" coords="367,204,455,230"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="parse_8c_a5743a7c7a28f2b26524f037cfee051d7_icgraph.png" border="0" usemap="#parse_8c_a5743a7c7a28f2b26524f037cfee051d7_icgraph" alt=""/></div>
+<map name="parse_8c_a5743a7c7a28f2b26524f037cfee051d7_icgraph" id="parse_8c_a5743a7c7a28f2b26524f037cfee051d7_icgraph">
+<area shape="rect" id="node2" href="parse_8c.html#a68833992f58c454cc4b399e6495d3457" title="简单表达式 &#45;&gt; 加数 | 加数 {+, &#45;} 加数 " alt="" coords="117,125,205,152"/>
+<area shape="rect" id="node3" href="parse_8c.html#a748ea477d7e9cba15a1d23ccec2148b7" title="表达式 &#45;&gt; 简单表达式 | 简单表达式 {&lt;, &gt;, =, &lt;=, &gt;=, &lt;&gt;} 简单表达式 " alt="" coords="253,113,352,140"/>
+<area shape="rect" id="node4" href="parse_8c.html#a51b5bd1d6581e6ddebb093ea476577be" title="if 语句 &#45;&gt; if 表达式 then 语句序列 end | if 表达式 then 语句序列 else 语句序列 end ..." alt="" coords="416,5,477,32"/>
+<area shape="rect" id="node7" href="parse_8c.html#aa01e603dbb1132a662bae5fec534b1f3" title="repeat 语句 &#45;&gt; repeat 语句序列 until 表达式 " alt="" coords="828,81,919,108"/>
+<area shape="rect" id="node10" href="parse_8c.html#a47791facfbbe8a7918aaec25902ef0e7" title="assign 语句 &#45;&gt; 标识符 := 表达式 " alt="" coords="400,56,493,83"/>
+<area shape="rect" id="node11" href="parse_8c.html#a05035e26d9ea848a887b442225fe0a3c" title="write 语句 &#45;&gt; write 表达式 " alt="" coords="405,107,488,133"/>
+<area shape="rect" id="node12" href="parse_8c.html#a926714887855939b510801f4509d70cb" title="因数 &#45;&gt; ( 表达式 ) | 数字 | 标识符 " alt="" coords="419,208,474,235"/>
+<area shape="rect" id="node5" href="parse_8c.html#a70095d31ccd507def5c76f3290b47202" title="语句 &#45;&gt; if 语句 | repeat 语句 | assign 语句 | read 语句 | write 语句 " alt="" coords="541,56,621,83"/>
+<area shape="rect" id="node6" href="parse_8c.html#af9d481a7d7e2b85b4cf329e89472b505" title="语句序列 &#45;&gt; 语句 ; 语句 " alt="" coords="669,31,780,57"/>
+<area shape="rect" id="node8" href="parse_8h.html#a3978e850bcd90e50ac083de049831eb5" title="语法分析器主函数 程序 &#45;&gt; 语句序列 " alt="" coords="846,31,901,57"/>
+<area shape="rect" id="node9" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="TPC��������ں��� " alt="" coords="967,31,1017,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a47791facfbbe8a7918aaec25902ef0e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47791facfbbe8a7918aaec25902ef0e7">&#9670;&nbsp;</a></span>assign_stmt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a> * assign_stmt </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>assign 语句 -&gt; 标识符 := 表达式 </p>
+<dl class="section return"><dt>返回</dt><dd>语法树的一个ASSIGN节点 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="parse_8c_a47791facfbbe8a7918aaec25902ef0e7_cgraph.png" border="0" usemap="#parse_8c_a47791facfbbe8a7918aaec25902ef0e7_cgraph" alt=""/></div>
+<map name="parse_8c_a47791facfbbe8a7918aaec25902ef0e7_cgraph" id="parse_8c_a47791facfbbe8a7918aaec25902ef0e7_cgraph">
+<area shape="rect" id="node2" href="utils_8c.html#a362c5050f92db2100e4d00c3d9b03f4a" title="创建一个空的语句节点 " alt="" coords="147,5,249,32"/>
+<area shape="rect" id="node3" href="utils_8c.html#afa7de10760996fc5201ebd6e7143fcf5" title="动态创建一个空间，并复制字符串 " alt="" coords="655,81,739,108"/>
+<area shape="rect" id="node4" href="parse_8c.html#a5ee7da9e5bb43f2b9f797c2ceb045820" title="获取下一个token，匹配成功返回token，失败抛出错误。 " alt="" coords="668,360,727,387"/>
+<area shape="rect" id="node11" href="parse_8c.html#a748ea477d7e9cba15a1d23ccec2148b7" title="表达式 &#45;&gt; 简单表达式 | 简单表达式 {&lt;, &gt;, =, &lt;=, &gt;=, &lt;&gt;} 简单表达式 " alt="" coords="149,157,247,184"/>
+<area shape="rect" id="node5" href="scan_8c.html#a9a87381a6bbaf512557fc21c8ae28a35" title="词法分析器主函数，每次生成一个Token供语法分析器调用 " alt="" coords="802,208,877,235"/>
+<area shape="rect" id="node9" href="utils_8c.html#af19bf3dc8caf4e45bdc9b053febbedee" title="将词法分析器分析结果输出至文件流 " alt="" coords="947,284,1029,311"/>
+<area shape="rect" id="node10" href="parse_8c.html#a256d11bf07725a265da8a68dbebd2be1" title="将错误信息输出到stdout " alt="" coords="795,309,884,336"/>
+<area shape="rect" id="node6" href="scan_8c.html#a7bcf99de554c1ec21c5fbbba3accb238" title="获取当前行下一个字符 " alt="" coords="955,132,1021,159"/>
+<area shape="rect" id="node7" href="scan_8c.html#a92bc16c7e91cc956c67770f1f9c927c1" title="将当前指针减一，用来返回{&lt;=, &gt;=, &lt;&gt;, :=}的报错信息 " alt="" coords="955,183,1021,209"/>
+<area shape="rect" id="node8" href="scan_8c.html#aebce0206bc04c28bd27bf0cacafb0811" title="查找一个串属不属于保留字，属于返回保留字Token，不属于标记为ID（标识符） " alt="" coords="932,233,1044,260"/>
+<area shape="rect" id="node12" href="parse_8c.html#a68833992f58c454cc4b399e6495d3457" title="简单表达式 &#45;&gt; 加数 | 加数 {+, &#45;} 加数 " alt="" coords="297,233,385,260"/>
+<area shape="rect" id="node15" href="utils_8c.html#a692239b050374630d532008b58ee1d16" title="创建一个空的表达式节点 " alt="" coords="648,157,747,184"/>
+<area shape="rect" id="node13" href="parse_8c.html#a5743a7c7a28f2b26524f037cfee051d7" title="加数 &#45;&gt; 因数 | 因数 {*, /} 因数 " alt="" coords="433,259,497,285"/>
+<area shape="rect" id="node14" href="parse_8c.html#a926714887855939b510801f4509d70cb" title="因数 &#45;&gt; ( 表达式 ) | 数字 | 标识符 " alt="" coords="545,259,600,285"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="parse_8c_a47791facfbbe8a7918aaec25902ef0e7_icgraph.png" border="0" usemap="#parse_8c_a47791facfbbe8a7918aaec25902ef0e7_icgraph" alt=""/></div>
+<map name="parse_8c_a47791facfbbe8a7918aaec25902ef0e7_icgraph" id="parse_8c_a47791facfbbe8a7918aaec25902ef0e7_icgraph">
+<area shape="rect" id="node2" href="parse_8c.html#a70095d31ccd507def5c76f3290b47202" title="语句 &#45;&gt; if 语句 | repeat 语句 | assign 语句 | read 语句 | write 语句 " alt="" coords="147,56,227,83"/>
+<area shape="rect" id="node3" href="parse_8c.html#af9d481a7d7e2b85b4cf329e89472b505" title="语句序列 &#45;&gt; 语句 ; 语句 " alt="" coords="275,56,385,83"/>
+<area shape="rect" id="node4" href="parse_8c.html#a51b5bd1d6581e6ddebb093ea476577be" title="if 语句 &#45;&gt; if 表达式 then 语句序列 end | if 表达式 then 语句序列 else 语句序列 end ..." alt="" coords="448,5,509,32"/>
+<area shape="rect" id="node5" href="parse_8c.html#aa01e603dbb1132a662bae5fec534b1f3" title="repeat 语句 &#45;&gt; repeat 语句序列 until 表达式 " alt="" coords="433,107,524,133"/>
+<area shape="rect" id="node6" href="parse_8h.html#a3978e850bcd90e50ac083de049831eb5" title="语法分析器主函数 程序 &#45;&gt; 语句序列 " alt="" coords="451,56,506,83"/>
+<area shape="rect" id="node7" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="TPC��������ں��� " alt="" coords="572,56,623,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a748ea477d7e9cba15a1d23ccec2148b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a748ea477d7e9cba15a1d23ccec2148b7">&#9670;&nbsp;</a></span>complex_exp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a> * complex_exp </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>表达式 -&gt; 简单表达式 | 简单表达式 {&lt;, &gt;, =, &lt;=, &gt;=, &lt;&gt;} 简单表达式 </p>
+<dl class="section return"><dt>返回</dt><dd>语法树的一个表达式节点 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="parse_8c_a748ea477d7e9cba15a1d23ccec2148b7_cgraph.png" border="0" usemap="#parse_8c_a748ea477d7e9cba15a1d23ccec2148b7_cgraph" alt=""/></div>
+<map name="parse_8c_a748ea477d7e9cba15a1d23ccec2148b7_cgraph" id="parse_8c_a748ea477d7e9cba15a1d23ccec2148b7_cgraph">
+<area shape="rect" id="node2" href="parse_8c.html#a68833992f58c454cc4b399e6495d3457" title="简单表达式 &#45;&gt; 加数 | 加数 {+, &#45;} 加数 " alt="" coords="152,183,240,209"/>
+<area shape="rect" id="node5" href="utils_8c.html#a692239b050374630d532008b58ee1d16" title="创建一个空的表达式节点 " alt="" coords="503,31,601,57"/>
+<area shape="rect" id="node6" href="parse_8c.html#a5ee7da9e5bb43f2b9f797c2ceb045820" title="获取下一个token，匹配成功返回token，失败抛出错误。 " alt="" coords="523,284,581,311"/>
+<area shape="rect" id="node3" href="parse_8c.html#a5743a7c7a28f2b26524f037cfee051d7" title="加数 &#45;&gt; 因数 | 因数 {*, /} 因数 " alt="" coords="288,157,352,184"/>
+<area shape="rect" id="node4" href="parse_8c.html#a926714887855939b510801f4509d70cb" title="因数 &#45;&gt; ( 表达式 ) | 数字 | 标识符 " alt="" coords="400,157,455,184"/>
+<area shape="rect" id="node7" href="scan_8c.html#a9a87381a6bbaf512557fc21c8ae28a35" title="词法分析器主函数，每次生成一个Token供语法分析器调用 " alt="" coords="657,81,731,108"/>
+<area shape="rect" id="node11" href="utils_8c.html#af19bf3dc8caf4e45bdc9b053febbedee" title="将词法分析器分析结果输出至文件流 " alt="" coords="801,157,884,184"/>
+<area shape="rect" id="node12" href="parse_8c.html#a256d11bf07725a265da8a68dbebd2be1" title="将错误信息输出到stdout " alt="" coords="649,208,739,235"/>
+<area shape="rect" id="node13" href="utils_8c.html#afa7de10760996fc5201ebd6e7143fcf5" title="动态创建一个空间，并复制字符串 " alt="" coords="510,233,594,260"/>
+<area shape="rect" id="node8" href="scan_8c.html#a7bcf99de554c1ec21c5fbbba3accb238" title="获取当前行下一个字符 " alt="" coords="809,5,876,32"/>
+<area shape="rect" id="node9" href="scan_8c.html#a92bc16c7e91cc956c67770f1f9c927c1" title="将当前指针减一，用来返回{&lt;=, &gt;=, &lt;&gt;, :=}的报错信息 " alt="" coords="809,56,876,83"/>
+<area shape="rect" id="node10" href="scan_8c.html#aebce0206bc04c28bd27bf0cacafb0811" title="查找一个串属不属于保留字，属于返回保留字Token，不属于标记为ID（标识符） " alt="" coords="787,107,899,133"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="parse_8c_a748ea477d7e9cba15a1d23ccec2148b7_icgraph.png" border="0" usemap="#parse_8c_a748ea477d7e9cba15a1d23ccec2148b7_icgraph" alt=""/></div>
+<map name="parse_8c_a748ea477d7e9cba15a1d23ccec2148b7_icgraph" id="parse_8c_a748ea477d7e9cba15a1d23ccec2148b7_icgraph">
+<area shape="rect" id="node2" href="parse_8c.html#a51b5bd1d6581e6ddebb093ea476577be" title="if 语句 &#45;&gt; if 表达式 then 语句序列 end | if 表达式 then 语句序列 else 语句序列 end ..." alt="" coords="168,5,229,32"/>
+<area shape="rect" id="node5" href="parse_8c.html#aa01e603dbb1132a662bae5fec534b1f3" title="repeat 语句 &#45;&gt; repeat 语句序列 until 表达式 " alt="" coords="580,81,671,108"/>
+<area shape="rect" id="node8" href="parse_8c.html#a47791facfbbe8a7918aaec25902ef0e7" title="assign 语句 &#45;&gt; 标识符 := 表达式 " alt="" coords="152,56,245,83"/>
+<area shape="rect" id="node9" href="parse_8c.html#a05035e26d9ea848a887b442225fe0a3c" title="write 语句 &#45;&gt; write 表达式 " alt="" coords="157,107,240,133"/>
+<area shape="rect" id="node10" href="parse_8c.html#a926714887855939b510801f4509d70cb" title="因数 &#45;&gt; ( 表达式 ) | 数字 | 标识符 " alt="" coords="171,208,226,235"/>
+<area shape="rect" id="node3" href="parse_8c.html#a70095d31ccd507def5c76f3290b47202" title="语句 &#45;&gt; if 语句 | repeat 语句 | assign 语句 | read 语句 | write 语句 " alt="" coords="293,56,373,83"/>
+<area shape="rect" id="node4" href="parse_8c.html#af9d481a7d7e2b85b4cf329e89472b505" title="语句序列 &#45;&gt; 语句 ; 语句 " alt="" coords="421,31,532,57"/>
+<area shape="rect" id="node6" href="parse_8h.html#a3978e850bcd90e50ac083de049831eb5" title="语法分析器主函数 程序 &#45;&gt; 语句序列 " alt="" coords="598,31,653,57"/>
+<area shape="rect" id="node7" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="TPC��������ں��� " alt="" coords="719,31,769,57"/>
+<area shape="rect" id="node11" href="parse_8c.html#a5743a7c7a28f2b26524f037cfee051d7" title="加数 &#45;&gt; 因数 | 因数 {*, /} 因数 " alt="" coords="301,208,365,235"/>
+<area shape="rect" id="node12" href="parse_8c.html#a68833992f58c454cc4b399e6495d3457" title="简单表达式 &#45;&gt; 加数 | 加数 {+, &#45;} 加数 " alt="" coords="433,233,521,260"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a926714887855939b510801f4509d70cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a926714887855939b510801f4509d70cb">&#9670;&nbsp;</a></span>factor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a> * factor </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>因数 -&gt; ( 表达式 ) | 数字 | 标识符 </p>
+<dl class="section return"><dt>返回</dt><dd>语法树的一个因数节点 </dd></dl>
+<p>atoi 函数: ASCII To Integer 将字符串转化为整数的库函数 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="parse_8c_a926714887855939b510801f4509d70cb_cgraph.png" border="0" usemap="#parse_8c_a926714887855939b510801f4509d70cb_cgraph" alt=""/></div>
+<map name="parse_8c_a926714887855939b510801f4509d70cb_cgraph" id="parse_8c_a926714887855939b510801f4509d70cb_cgraph">
+<area shape="rect" id="node2" href="utils_8c.html#a692239b050374630d532008b58ee1d16" title="创建一个空的表达式节点 " alt="" coords="503,411,601,437"/>
+<area shape="rect" id="node3" href="parse_8c.html#a5ee7da9e5bb43f2b9f797c2ceb045820" title="获取下一个token，匹配成功返回token，失败抛出错误。 " alt="" coords="523,233,581,260"/>
+<area shape="rect" id="node4" href="scan_8c.html#a9a87381a6bbaf512557fc21c8ae28a35" title="词法分析器主函数，每次生成一个Token供语法分析器调用 " alt="" coords="657,81,731,108"/>
+<area shape="rect" id="node8" href="utils_8c.html#af19bf3dc8caf4e45bdc9b053febbedee" title="将词法分析器分析结果输出至文件流 " alt="" coords="801,157,884,184"/>
+<area shape="rect" id="node9" href="parse_8c.html#a256d11bf07725a265da8a68dbebd2be1" title="将错误信息输出到stdout " alt="" coords="649,385,739,412"/>
+<area shape="rect" id="node10" href="utils_8c.html#afa7de10760996fc5201ebd6e7143fcf5" title="动态创建一个空间，并复制字符串 " alt="" coords="115,335,199,361"/>
+<area shape="rect" id="node11" href="parse_8c.html#a748ea477d7e9cba15a1d23ccec2148b7" title="表达式 &#45;&gt; 简单表达式 | 简单表达式 {&lt;, &gt;, =, &lt;=, &gt;=, &lt;&gt;} 简单表达式 " alt="" coords="108,284,207,311"/>
+<area shape="rect" id="node5" href="scan_8c.html#a7bcf99de554c1ec21c5fbbba3accb238" title="获取当前行下一个字符 " alt="" coords="809,107,876,133"/>
+<area shape="rect" id="node6" href="scan_8c.html#a92bc16c7e91cc956c67770f1f9c927c1" title="将当前指针减一，用来返回{&lt;=, &gt;=, &lt;&gt;, :=}的报错信息 " alt="" coords="809,5,876,32"/>
+<area shape="rect" id="node7" href="scan_8c.html#aebce0206bc04c28bd27bf0cacafb0811" title="查找一个串属不属于保留字，属于返回保留字Token，不属于标记为ID（标识符） " alt="" coords="787,56,899,83"/>
+<area shape="rect" id="node12" href="parse_8c.html#a68833992f58c454cc4b399e6495d3457" title="简单表达式 &#45;&gt; 加数 | 加数 {+, &#45;} 加数 " alt="" coords="255,335,343,361"/>
+<area shape="rect" id="node13" href="parse_8c.html#a5743a7c7a28f2b26524f037cfee051d7" title="加数 &#45;&gt; 因数 | 因数 {*, /} 因数 " alt="" coords="391,284,455,311"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="parse_8c_a926714887855939b510801f4509d70cb_icgraph.png" border="0" usemap="#parse_8c_a926714887855939b510801f4509d70cb_icgraph" alt=""/></div>
+<map name="parse_8c_a926714887855939b510801f4509d70cb_icgraph" id="parse_8c_a926714887855939b510801f4509d70cb_icgraph">
+<area shape="rect" id="node2" href="parse_8c.html#a5743a7c7a28f2b26524f037cfee051d7" title="加数 &#45;&gt; 因数 | 因数 {*, /} 因数 " alt="" coords="108,41,172,67"/>
+<area shape="rect" id="node3" href="parse_8c.html#a68833992f58c454cc4b399e6495d3457" title="简单表达式 &#45;&gt; 加数 | 加数 {+, &#45;} 加数 " alt="" coords="220,41,308,67"/>
+<area shape="rect" id="node4" href="parse_8c.html#a748ea477d7e9cba15a1d23ccec2148b7" title="表达式 &#45;&gt; 简单表达式 | 简单表达式 {&lt;, &gt;, =, &lt;=, &gt;=, &lt;&gt;} 简单表达式 " alt="" coords="356,66,455,93"/>
+<area shape="rect" id="node5" href="parse_8c.html#a51b5bd1d6581e6ddebb093ea476577be" title="if 语句 &#45;&gt; if 表达式 then 语句序列 end | if 表达式 then 语句序列 else 语句序列 end ..." alt="" coords="945,15,1007,42"/>
+<area shape="rect" id="node8" href="parse_8c.html#aa01e603dbb1132a662bae5fec534b1f3" title="repeat 语句 &#45;&gt; repeat 语句序列 until 表达式 " alt="" coords="931,117,1021,143"/>
+<area shape="rect" id="node11" href="parse_8c.html#a47791facfbbe8a7918aaec25902ef0e7" title="assign 语句 &#45;&gt; 标识符 := 表达式 " alt="" coords="503,41,596,67"/>
+<area shape="rect" id="node12" href="parse_8c.html#a05035e26d9ea848a887b442225fe0a3c" title="write 语句 &#45;&gt; write 表达式 " alt="" coords="508,91,591,118"/>
+<area shape="rect" id="node6" href="parse_8c.html#a70095d31ccd507def5c76f3290b47202" title="语句 &#45;&gt; if 语句 | repeat 语句 | assign 语句 | read 语句 | write 语句 " alt="" coords="644,66,724,93"/>
+<area shape="rect" id="node7" href="parse_8c.html#af9d481a7d7e2b85b4cf329e89472b505" title="语句序列 &#45;&gt; 语句 ; 语句 " alt="" coords="772,66,883,93"/>
+<area shape="rect" id="node9" href="parse_8h.html#a3978e850bcd90e50ac083de049831eb5" title="语法分析器主函数 程序 &#45;&gt; 语句序列 " alt="" coords="949,66,1003,93"/>
+<area shape="rect" id="node10" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="TPC��������ں��� " alt="" coords="1069,66,1120,93"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a51b5bd1d6581e6ddebb093ea476577be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51b5bd1d6581e6ddebb093ea476577be">&#9670;&nbsp;</a></span>if_stmt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a> * if_stmt </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>if 语句 -&gt; if 表达式 then 语句序列 end | if 表达式 then 语句序列 else 语句序列 end </p>
+<dl class="section return"><dt>返回</dt><dd>语法树的一个IF语句节点 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="parse_8c_a51b5bd1d6581e6ddebb093ea476577be_cgraph.png" border="0" usemap="#parse_8c_a51b5bd1d6581e6ddebb093ea476577be_cgraph" alt=""/></div>
+<map name="parse_8c_a51b5bd1d6581e6ddebb093ea476577be_cgraph" id="parse_8c_a51b5bd1d6581e6ddebb093ea476577be_cgraph">
+<area shape="rect" id="node2" href="utils_8c.html#a362c5050f92db2100e4d00c3d9b03f4a" title="创建一个空的语句节点 " alt="" coords="543,600,645,627"/>
+<area shape="rect" id="node3" href="parse_8c.html#a5ee7da9e5bb43f2b9f797c2ceb045820" title="获取下一个token，匹配成功返回token，失败抛出错误。 " alt="" coords="1064,499,1123,525"/>
+<area shape="rect" id="node10" href="parse_8c.html#a748ea477d7e9cba15a1d23ccec2148b7" title="表达式 &#45;&gt; 简单表达式 | 简单表达式 {&lt;, &gt;, =, &lt;=, &gt;=, &lt;&gt;} 简单表达式 " alt="" coords="545,397,643,424"/>
+<area shape="rect" id="node16" href="parse_8c.html#af9d481a7d7e2b85b4cf329e89472b505" title="语句序列 &#45;&gt; 语句 ; 语句 " alt="" coords="115,600,225,627"/>
+<area shape="rect" id="node4" href="scan_8c.html#a9a87381a6bbaf512557fc21c8ae28a35" title="词法分析器主函数，每次生成一个Token供语法分析器调用 " alt="" coords="1198,499,1273,525"/>
+<area shape="rect" id="node8" href="utils_8c.html#af19bf3dc8caf4e45bdc9b053febbedee" title="将词法分析器分析结果输出至文件流 " alt="" coords="1343,397,1425,424"/>
+<area shape="rect" id="node9" href="parse_8c.html#a256d11bf07725a265da8a68dbebd2be1" title="将错误信息输出到stdout " alt="" coords="1191,347,1280,373"/>
+<area shape="rect" id="node5" href="scan_8c.html#a7bcf99de554c1ec21c5fbbba3accb238" title="获取当前行下一个字符 " alt="" coords="1351,499,1417,525"/>
+<area shape="rect" id="node6" href="scan_8c.html#a92bc16c7e91cc956c67770f1f9c927c1" title="将当前指针减一，用来返回{&lt;=, &gt;=, &lt;&gt;, :=}的报错信息 " alt="" coords="1351,549,1417,576"/>
+<area shape="rect" id="node7" href="scan_8c.html#aebce0206bc04c28bd27bf0cacafb0811" title="查找一个串属不属于保留字，属于返回保留字Token，不属于标记为ID（标识符） " alt="" coords="1328,448,1440,475"/>
+<area shape="rect" id="node11" href="parse_8c.html#a68833992f58c454cc4b399e6495d3457" title="简单表达式 &#45;&gt; 加数 | 加数 {+, &#45;} 加数 " alt="" coords="693,397,781,424"/>
+<area shape="rect" id="node14" href="utils_8c.html#a692239b050374630d532008b58ee1d16" title="创建一个空的表达式节点 " alt="" coords="1044,271,1143,297"/>
+<area shape="rect" id="node12" href="parse_8c.html#a5743a7c7a28f2b26524f037cfee051d7" title="加数 &#45;&gt; 因数 | 因数 {*, /} 因数 " alt="" coords="829,397,893,424"/>
+<area shape="rect" id="node13" href="parse_8c.html#a926714887855939b510801f4509d70cb" title="因数 &#45;&gt; ( 表达式 ) | 数字 | 标识符 " alt="" coords="941,347,996,373"/>
+<area shape="rect" id="node15" href="utils_8c.html#afa7de10760996fc5201ebd6e7143fcf5" title="动态创建一个空间，并复制字符串 " alt="" coords="1051,144,1135,171"/>
+<area shape="rect" id="node17" href="parse_8c.html#a70095d31ccd507def5c76f3290b47202" title="语句 &#45;&gt; if 语句 | repeat 语句 | assign 语句 | read 语句 | write 语句 " alt="" coords="273,549,353,576"/>
+<area shape="rect" id="node18" href="parse_8c.html#aa01e603dbb1132a662bae5fec534b1f3" title="repeat 语句 &#45;&gt; repeat 语句序列 until 表达式 " alt="" coords="403,600,493,627"/>
+<area shape="rect" id="node19" href="parse_8c.html#a47791facfbbe8a7918aaec25902ef0e7" title="assign 语句 &#45;&gt; 标识符 := 表达式 " alt="" coords="401,448,495,475"/>
+<area shape="rect" id="node20" href="parse_8c.html#acbf6a9e0d3d9bc4b84ae1cc3dfa87a18" title="read 语句 &#45;&gt; read 标识符 " alt="" coords="408,499,488,525"/>
+<area shape="rect" id="node21" href="parse_8c.html#a05035e26d9ea848a887b442225fe0a3c" title="write 语句 &#45;&gt; write 表达式 " alt="" coords="407,549,489,576"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="parse_8c_a51b5bd1d6581e6ddebb093ea476577be_icgraph.png" border="0" usemap="#parse_8c_a51b5bd1d6581e6ddebb093ea476577be_icgraph" alt=""/></div>
+<map name="parse_8c_a51b5bd1d6581e6ddebb093ea476577be_icgraph" id="parse_8c_a51b5bd1d6581e6ddebb093ea476577be_icgraph">
+<area shape="rect" id="node2" href="parse_8c.html#a70095d31ccd507def5c76f3290b47202" title="语句 &#45;&gt; if 语句 | repeat 语句 | assign 语句 | read 语句 | write 语句 " alt="" coords="115,56,195,83"/>
+<area shape="rect" id="node3" href="parse_8c.html#af9d481a7d7e2b85b4cf329e89472b505" title="语句序列 &#45;&gt; 语句 ; 语句 " alt="" coords="243,5,353,32"/>
+<area shape="rect" id="node4" href="parse_8c.html#aa01e603dbb1132a662bae5fec534b1f3" title="repeat 语句 &#45;&gt; repeat 语句序列 until 表达式 " alt="" coords="401,56,492,83"/>
+<area shape="rect" id="node5" href="parse_8h.html#a3978e850bcd90e50ac083de049831eb5" title="语法分析器主函数 程序 &#45;&gt; 语句序列 " alt="" coords="419,5,474,32"/>
+<area shape="rect" id="node6" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="TPC��������ں��� " alt="" coords="540,5,591,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5ee7da9e5bb43f2b9f797c2ceb045820"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ee7da9e5bb43f2b9f797c2ceb045820">&#9670;&nbsp;</a></span>match()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void match </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="globals_8h.html#a6a9e93b081bad7fc74c17306fb168c1f">Token</a>&#160;</td>
+          <td class="paramname"><em>expected</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取下一个token，匹配成功返回token，失败抛出错误。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">expected</td><td>期待获得的Token值 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="parse_8c_a5ee7da9e5bb43f2b9f797c2ceb045820_cgraph.png" border="0" usemap="#parse_8c_a5ee7da9e5bb43f2b9f797c2ceb045820_cgraph" alt=""/></div>
+<map name="parse_8c_a5ee7da9e5bb43f2b9f797c2ceb045820_cgraph" id="parse_8c_a5ee7da9e5bb43f2b9f797c2ceb045820_cgraph">
+<area shape="rect" id="node2" href="scan_8c.html#a9a87381a6bbaf512557fc21c8ae28a35" title="词法分析器主函数，每次生成一个Token供语法分析器调用 " alt="" coords="119,107,194,133"/>
+<area shape="rect" id="node6" href="utils_8c.html#af19bf3dc8caf4e45bdc9b053febbedee" title="将词法分析器分析结果输出至文件流 " alt="" coords="264,157,347,184"/>
+<area shape="rect" id="node7" href="parse_8c.html#a256d11bf07725a265da8a68dbebd2be1" title="将错误信息输出到stdout " alt="" coords="112,208,201,235"/>
+<area shape="rect" id="node3" href="scan_8c.html#a7bcf99de554c1ec21c5fbbba3accb238" title="获取当前行下一个字符 " alt="" coords="272,5,339,32"/>
+<area shape="rect" id="node4" href="scan_8c.html#a92bc16c7e91cc956c67770f1f9c927c1" title="将当前指针减一，用来返回{&lt;=, &gt;=, &lt;&gt;, :=}的报错信息 " alt="" coords="272,56,339,83"/>
+<area shape="rect" id="node5" href="scan_8c.html#aebce0206bc04c28bd27bf0cacafb0811" title="查找一个串属不属于保留字，属于返回保留字Token，不属于标记为ID（标识符） " alt="" coords="249,107,361,133"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="parse_8c_a5ee7da9e5bb43f2b9f797c2ceb045820_icgraph.png" border="0" usemap="#parse_8c_a5ee7da9e5bb43f2b9f797c2ceb045820_icgraph" alt=""/></div>
+<map name="parse_8c_a5ee7da9e5bb43f2b9f797c2ceb045820_icgraph" id="parse_8c_a5ee7da9e5bb43f2b9f797c2ceb045820_icgraph">
+<area shape="rect" id="node2" href="parse_8c.html#af9d481a7d7e2b85b4cf329e89472b505" title="语句序列 &#45;&gt; 语句 ; 语句 " alt="" coords="112,56,223,83"/>
+<area shape="rect" id="node3" href="parse_8c.html#a51b5bd1d6581e6ddebb093ea476577be" title="if 语句 &#45;&gt; if 表达式 then 语句序列 end | if 表达式 then 语句序列 else 语句序列 end ..." alt="" coords="287,107,348,133"/>
+<area shape="rect" id="node5" href="parse_8c.html#aa01e603dbb1132a662bae5fec534b1f3" title="repeat 语句 &#45;&gt; repeat 语句序列 until 表达式 " alt="" coords="272,157,363,184"/>
+<area shape="rect" id="node8" href="parse_8c.html#a47791facfbbe8a7918aaec25902ef0e7" title="assign 语句 &#45;&gt; 标识符 := 表达式 " alt="" coords="271,208,364,235"/>
+<area shape="rect" id="node9" href="parse_8c.html#acbf6a9e0d3d9bc4b84ae1cc3dfa87a18" title="read 语句 &#45;&gt; read 标识符 " alt="" coords="127,360,207,387"/>
+<area shape="rect" id="node10" href="parse_8c.html#a05035e26d9ea848a887b442225fe0a3c" title="write 语句 &#45;&gt; write 表达式 " alt="" coords="276,309,359,336"/>
+<area shape="rect" id="node11" href="parse_8c.html#a748ea477d7e9cba15a1d23ccec2148b7" title="表达式 &#45;&gt; 简单表达式 | 简单表达式 {&lt;, &gt;, =, &lt;=, &gt;=, &lt;&gt;} 简单表达式 " alt="" coords="118,259,217,285"/>
+<area shape="rect" id="node12" href="parse_8c.html#a926714887855939b510801f4509d70cb" title="因数 &#45;&gt; ( 表达式 ) | 数字 | 标识符 " alt="" coords="290,411,345,437"/>
+<area shape="rect" id="node13" href="parse_8c.html#a5743a7c7a28f2b26524f037cfee051d7" title="加数 &#45;&gt; 因数 | 因数 {*, /} 因数 " alt="" coords="420,436,484,463"/>
+<area shape="rect" id="node14" href="parse_8c.html#a68833992f58c454cc4b399e6495d3457" title="简单表达式 &#45;&gt; 加数 | 加数 {+, &#45;} 加数 " alt="" coords="540,436,628,463"/>
+<area shape="rect" id="node6" href="parse_8h.html#a3978e850bcd90e50ac083de049831eb5" title="语法分析器主函数 程序 &#45;&gt; 语句序列 " alt="" coords="290,5,345,32"/>
+<area shape="rect" id="node4" href="parse_8c.html#a70095d31ccd507def5c76f3290b47202" title="语句 &#45;&gt; if 语句 | repeat 语句 | assign 语句 | read 语句 | write 语句 " alt="" coords="412,183,492,209"/>
+<area shape="rect" id="node7" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="TPC��������ں��� " alt="" coords="427,5,477,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3978e850bcd90e50ac083de049831eb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3978e850bcd90e50ac083de049831eb5">&#9670;&nbsp;</a></span>parse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a>* parse </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>语法分析器主函数 程序 -&gt; 语句序列 </p>
+<dl class="section return"><dt>返回</dt><dd>语法树的根节点（程序节点） </dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="scan_8h.html">scan.h</a> </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="parse_8c_a3978e850bcd90e50ac083de049831eb5_cgraph.png" border="0" usemap="#parse_8c_a3978e850bcd90e50ac083de049831eb5_cgraph" alt=""/></div>
+<map name="parse_8c_a3978e850bcd90e50ac083de049831eb5_cgraph" id="parse_8c_a3978e850bcd90e50ac083de049831eb5_cgraph">
+<area shape="rect" id="node2" href="scan_8c.html#a9a87381a6bbaf512557fc21c8ae28a35" title="词法分析器主函数，每次生成一个Token供语法分析器调用 " alt="" coords="1191,372,1266,399"/>
+<area shape="rect" id="node7" href="parse_8c.html#af9d481a7d7e2b85b4cf329e89472b505" title="语句序列 &#45;&gt; 语句 ; 语句 " alt="" coords="108,271,219,297"/>
+<area shape="rect" id="node12" href="parse_8c.html#a256d11bf07725a265da8a68dbebd2be1" title="将错误信息输出到stdout " alt="" coords="1184,777,1273,804"/>
+<area shape="rect" id="node3" href="scan_8c.html#a7bcf99de554c1ec21c5fbbba3accb238" title="获取当前行下一个字符 " alt="" coords="1344,321,1411,348"/>
+<area shape="rect" id="node4" href="scan_8c.html#a92bc16c7e91cc956c67770f1f9c927c1" title="将当前指针减一，用来返回{&lt;=, &gt;=, &lt;&gt;, :=}的报错信息 " alt="" coords="1344,372,1411,399"/>
+<area shape="rect" id="node5" href="scan_8c.html#aebce0206bc04c28bd27bf0cacafb0811" title="查找一个串属不属于保留字，属于返回保留字Token，不属于标记为ID（标识符） " alt="" coords="1321,423,1433,449"/>
+<area shape="rect" id="node6" href="utils_8c.html#af19bf3dc8caf4e45bdc9b053febbedee" title="将词法分析器分析结果输出至文件流 " alt="" coords="1336,581,1419,608"/>
+<area shape="rect" id="node8" href="parse_8c.html#a70095d31ccd507def5c76f3290b47202" title="语句 &#45;&gt; if 语句 | repeat 语句 | assign 语句 | read 语句 | write 语句 " alt="" coords="267,347,347,373"/>
+<area shape="rect" id="node11" href="parse_8c.html#a5ee7da9e5bb43f2b9f797c2ceb045820" title="获取下一个token，匹配成功返回token，失败抛出错误。 " alt="" coords="1057,372,1116,399"/>
+<area shape="rect" id="node9" href="parse_8c.html#a51b5bd1d6581e6ddebb093ea476577be" title="if 语句 &#45;&gt; if 表达式 then 语句序列 end | if 表达式 then 语句序列 else 语句序列 end ..." alt="" coords="411,296,472,323"/>
+<area shape="rect" id="node19" href="parse_8c.html#aa01e603dbb1132a662bae5fec534b1f3" title="repeat 语句 &#45;&gt; repeat 语句序列 until 表达式 " alt="" coords="396,245,487,272"/>
+<area shape="rect" id="node20" href="parse_8c.html#a47791facfbbe8a7918aaec25902ef0e7" title="assign 语句 &#45;&gt; 标识符 := 表达式 " alt="" coords="395,397,488,424"/>
+<area shape="rect" id="node21" href="parse_8c.html#acbf6a9e0d3d9bc4b84ae1cc3dfa87a18" title="read 语句 &#45;&gt; read 标识符 " alt="" coords="401,448,481,475"/>
+<area shape="rect" id="node22" href="parse_8c.html#a05035e26d9ea848a887b442225fe0a3c" title="write 语句 &#45;&gt; write 表达式 " alt="" coords="400,347,483,373"/>
+<area shape="rect" id="node10" href="utils_8c.html#a362c5050f92db2100e4d00c3d9b03f4a" title="创建一个空的语句节点 " alt="" coords="536,347,639,373"/>
+<area shape="rect" id="node13" href="parse_8c.html#a748ea477d7e9cba15a1d23ccec2148b7" title="表达式 &#45;&gt; 简单表达式 | 简单表达式 {&lt;, &gt;, =, &lt;=, &gt;=, &lt;&gt;} 简单表达式 " alt="" coords="538,296,637,323"/>
+<area shape="rect" id="node14" href="parse_8c.html#a68833992f58c454cc4b399e6495d3457" title="简单表达式 &#45;&gt; 加数 | 加数 {+, &#45;} 加数 " alt="" coords="687,524,775,551"/>
+<area shape="rect" id="node17" href="utils_8c.html#a692239b050374630d532008b58ee1d16" title="创建一个空的表达式节点 " alt="" coords="1037,549,1136,576"/>
+<area shape="rect" id="node15" href="parse_8c.html#a5743a7c7a28f2b26524f037cfee051d7" title="加数 &#45;&gt; 因数 | 因数 {*, /} 因数 " alt="" coords="823,612,887,639"/>
+<area shape="rect" id="node16" href="parse_8c.html#a926714887855939b510801f4509d70cb" title="因数 &#45;&gt; ( 表达式 ) | 数字 | 标识符 " alt="" coords="935,701,989,728"/>
+<area shape="rect" id="node18" href="utils_8c.html#afa7de10760996fc5201ebd6e7143fcf5" title="动态创建一个空间，并复制字符串 " alt="" coords="1045,752,1129,779"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="parse_8c_a3978e850bcd90e50ac083de049831eb5_icgraph.png" border="0" usemap="#parse_8c_a3978e850bcd90e50ac083de049831eb5_icgraph" alt=""/></div>
+<map name="parse_8c_a3978e850bcd90e50ac083de049831eb5_icgraph" id="parse_8c_a3978e850bcd90e50ac083de049831eb5_icgraph">
+<area shape="rect" id="node2" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="TPC��������ں��� " alt="" coords="108,5,159,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="acbf6a9e0d3d9bc4b84ae1cc3dfa87a18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbf6a9e0d3d9bc4b84ae1cc3dfa87a18">&#9670;&nbsp;</a></span>read_stmt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a> * read_stmt </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>read 语句 -&gt; read 标识符 </p>
+<dl class="section return"><dt>返回</dt><dd>语法树的一个READ节点 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="parse_8c_acbf6a9e0d3d9bc4b84ae1cc3dfa87a18_cgraph.png" border="0" usemap="#parse_8c_acbf6a9e0d3d9bc4b84ae1cc3dfa87a18_cgraph" alt=""/></div>
+<map name="parse_8c_acbf6a9e0d3d9bc4b84ae1cc3dfa87a18_cgraph" id="parse_8c_acbf6a9e0d3d9bc4b84ae1cc3dfa87a18_cgraph">
+<area shape="rect" id="node2" href="utils_8c.html#a362c5050f92db2100e4d00c3d9b03f4a" title="创建一个空的语句节点 " alt="" coords="133,107,236,133"/>
+<area shape="rect" id="node3" href="parse_8c.html#a5ee7da9e5bb43f2b9f797c2ceb045820" title="获取下一个token，匹配成功返回token，失败抛出错误。 " alt="" coords="155,157,214,184"/>
+<area shape="rect" id="node10" href="utils_8c.html#afa7de10760996fc5201ebd6e7143fcf5" title="动态创建一个空间，并复制字符串 " alt="" coords="143,208,227,235"/>
+<area shape="rect" id="node4" href="scan_8c.html#a9a87381a6bbaf512557fc21c8ae28a35" title="词法分析器主函数，每次生成一个Token供语法分析器调用 " alt="" coords="291,107,366,133"/>
+<area shape="rect" id="node8" href="utils_8c.html#af19bf3dc8caf4e45bdc9b053febbedee" title="将词法分析器分析结果输出至文件流 " alt="" coords="436,157,519,184"/>
+<area shape="rect" id="node9" href="parse_8c.html#a256d11bf07725a265da8a68dbebd2be1" title="将错误信息输出到stdout " alt="" coords="284,208,373,235"/>
+<area shape="rect" id="node5" href="scan_8c.html#a7bcf99de554c1ec21c5fbbba3accb238" title="获取当前行下一个字符 " alt="" coords="444,5,511,32"/>
+<area shape="rect" id="node6" href="scan_8c.html#a92bc16c7e91cc956c67770f1f9c927c1" title="将当前指针减一，用来返回{&lt;=, &gt;=, &lt;&gt;, :=}的报错信息 " alt="" coords="444,56,511,83"/>
+<area shape="rect" id="node7" href="scan_8c.html#aebce0206bc04c28bd27bf0cacafb0811" title="查找一个串属不属于保留字，属于返回保留字Token，不属于标记为ID（标识符） " alt="" coords="421,107,533,133"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="parse_8c_acbf6a9e0d3d9bc4b84ae1cc3dfa87a18_icgraph.png" border="0" usemap="#parse_8c_acbf6a9e0d3d9bc4b84ae1cc3dfa87a18_icgraph" alt=""/></div>
+<map name="parse_8c_acbf6a9e0d3d9bc4b84ae1cc3dfa87a18_icgraph" id="parse_8c_acbf6a9e0d3d9bc4b84ae1cc3dfa87a18_icgraph">
+<area shape="rect" id="node2" href="parse_8c.html#a70095d31ccd507def5c76f3290b47202" title="语句 &#45;&gt; if 语句 | repeat 语句 | assign 语句 | read 语句 | write 语句 " alt="" coords="133,56,213,83"/>
+<area shape="rect" id="node3" href="parse_8c.html#af9d481a7d7e2b85b4cf329e89472b505" title="语句序列 &#45;&gt; 语句 ; 语句 " alt="" coords="261,56,372,83"/>
+<area shape="rect" id="node4" href="parse_8c.html#a51b5bd1d6581e6ddebb093ea476577be" title="if 语句 &#45;&gt; if 表达式 then 语句序列 end | if 表达式 then 语句序列 else 语句序列 end ..." alt="" coords="435,5,496,32"/>
+<area shape="rect" id="node5" href="parse_8c.html#aa01e603dbb1132a662bae5fec534b1f3" title="repeat 语句 &#45;&gt; repeat 语句序列 until 表达式 " alt="" coords="420,107,511,133"/>
+<area shape="rect" id="node6" href="parse_8h.html#a3978e850bcd90e50ac083de049831eb5" title="语法分析器主函数 程序 &#45;&gt; 语句序列 " alt="" coords="438,56,493,83"/>
+<area shape="rect" id="node7" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="TPC��������ں��� " alt="" coords="559,56,609,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa01e603dbb1132a662bae5fec534b1f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa01e603dbb1132a662bae5fec534b1f3">&#9670;&nbsp;</a></span>repeat_stmt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a> * repeat_stmt </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>repeat 语句 -&gt; repeat 语句序列 until 表达式 </p>
+<dl class="section return"><dt>返回</dt><dd>语法树的一个REPEAT语句节点 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="parse_8c_aa01e603dbb1132a662bae5fec534b1f3_cgraph.png" border="0" usemap="#parse_8c_aa01e603dbb1132a662bae5fec534b1f3_cgraph" alt=""/></div>
+<map name="parse_8c_aa01e603dbb1132a662bae5fec534b1f3_cgraph" id="parse_8c_aa01e603dbb1132a662bae5fec534b1f3_cgraph">
+<area shape="rect" id="node2" href="utils_8c.html#a362c5050f92db2100e4d00c3d9b03f4a" title="创建一个空的语句节点 " alt="" coords="572,600,675,627"/>
+<area shape="rect" id="node3" href="parse_8c.html#a5ee7da9e5bb43f2b9f797c2ceb045820" title="获取下一个token，匹配成功返回token，失败抛出错误。 " alt="" coords="1093,499,1152,525"/>
+<area shape="rect" id="node10" href="parse_8c.html#af9d481a7d7e2b85b4cf329e89472b505" title="语句序列 &#45;&gt; 语句 ; 语句 " alt="" coords="144,600,255,627"/>
+<area shape="rect" id="node13" href="parse_8c.html#a748ea477d7e9cba15a1d23ccec2148b7" title="表达式 &#45;&gt; 简单表达式 | 简单表达式 {&lt;, &gt;, =, &lt;=, &gt;=, &lt;&gt;} 简单表达式 " alt="" coords="574,397,673,424"/>
+<area shape="rect" id="node4" href="scan_8c.html#a9a87381a6bbaf512557fc21c8ae28a35" title="词法分析器主函数，每次生成一个Token供语法分析器调用 " alt="" coords="1227,499,1302,525"/>
+<area shape="rect" id="node8" href="utils_8c.html#af19bf3dc8caf4e45bdc9b053febbedee" title="将词法分析器分析结果输出至文件流 " alt="" coords="1372,397,1455,424"/>
+<area shape="rect" id="node9" href="parse_8c.html#a256d11bf07725a265da8a68dbebd2be1" title="将错误信息输出到stdout " alt="" coords="1220,347,1309,373"/>
+<area shape="rect" id="node5" href="scan_8c.html#a7bcf99de554c1ec21c5fbbba3accb238" title="获取当前行下一个字符 " alt="" coords="1380,499,1447,525"/>
+<area shape="rect" id="node6" href="scan_8c.html#a92bc16c7e91cc956c67770f1f9c927c1" title="将当前指针减一，用来返回{&lt;=, &gt;=, &lt;&gt;, :=}的报错信息 " alt="" coords="1380,549,1447,576"/>
+<area shape="rect" id="node7" href="scan_8c.html#aebce0206bc04c28bd27bf0cacafb0811" title="查找一个串属不属于保留字，属于返回保留字Token，不属于标记为ID（标识符） " alt="" coords="1357,448,1469,475"/>
+<area shape="rect" id="node11" href="parse_8c.html#a70095d31ccd507def5c76f3290b47202" title="语句 &#45;&gt; if 语句 | repeat 语句 | assign 语句 | read 语句 | write 语句 " alt="" coords="303,549,383,576"/>
+<area shape="rect" id="node12" href="parse_8c.html#a51b5bd1d6581e6ddebb093ea476577be" title="if 语句 &#45;&gt; if 表达式 then 语句序列 end | if 表达式 then 语句序列 else 语句序列 end ..." alt="" coords="447,600,508,627"/>
+<area shape="rect" id="node19" href="parse_8c.html#a47791facfbbe8a7918aaec25902ef0e7" title="assign 语句 &#45;&gt; 标识符 := 表达式 " alt="" coords="431,448,524,475"/>
+<area shape="rect" id="node20" href="parse_8c.html#acbf6a9e0d3d9bc4b84ae1cc3dfa87a18" title="read 语句 &#45;&gt; read 标识符 " alt="" coords="437,499,517,525"/>
+<area shape="rect" id="node21" href="parse_8c.html#a05035e26d9ea848a887b442225fe0a3c" title="write 语句 &#45;&gt; write 表达式 " alt="" coords="436,549,519,576"/>
+<area shape="rect" id="node14" href="parse_8c.html#a68833992f58c454cc4b399e6495d3457" title="简单表达式 &#45;&gt; 加数 | 加数 {+, &#45;} 加数 " alt="" coords="723,397,811,424"/>
+<area shape="rect" id="node17" href="utils_8c.html#a692239b050374630d532008b58ee1d16" title="创建一个空的表达式节点 " alt="" coords="1073,271,1172,297"/>
+<area shape="rect" id="node15" href="parse_8c.html#a5743a7c7a28f2b26524f037cfee051d7" title="加数 &#45;&gt; 因数 | 因数 {*, /} 因数 " alt="" coords="859,397,923,424"/>
+<area shape="rect" id="node16" href="parse_8c.html#a926714887855939b510801f4509d70cb" title="因数 &#45;&gt; ( 表达式 ) | 数字 | 标识符 " alt="" coords="971,347,1025,373"/>
+<area shape="rect" id="node18" href="utils_8c.html#afa7de10760996fc5201ebd6e7143fcf5" title="动态创建一个空间，并复制字符串 " alt="" coords="1081,144,1165,171"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="parse_8c_aa01e603dbb1132a662bae5fec534b1f3_icgraph.png" border="0" usemap="#parse_8c_aa01e603dbb1132a662bae5fec534b1f3_icgraph" alt=""/></div>
+<map name="parse_8c_aa01e603dbb1132a662bae5fec534b1f3_icgraph" id="parse_8c_aa01e603dbb1132a662bae5fec534b1f3_icgraph">
+<area shape="rect" id="node2" href="parse_8c.html#a70095d31ccd507def5c76f3290b47202" title="语句 &#45;&gt; if 语句 | repeat 语句 | assign 语句 | read 语句 | write 语句 " alt="" coords="144,56,224,83"/>
+<area shape="rect" id="node3" href="parse_8c.html#af9d481a7d7e2b85b4cf329e89472b505" title="语句序列 &#45;&gt; 语句 ; 语句 " alt="" coords="272,5,383,32"/>
+<area shape="rect" id="node4" href="parse_8c.html#a51b5bd1d6581e6ddebb093ea476577be" title="if 语句 &#45;&gt; if 表达式 then 语句序列 end | if 表达式 then 语句序列 else 语句序列 end ..." alt="" coords="431,56,492,83"/>
+<area shape="rect" id="node5" href="parse_8h.html#a3978e850bcd90e50ac083de049831eb5" title="语法分析器主函数 程序 &#45;&gt; 语句序列 " alt="" coords="434,5,489,32"/>
+<area shape="rect" id="node6" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="TPC��������ں��� " alt="" coords="540,5,591,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a68833992f58c454cc4b399e6495d3457"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68833992f58c454cc4b399e6495d3457">&#9670;&nbsp;</a></span>simple_exp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a> * simple_exp </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>简单表达式 -&gt; 加数 | 加数 {+, -} 加数 </p>
+<dl class="section return"><dt>返回</dt><dd>语法树的一个简单表达式节点 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="parse_8c_a68833992f58c454cc4b399e6495d3457_cgraph.png" border="0" usemap="#parse_8c_a68833992f58c454cc4b399e6495d3457_cgraph" alt=""/></div>
+<map name="parse_8c_a68833992f58c454cc4b399e6495d3457_cgraph" id="parse_8c_a68833992f58c454cc4b399e6495d3457_cgraph">
+<area shape="rect" id="node2" href="parse_8c.html#a5743a7c7a28f2b26524f037cfee051d7" title="加数 &#45;&gt; 因数 | 因数 {*, /} 因数 " alt="" coords="141,215,205,242"/>
+<area shape="rect" id="node4" href="utils_8c.html#a692239b050374630d532008b58ee1d16" title="创建一个空的表达式节点 " alt="" coords="503,13,601,39"/>
+<area shape="rect" id="node5" href="parse_8c.html#a5ee7da9e5bb43f2b9f797c2ceb045820" title="获取下一个token，匹配成功返回token，失败抛出错误。 " alt="" coords="523,291,581,318"/>
+<area shape="rect" id="node3" href="parse_8c.html#a926714887855939b510801f4509d70cb" title="因数 &#45;&gt; ( 表达式 ) | 数字 | 标识符 " alt="" coords="253,215,308,242"/>
+<area shape="rect" id="node6" href="scan_8c.html#a9a87381a6bbaf512557fc21c8ae28a35" title="词法分析器主函数，每次生成一个Token供语法分析器调用 " alt="" coords="657,114,731,141"/>
+<area shape="rect" id="node10" href="utils_8c.html#af19bf3dc8caf4e45bdc9b053febbedee" title="将词法分析器分析结果输出至文件流 " alt="" coords="801,203,884,230"/>
+<area shape="rect" id="node11" href="parse_8c.html#a256d11bf07725a265da8a68dbebd2be1" title="将错误信息输出到stdout " alt="" coords="649,241,739,267"/>
+<area shape="rect" id="node12" href="utils_8c.html#afa7de10760996fc5201ebd6e7143fcf5" title="动态创建一个空间，并复制字符串 " alt="" coords="363,139,447,166"/>
+<area shape="rect" id="node13" href="parse_8c.html#a748ea477d7e9cba15a1d23ccec2148b7" title="表达式 &#45;&gt; 简单表达式 | 简单表达式 {&lt;, &gt;, =, &lt;=, &gt;=, &lt;&gt;} 简单表达式 " alt="" coords="356,342,455,369"/>
+<area shape="rect" id="node7" href="scan_8c.html#a7bcf99de554c1ec21c5fbbba3accb238" title="获取当前行下一个字符 " alt="" coords="809,153,876,179"/>
+<area shape="rect" id="node8" href="scan_8c.html#a92bc16c7e91cc956c67770f1f9c927c1" title="将当前指针减一，用来返回{&lt;=, &gt;=, &lt;&gt;, :=}的报错信息 " alt="" coords="809,51,876,78"/>
+<area shape="rect" id="node9" href="scan_8c.html#aebce0206bc04c28bd27bf0cacafb0811" title="查找一个串属不属于保留字，属于返回保留字Token，不属于标记为ID（标识符） " alt="" coords="787,102,899,129"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="parse_8c_a68833992f58c454cc4b399e6495d3457_icgraph.png" border="0" usemap="#parse_8c_a68833992f58c454cc4b399e6495d3457_icgraph" alt=""/></div>
+<map name="parse_8c_a68833992f58c454cc4b399e6495d3457_icgraph" id="parse_8c_a68833992f58c454cc4b399e6495d3457_icgraph">
+<area shape="rect" id="node2" href="parse_8c.html#a748ea477d7e9cba15a1d23ccec2148b7" title="表达式 &#45;&gt; 简单表达式 | 简单表达式 {&lt;, &gt;, =, &lt;=, &gt;=, &lt;&gt;} 简单表达式 " alt="" coords="141,132,240,159"/>
+<area shape="rect" id="node3" href="parse_8c.html#a51b5bd1d6581e6ddebb093ea476577be" title="if 语句 &#45;&gt; if 表达式 then 语句序列 end | if 表达式 then 语句序列 else 语句序列 end ..." alt="" coords="304,5,365,32"/>
+<area shape="rect" id="node6" href="parse_8c.html#aa01e603dbb1132a662bae5fec534b1f3" title="repeat 语句 &#45;&gt; repeat 语句序列 until 表达式 " alt="" coords="716,81,807,108"/>
+<area shape="rect" id="node9" href="parse_8c.html#a47791facfbbe8a7918aaec25902ef0e7" title="assign 语句 &#45;&gt; 标识符 := 表达式 " alt="" coords="288,56,381,83"/>
+<area shape="rect" id="node10" href="parse_8c.html#a05035e26d9ea848a887b442225fe0a3c" title="write 语句 &#45;&gt; write 表达式 " alt="" coords="293,107,376,133"/>
+<area shape="rect" id="node11" href="parse_8c.html#a926714887855939b510801f4509d70cb" title="因数 &#45;&gt; ( 表达式 ) | 数字 | 标识符 " alt="" coords="307,208,362,235"/>
+<area shape="rect" id="node4" href="parse_8c.html#a70095d31ccd507def5c76f3290b47202" title="语句 &#45;&gt; if 语句 | repeat 语句 | assign 语句 | read 语句 | write 语句 " alt="" coords="429,56,509,83"/>
+<area shape="rect" id="node5" href="parse_8c.html#af9d481a7d7e2b85b4cf329e89472b505" title="语句序列 &#45;&gt; 语句 ; 语句 " alt="" coords="557,31,668,57"/>
+<area shape="rect" id="node7" href="parse_8h.html#a3978e850bcd90e50ac083de049831eb5" title="语法分析器主函数 程序 &#45;&gt; 语句序列 " alt="" coords="734,31,789,57"/>
+<area shape="rect" id="node8" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="TPC��������ں��� " alt="" coords="855,31,905,57"/>
+<area shape="rect" id="node12" href="parse_8c.html#a5743a7c7a28f2b26524f037cfee051d7" title="加数 &#45;&gt; 因数 | 因数 {*, /} 因数 " alt="" coords="437,233,501,260"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a70095d31ccd507def5c76f3290b47202"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70095d31ccd507def5c76f3290b47202">&#9670;&nbsp;</a></span>statement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a> * statement </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>语句 -&gt; if 语句 | repeat 语句 | assign 语句 | read 语句 | write 语句 </p>
+<dl class="section return"><dt>返回</dt><dd>语法树的一个语句节点 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="parse_8c_a70095d31ccd507def5c76f3290b47202_cgraph.png" border="0" usemap="#parse_8c_a70095d31ccd507def5c76f3290b47202_cgraph" alt=""/></div>
+<map name="parse_8c_a70095d31ccd507def5c76f3290b47202_cgraph" id="parse_8c_a70095d31ccd507def5c76f3290b47202_cgraph">
+<area shape="rect" id="node2" href="parse_8c.html#a51b5bd1d6581e6ddebb093ea476577be" title="if 语句 &#45;&gt; if 表达式 then 语句序列 end | if 表达式 then 语句序列 else 语句序列 end ..." alt="" coords="149,600,211,627"/>
+<area shape="rect" id="node5" href="scan_8c.html#a9a87381a6bbaf512557fc21c8ae28a35" title="词法分析器主函数，每次生成一个Token供语法分析器调用 " alt="" coords="938,324,1013,351"/>
+<area shape="rect" id="node9" href="utils_8c.html#af19bf3dc8caf4e45bdc9b053febbedee" title="将词法分析器分析结果输出至文件流 " alt="" coords="1083,433,1165,460"/>
+<area shape="rect" id="node10" href="parse_8c.html#a256d11bf07725a265da8a68dbebd2be1" title="将错误信息输出到stdout " alt="" coords="931,497,1020,524"/>
+<area shape="rect" id="node18" href="parse_8c.html#aa01e603dbb1132a662bae5fec534b1f3" title="repeat 语句 &#45;&gt; repeat 语句序列 until 表达式 " alt="" coords="135,651,225,677"/>
+<area shape="rect" id="node19" href="parse_8c.html#a47791facfbbe8a7918aaec25902ef0e7" title="assign 语句 &#45;&gt; 标识符 := 表达式 " alt="" coords="133,499,227,525"/>
+<area shape="rect" id="node20" href="parse_8c.html#acbf6a9e0d3d9bc4b84ae1cc3dfa87a18" title="read 语句 &#45;&gt; read 标识符 " alt="" coords="140,397,220,424"/>
+<area shape="rect" id="node21" href="parse_8c.html#a05035e26d9ea848a887b442225fe0a3c" title="write 语句 &#45;&gt; write 表达式 " alt="" coords="139,549,221,576"/>
+<area shape="rect" id="node3" href="utils_8c.html#a362c5050f92db2100e4d00c3d9b03f4a" title="创建一个空的语句节点 " alt="" coords="279,499,381,525"/>
+<area shape="rect" id="node4" href="parse_8c.html#a5ee7da9e5bb43f2b9f797c2ceb045820" title="获取下一个token，匹配成功返回token，失败抛出错误。 " alt="" coords="804,497,863,524"/>
+<area shape="rect" id="node11" href="parse_8c.html#a748ea477d7e9cba15a1d23ccec2148b7" title="表达式 &#45;&gt; 简单表达式 | 简单表达式 {&lt;, &gt;, =, &lt;=, &gt;=, &lt;&gt;} 简单表达式 " alt="" coords="281,549,379,576"/>
+<area shape="rect" id="node17" href="parse_8c.html#af9d481a7d7e2b85b4cf329e89472b505" title="语句序列 &#45;&gt; 语句 ; 语句 " alt="" coords="275,752,385,779"/>
+<area shape="rect" id="node6" href="scan_8c.html#a7bcf99de554c1ec21c5fbbba3accb238" title="获取当前行下一个字符 " alt="" coords="1091,324,1157,351"/>
+<area shape="rect" id="node7" href="scan_8c.html#a92bc16c7e91cc956c67770f1f9c927c1" title="将当前指针减一，用来返回{&lt;=, &gt;=, &lt;&gt;, :=}的报错信息 " alt="" coords="1091,375,1157,401"/>
+<area shape="rect" id="node8" href="scan_8c.html#aebce0206bc04c28bd27bf0cacafb0811" title="查找一个串属不属于保留字，属于返回保留字Token，不属于标记为ID（标识符） " alt="" coords="1068,273,1180,300"/>
+<area shape="rect" id="node12" href="parse_8c.html#a68833992f58c454cc4b399e6495d3457" title="简单表达式 &#45;&gt; 加数 | 加数 {+, &#45;} 加数 " alt="" coords="433,309,521,336"/>
+<area shape="rect" id="node15" href="utils_8c.html#a692239b050374630d532008b58ee1d16" title="创建一个空的表达式节点 " alt="" coords="784,220,883,247"/>
+<area shape="rect" id="node13" href="parse_8c.html#a5743a7c7a28f2b26524f037cfee051d7" title="加数 &#45;&gt; 因数 | 因数 {*, /} 因数 " alt="" coords="569,296,633,323"/>
+<area shape="rect" id="node14" href="parse_8c.html#a926714887855939b510801f4509d70cb" title="因数 &#45;&gt; ( 表达式 ) | 数字 | 标识符 " alt="" coords="681,296,736,323"/>
+<area shape="rect" id="node16" href="utils_8c.html#afa7de10760996fc5201ebd6e7143fcf5" title="动态创建一个空间，并复制字符串 " alt="" coords="791,93,875,120"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="parse_8c_a70095d31ccd507def5c76f3290b47202_icgraph.png" border="0" usemap="#parse_8c_a70095d31ccd507def5c76f3290b47202_icgraph" alt=""/></div>
+<map name="parse_8c_a70095d31ccd507def5c76f3290b47202_icgraph" id="parse_8c_a70095d31ccd507def5c76f3290b47202_icgraph">
+<area shape="rect" id="node2" href="parse_8c.html#af9d481a7d7e2b85b4cf329e89472b505" title="语句序列 &#45;&gt; 语句 ; 语句 " alt="" coords="133,56,244,83"/>
+<area shape="rect" id="node3" href="parse_8c.html#a51b5bd1d6581e6ddebb093ea476577be" title="if 语句 &#45;&gt; if 表达式 then 语句序列 end | if 表达式 then 语句序列 else 语句序列 end ..." alt="" coords="307,5,368,32"/>
+<area shape="rect" id="node4" href="parse_8c.html#aa01e603dbb1132a662bae5fec534b1f3" title="repeat 语句 &#45;&gt; repeat 语句序列 until 表达式 " alt="" coords="292,107,383,133"/>
+<area shape="rect" id="node5" href="parse_8h.html#a3978e850bcd90e50ac083de049831eb5" title="语法分析器主函数 程序 &#45;&gt; 语句序列 " alt="" coords="310,56,365,83"/>
+<area shape="rect" id="node6" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="TPC��������ں��� " alt="" coords="431,56,481,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af9d481a7d7e2b85b4cf329e89472b505"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9d481a7d7e2b85b4cf329e89472b505">&#9670;&nbsp;</a></span>stmt_sequence()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a> * stmt_sequence </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>语句序列 -&gt; 语句 ; 语句 </p>
+<dl class="section return"><dt>返回</dt><dd>语法树的一个语句集节点 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="parse_8c_af9d481a7d7e2b85b4cf329e89472b505_cgraph.png" border="0" usemap="#parse_8c_af9d481a7d7e2b85b4cf329e89472b505_cgraph" alt=""/></div>
+<map name="parse_8c_af9d481a7d7e2b85b4cf329e89472b505_cgraph" id="parse_8c_af9d481a7d7e2b85b4cf329e89472b505_cgraph">
+<area shape="rect" id="node2" href="parse_8c.html#a70095d31ccd507def5c76f3290b47202" title="语句 &#45;&gt; if 语句 | repeat 语句 | assign 语句 | read 语句 | write 语句 " alt="" coords="164,664,244,691"/>
+<area shape="rect" id="node5" href="parse_8c.html#a5ee7da9e5bb43f2b9f797c2ceb045820" title="获取下一个token，匹配成功返回token，失败抛出错误。 " alt="" coords="955,588,1013,615"/>
+<area shape="rect" id="node3" href="parse_8c.html#a51b5bd1d6581e6ddebb093ea476577be" title="if 语句 &#45;&gt; if 表达式 then 语句序列 end | if 表达式 then 语句序列 else 语句序列 end ..." alt="" coords="308,613,369,640"/>
+<area shape="rect" id="node6" href="scan_8c.html#a9a87381a6bbaf512557fc21c8ae28a35" title="词法分析器主函数，每次生成一个Token供语法分析器调用 " alt="" coords="1089,56,1163,83"/>
+<area shape="rect" id="node10" href="utils_8c.html#af19bf3dc8caf4e45bdc9b053febbedee" title="将词法分析器分析结果输出至文件流 " alt="" coords="1233,284,1316,311"/>
+<area shape="rect" id="node11" href="parse_8c.html#a256d11bf07725a265da8a68dbebd2be1" title="将错误信息输出到stdout " alt="" coords="1081,537,1171,564"/>
+<area shape="rect" id="node18" href="parse_8c.html#aa01e603dbb1132a662bae5fec534b1f3" title="repeat 语句 &#45;&gt; repeat 语句序列 until 表达式 " alt="" coords="293,765,384,792"/>
+<area shape="rect" id="node19" href="parse_8c.html#a47791facfbbe8a7918aaec25902ef0e7" title="assign 语句 &#45;&gt; 标识符 := 表达式 " alt="" coords="292,563,385,589"/>
+<area shape="rect" id="node20" href="parse_8c.html#acbf6a9e0d3d9bc4b84ae1cc3dfa87a18" title="read 语句 &#45;&gt; read 标识符 " alt="" coords="299,664,379,691"/>
+<area shape="rect" id="node21" href="parse_8c.html#a05035e26d9ea848a887b442225fe0a3c" title="write 语句 &#45;&gt; write 表达式 " alt="" coords="297,715,380,741"/>
+<area shape="rect" id="node4" href="utils_8c.html#a362c5050f92db2100e4d00c3d9b03f4a" title="创建一个空的语句节点 " alt="" coords="433,715,536,741"/>
+<area shape="rect" id="node12" href="parse_8c.html#a748ea477d7e9cba15a1d23ccec2148b7" title="表达式 &#45;&gt; 简单表达式 | 简单表达式 {&lt;, &gt;, =, &lt;=, &gt;=, &lt;&gt;} 简单表达式 " alt="" coords="435,563,534,589"/>
+<area shape="rect" id="node7" href="scan_8c.html#a7bcf99de554c1ec21c5fbbba3accb238" title="获取当前行下一个字符 " alt="" coords="1241,56,1308,83"/>
+<area shape="rect" id="node8" href="scan_8c.html#a92bc16c7e91cc956c67770f1f9c927c1" title="将当前指针减一，用来返回{&lt;=, &gt;=, &lt;&gt;, :=}的报错信息 " alt="" coords="1241,107,1308,133"/>
+<area shape="rect" id="node9" href="scan_8c.html#aebce0206bc04c28bd27bf0cacafb0811" title="查找一个串属不属于保留字，属于返回保留字Token，不属于标记为ID（标识符） " alt="" coords="1219,5,1331,32"/>
+<area shape="rect" id="node13" href="parse_8c.html#a68833992f58c454cc4b399e6495d3457" title="简单表达式 &#45;&gt; 加数 | 加数 {+, &#45;} 加数 " alt="" coords="584,411,672,437"/>
+<area shape="rect" id="node16" href="utils_8c.html#a692239b050374630d532008b58ee1d16" title="创建一个空的表达式节点 " alt="" coords="935,309,1033,336"/>
+<area shape="rect" id="node14" href="parse_8c.html#a5743a7c7a28f2b26524f037cfee051d7" title="加数 &#45;&gt; 因数 | 因数 {*, /} 因数 " alt="" coords="720,411,784,437"/>
+<area shape="rect" id="node15" href="parse_8c.html#a926714887855939b510801f4509d70cb" title="因数 &#45;&gt; ( 表达式 ) | 数字 | 标识符 " alt="" coords="832,411,887,437"/>
+<area shape="rect" id="node17" href="utils_8c.html#afa7de10760996fc5201ebd6e7143fcf5" title="动态创建一个空间，并复制字符串 " alt="" coords="942,208,1026,235"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="parse_8c_af9d481a7d7e2b85b4cf329e89472b505_icgraph.png" border="0" usemap="#parse_8c_af9d481a7d7e2b85b4cf329e89472b505_icgraph" alt=""/></div>
+<map name="parse_8c_af9d481a7d7e2b85b4cf329e89472b505_icgraph" id="parse_8c_af9d481a7d7e2b85b4cf329e89472b505_icgraph">
+<area shape="rect" id="node2" href="parse_8c.html#a51b5bd1d6581e6ddebb093ea476577be" title="if 语句 &#45;&gt; if 表达式 then 语句序列 end | if 表达式 then 语句序列 else 语句序列 end ..." alt="" coords="179,5,240,32"/>
+<area shape="rect" id="node4" href="parse_8c.html#aa01e603dbb1132a662bae5fec534b1f3" title="repeat 语句 &#45;&gt; repeat 语句序列 until 表达式 " alt="" coords="164,56,255,83"/>
+<area shape="rect" id="node5" href="parse_8h.html#a3978e850bcd90e50ac083de049831eb5" title="语法分析器主函数 程序 &#45;&gt; 语句序列 " alt="" coords="182,157,237,184"/>
+<area shape="rect" id="node3" href="parse_8c.html#a70095d31ccd507def5c76f3290b47202" title="语句 &#45;&gt; if 语句 | repeat 语句 | assign 语句 | read 语句 | write 语句 " alt="" coords="303,56,383,83"/>
+<area shape="rect" id="node6" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="TPC��������ں��� " alt="" coords="317,157,368,184"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a256d11bf07725a265da8a68dbebd2be1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a256d11bf07725a265da8a68dbebd2be1">&#9670;&nbsp;</a></span>syntaxError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void syntaxError </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>message</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>将错误信息输出到stdout </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>错误消息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="parse_8c_a256d11bf07725a265da8a68dbebd2be1_icgraph.png" border="0" usemap="#parse_8c_a256d11bf07725a265da8a68dbebd2be1_icgraph" alt=""/></div>
+<map name="parse_8c_a256d11bf07725a265da8a68dbebd2be1_icgraph" id="parse_8c_a256d11bf07725a265da8a68dbebd2be1_icgraph">
+<area shape="rect" id="node2" href="parse_8c.html#a5ee7da9e5bb43f2b9f797c2ceb045820" title="获取下一个token，匹配成功返回token，失败抛出错误。 " alt="" coords="143,322,201,348"/>
+<area shape="rect" id="node5" href="parse_8c.html#a70095d31ccd507def5c76f3290b47202" title="语句 &#45;&gt; if 语句 | repeat 语句 | assign 语句 | read 语句 | write 语句 " alt="" coords="549,271,629,298"/>
+<area shape="rect" id="node7" href="parse_8h.html#a3978e850bcd90e50ac083de049831eb5" title="语法分析器主函数 程序 &#45;&gt; 语句序列 " alt="" coords="427,68,482,95"/>
+<area shape="rect" id="node13" href="parse_8c.html#a926714887855939b510801f4509d70cb" title="因数 &#45;&gt; ( 表达式 ) | 数字 | 标识符 " alt="" coords="427,524,482,551"/>
+<area shape="rect" id="node3" href="parse_8c.html#af9d481a7d7e2b85b4cf329e89472b505" title="语句序列 &#45;&gt; 语句 ; 语句 " alt="" coords="249,170,360,196"/>
+<area shape="rect" id="node4" href="parse_8c.html#a51b5bd1d6581e6ddebb093ea476577be" title="if 语句 &#45;&gt; if 表达式 then 语句序列 end | if 表达式 then 语句序列 else 语句序列 end ..." alt="" coords="424,220,485,247"/>
+<area shape="rect" id="node6" href="parse_8c.html#aa01e603dbb1132a662bae5fec534b1f3" title="repeat 语句 &#45;&gt; repeat 语句序列 until 表达式 " alt="" coords="409,271,500,298"/>
+<area shape="rect" id="node9" href="parse_8c.html#a47791facfbbe8a7918aaec25902ef0e7" title="assign 语句 &#45;&gt; 标识符 := 表达式 " alt="" coords="408,322,501,348"/>
+<area shape="rect" id="node10" href="parse_8c.html#acbf6a9e0d3d9bc4b84ae1cc3dfa87a18" title="read 语句 &#45;&gt; read 标识符 " alt="" coords="265,474,345,500"/>
+<area shape="rect" id="node11" href="parse_8c.html#a05035e26d9ea848a887b442225fe0a3c" title="write 语句 &#45;&gt; write 表达式 " alt="" coords="413,423,496,450"/>
+<area shape="rect" id="node12" href="parse_8c.html#a748ea477d7e9cba15a1d23ccec2148b7" title="表达式 &#45;&gt; 简单表达式 | 简单表达式 {&lt;, &gt;, =, &lt;=, &gt;=, &lt;&gt;} 简单表达式 " alt="" coords="255,372,354,399"/>
+<area shape="rect" id="node14" href="parse_8c.html#a5743a7c7a28f2b26524f037cfee051d7" title="加数 &#45;&gt; 因数 | 因数 {*, /} 因数 " alt="" coords="557,524,621,551"/>
+<area shape="rect" id="node15" href="parse_8c.html#a68833992f58c454cc4b399e6495d3457" title="简单表达式 &#45;&gt; 加数 | 加数 {+, &#45;} 加数 " alt="" coords="677,372,765,399"/>
+<area shape="rect" id="node8" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="TPC��������ں��� " alt="" coords="564,68,615,95"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a05035e26d9ea848a887b442225fe0a3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05035e26d9ea848a887b442225fe0a3c">&#9670;&nbsp;</a></span>write_stmt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="globals_8h.html#a586f2b14d493294c4c7565cbc5d78f92">TreeNode</a> * write_stmt </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>write 语句 -&gt; write 表达式 </p>
+<dl class="section return"><dt>返回</dt><dd>语法树的一个WRITE节点 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="parse_8c_a05035e26d9ea848a887b442225fe0a3c_cgraph.png" border="0" usemap="#parse_8c_a05035e26d9ea848a887b442225fe0a3c_cgraph" alt=""/></div>
+<map name="parse_8c_a05035e26d9ea848a887b442225fe0a3c_cgraph" id="parse_8c_a05035e26d9ea848a887b442225fe0a3c_cgraph">
+<area shape="rect" id="node2" href="utils_8c.html#a362c5050f92db2100e4d00c3d9b03f4a" title="创建一个空的语句节点 " alt="" coords="136,157,239,184"/>
+<area shape="rect" id="node3" href="parse_8c.html#a5ee7da9e5bb43f2b9f797c2ceb045820" title="获取下一个token，匹配成功返回token，失败抛出错误。 " alt="" coords="657,259,716,285"/>
+<area shape="rect" id="node10" href="parse_8c.html#a748ea477d7e9cba15a1d23ccec2148b7" title="表达式 &#45;&gt; 简单表达式 | 简单表达式 {&lt;, &gt;, =, &lt;=, &gt;=, &lt;&gt;} 简单表达式 " alt="" coords="138,208,237,235"/>
+<area shape="rect" id="node4" href="scan_8c.html#a9a87381a6bbaf512557fc21c8ae28a35" title="词法分析器主函数，每次生成一个Token供语法分析器调用 " alt="" coords="791,81,866,108"/>
+<area shape="rect" id="node8" href="utils_8c.html#af19bf3dc8caf4e45bdc9b053febbedee" title="将词法分析器分析结果输出至文件流 " alt="" coords="936,171,1019,197"/>
+<area shape="rect" id="node9" href="parse_8c.html#a256d11bf07725a265da8a68dbebd2be1" title="将错误信息输出到stdout " alt="" coords="784,208,873,235"/>
+<area shape="rect" id="node5" href="scan_8c.html#a7bcf99de554c1ec21c5fbbba3accb238" title="获取当前行下一个字符 " alt="" coords="944,19,1011,45"/>
+<area shape="rect" id="node6" href="scan_8c.html#a92bc16c7e91cc956c67770f1f9c927c1" title="将当前指针减一，用来返回{&lt;=, &gt;=, &lt;&gt;, :=}的报错信息 " alt="" coords="944,69,1011,96"/>
+<area shape="rect" id="node7" href="scan_8c.html#aebce0206bc04c28bd27bf0cacafb0811" title="查找一个串属不属于保留字，属于返回保留字Token，不属于标记为ID（标识符） " alt="" coords="921,120,1033,147"/>
+<area shape="rect" id="node11" href="parse_8c.html#a68833992f58c454cc4b399e6495d3457" title="简单表达式 &#45;&gt; 加数 | 加数 {+, &#45;} 加数 " alt="" coords="287,132,375,159"/>
+<area shape="rect" id="node14" href="utils_8c.html#a692239b050374630d532008b58ee1d16" title="创建一个空的表达式节点 " alt="" coords="637,5,736,32"/>
+<area shape="rect" id="node12" href="parse_8c.html#a5743a7c7a28f2b26524f037cfee051d7" title="加数 &#45;&gt; 因数 | 因数 {*, /} 因数 " alt="" coords="423,107,487,133"/>
+<area shape="rect" id="node13" href="parse_8c.html#a926714887855939b510801f4509d70cb" title="因数 &#45;&gt; ( 表达式 ) | 数字 | 标识符 " alt="" coords="535,107,589,133"/>
+<area shape="rect" id="node15" href="utils_8c.html#afa7de10760996fc5201ebd6e7143fcf5" title="动态创建一个空间，并复制字符串 " alt="" coords="645,107,729,133"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="parse_8c_a05035e26d9ea848a887b442225fe0a3c_icgraph.png" border="0" usemap="#parse_8c_a05035e26d9ea848a887b442225fe0a3c_icgraph" alt=""/></div>
+<map name="parse_8c_a05035e26d9ea848a887b442225fe0a3c_icgraph" id="parse_8c_a05035e26d9ea848a887b442225fe0a3c_icgraph">
+<area shape="rect" id="node2" href="parse_8c.html#a70095d31ccd507def5c76f3290b47202" title="语句 &#45;&gt; if 语句 | repeat 语句 | assign 语句 | read 语句 | write 语句 " alt="" coords="136,56,216,83"/>
+<area shape="rect" id="node3" href="parse_8c.html#af9d481a7d7e2b85b4cf329e89472b505" title="语句序列 &#45;&gt; 语句 ; 语句 " alt="" coords="264,56,375,83"/>
+<area shape="rect" id="node4" href="parse_8c.html#a51b5bd1d6581e6ddebb093ea476577be" title="if 语句 &#45;&gt; if 表达式 then 语句序列 end | if 表达式 then 语句序列 else 语句序列 end ..." alt="" coords="437,5,499,32"/>
+<area shape="rect" id="node5" href="parse_8c.html#aa01e603dbb1132a662bae5fec534b1f3" title="repeat 语句 &#45;&gt; repeat 语句序列 until 表达式 " alt="" coords="423,107,513,133"/>
+<area shape="rect" id="node6" href="parse_8h.html#a3978e850bcd90e50ac083de049831eb5" title="语法分析器主函数 程序 &#45;&gt; 语句序列 " alt="" coords="441,56,495,83"/>
+<area shape="rect" id="node7" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="TPC��������ں��� " alt="" coords="561,56,612,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a id="ab88f7a2c255ddf124db18f5bf961c10c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab88f7a2c255ddf124db18f5bf961c10c">&#9670;&nbsp;</a></span>token</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="globals_8h.html#a6a9e93b081bad7fc74c17306fb168c1f">Token</a> token</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>待处理的Token </p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>
