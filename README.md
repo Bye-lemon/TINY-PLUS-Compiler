@@ -1,9 +1,42 @@
 # TINY-PLUS Compiler(TPC)
+
 ---
+
 [![Build Status](https://travis-ci.org/Bye-lemon/TINY-PLUS-Complier.svg?branch=master)](https://travis-ci.org/Bye-lemon/TINY-PLUS-Complier)
 
+## 文件说明
+
+| 文件名/文件夹名 | 文件功能     |
+| --------------- | ------------ |
+| dist/           | GUI          |
+| test/           | 测试文件源码 |
+| TPC-GUI/        | GUI源代码    |
 
 ## 使用方法
+
+#### 构建TPC可执行文件
+
+```bash
+mkdir build
+cd build
+cmake ..
+make
+```
+
+#### 编译TNY文件
+
+```bash
+./TPC <Filename>
+```
+
+#### 编译结果说明
+
+| 后缀名  | 说明           |
+| ------- | -------------- |
+| .scan   | 词法分析结果   |
+| .tree   | 语法分析结果   |
+| .symbol | 符号表         |
+| .code   | 四元式中间代码 |
 
 ## 文法的定义
 
