@@ -2,7 +2,7 @@
 
 ---
 
-[![Build Status](https://travis-ci.org/Bye-lemon/TINY-PLUS-Complier.svg?branch=master)](https://travis-ci.org/Bye-lemon/TINY-PLUS-Complier)
+[![Build Status](https://travis-ci.org/Bye-lemon/TINY-PLUS-Compiler.svg?branch=master)](https://travis-ci.org/Bye-lemon/TINY-PLUS-Compiler)
 
 ## 文件说明
 
